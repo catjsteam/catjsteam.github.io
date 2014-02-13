@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Lior Reuven, CEO (Leopard)",
+        "image": "lior",
+        "text": " An Ideator, Family Guy and R&D Manger @ HP Software. Served in various role in both production monitoring ( APM / BSM  ) and testing area ( QM / ALM )Really enjoying my current team , aka CAT JS Team and focusing on making mobile web better. Always looking for something new.",
+        "style": "width:400px"
+    },
+    {
+        "title": "Arik Levin, CTO (Tiger)",
+        "image": "arik",
+        "text": "Programming I started at age 10 and still fresh. I just like to be around the impossible, especially if it involves JavaScript and recently when it comes to NodeJS. Some says that I'm a UI master but I tend to ignore it. I used to have a dirt bike and I miss it still...",
+        "style": "width:400px"
+    },
+    {
+        "title": "Ran Snir, Expert (Puma)",
+        "image": "ran",
+        "text": "I was a part of the Innovation Group @HP Software. I especially enjoy facing new challenges, learning new technologies, creating and connecting between the physical world to the computer world. In my free time I like to travel, swim and building prototypes using Arduino.",
+        "style": "width:400px"
+    },
+    {
+        "title": "Pablo Retyk, Expert (Jaguar)",
+        "image": "pablo",
+        "text": "Passionate for software development, having over 14 years of programming experience, working at HP Software R&D in the last 6 years, focused on developing Automation Software tools. When not working I spend the time montain biking and enjoying nature with my family.",
+        "style": "width:400px"
+    },
+    {
+        "title": "CAT Team",
+        "image": "catteam",
+        "text": "We experienced the real day to day web application testing and we didn't like it one bit. So from the pain we were living we have decided to create something new, this is what we have come up with and we want to share it with you fine people. <br/><br/> A thing or two about CAT's name...<br/> It all started with <b>Comment and Testing</b> and it still is, but then someone said we need something a bit more formal so we changed it to <b>Core Agile Technology</b>",
+        "style": "width:700px"
+    }
+]

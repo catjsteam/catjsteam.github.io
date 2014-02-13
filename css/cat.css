@@ -1,0 +1,2322 @@
+/* 2230 */
+/*
+ * HP fonts imports
+ */
+@font-face {
+  font-family: 'HPSimplified';
+  src: url('fonts/hpsimplified-regular-eot.eot');
+  src: url('fonts/hpsimplified-regular-eot.eot?#iefix') format('embedded-opentype'), url('fonts/hpsimplified-regular-woff.woff') format('woff'), url('fonts/hpsimplified-regular-ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HPSimplifiedBold';
+  src: url('fonts/hpsimplified-bold-eot.eot');
+  src: url('fonts/hpsimplified-bold-eot.eot?#iefix') format('embedded-opentype'), url('fonts/hpsimplified-bold-woff.woff') format('woff'), url('fonts/hpsimplified-bold-ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HPSimplifiedBoldItalic';
+  src: url('fonts/hpsimplified-bolditalic-eot.eot');
+  src: url('fonts/hpsimplified-bolditalic-eot.eot?#iefix') format('embedded-opentype'), url('fonts/hpsimplified-bolditalic-woff.woff') format('woff'), url('fonts/hpsimplified-bolditalic-ttf.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'HPSimplifiedItalic';
+  src: url('fonts/hpsimplified-italic-eot.eot');
+  src: url('fonts/hpsimplified-italic-eot.eot?#iefix') format('embedded-opentype'), url('fonts/hpsimplified-italic-woff.woff') format('woff'), url('fonts/hpsimplified-italic-ttf.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'HPSimplifiedLight';
+  src: url('fonts/hpsimplified-light-eot.eot');
+  src: url('fonts/hpsimplified-light-eot.eot?#iefix') format('embedded-opentype'), url('fonts/hpsimplified-light-woff.woff') format('woff'), url('fonts/hpsimplified-light-ttf.ttf') format('truetype');
+}
+/*
+ * Main body
+ */
+BODY {
+  font-family: "HPSimplified";
+  color: #5b83ad;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  background: #cdcdcd;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #cdcdcd 0%, #ffffff 35%, #ffffff 58%, #ffffff 75%, #cdcdcd 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cdcdcd), color-stop(35%, #ffffff), color-stop(58%, #ffffff), color-stop(75%, #ffffff), color-stop(100%, #cdcdcd));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #cdcdcd 0%, #ffffff 35%, #ffffff 58%, #ffffff 75%, #cdcdcd 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #cdcdcd 0%, #ffffff 35%, #ffffff 58%, #ffffff 75%, #cdcdcd 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #cdcdcd 0%, #ffffff 35%, #ffffff 58%, #ffffff 75%, #cdcdcd 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #cdcdcd 0%, #ffffff 35%, #ffffff 58%, #ffffff 75%, #cdcdcd 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cdcdcd', endColorstr='#cdcdcd', GradientType=0);
+  /* IE6-9 */
+  -webkit-transition: opacity 1000ms;
+  -moz-transition: opacity 1000ms;
+  -o-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+.transitionTopSlow {
+  -webkit-transition: top 3.5s ease;
+  -moz-transition: top 3.5s ease;
+  -o-transition: top 3.5s ease;
+  transition: top 3.5s ease;
+}
+.transitionTop {
+  -webkit-transition: top 0.8s ease;
+  -moz-transition: top 0.8s ease;
+  -o-transition: top 0.8s ease;
+  transition: top 0.8s ease;
+}
+.transitionHeight {
+  -webkit-transition: height 1s ease;
+  -moz-transition: height 1s ease;
+  -o-transition: height 1s ease;
+  transition: height 1s ease;
+}
+.transitionOpacity {
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.transitionTopTiny {
+  -webkit-transition: top 0.3s ease;
+  -moz-transition: top 0.3s ease;
+  -o-transition: top 0.3s ease;
+  transition: top 0.3s ease;
+}
+.transitionHeightTiny {
+  -webkit-transition: height 0.3s ease;
+  -moz-transition: height 0.3s ease;
+  -o-transition: height 0.3s ease;
+  transition: height 0.3s ease;
+}
+.tablet-device {
+  position: absolute;
+  -webkit-border-radius: 22px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 22px;
+  -moz-background-clip: padding;
+  border-radius: 22px;
+  background-clip: padding-box;
+  background-color: #000000;
+  width: 195;
+  height: 285;
+  -webkit-transform: rotateZ(270deg);
+  -moz-transform: rotateZ(270deg);
+  -o-transform: rotateZ(270deg);
+  -ms-transform: rotateZ(270deg);
+  transform: rotateZ(270deg);
+  top: 150px;
+  left: 100px;
+}
+.tablet-device .screen {
+  position: absolute;
+  background-color: #4a92cc;
+  top: 18px;
+  left: 27px;
+  width: 141px;
+  height: 231px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.tablet-device .text {
+  position: absolute;
+  padding: 40px 40px 55px 55px;
+  font-size: 28px;
+  color: #ffffff;
+  font-family: 'HPSimplifiedLight';
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.tablet-device .text .header {
+  font-family: 'HPSimplifiedBold';
+  font-size: 28px;
+  color: #ffffff;
+}
+.tablet-device .mask {
+  position: absolute;
+  top: 18px;
+  left: 27px;
+  border-bottom: 231px solid #407fb1;
+  border-right: 141px solid transparent;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+.tablet-device .button {
+  position: absolute;
+  background-color: #ffffff;
+  bottom: 13px;
+  left: 85.5;
+  width: 24px;
+  height: 12px;
+}
+.tablet-device .opensourcesign {
+  -webkit-transform: rotateZ(90deg);
+  -moz-transform: rotateZ(90deg);
+  -o-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+  position: absolute;
+  top: 65px;
+  left: 24px;
+  width: 122px;
+  height: 130px;
+  background: url('../resources/sprite.png') -198px 0px;
+}
+.desktop-device {
+  position: absolute;
+  -webkit-border-radius: 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px;
+  background-clip: padding-box;
+  background-color: #000000;
+  width: 420;
+  height: 250;
+  -webkit-transition-property: width, height, top left opacity;
+  -moz-transition-property: width, height, top left opacity;
+  -o-transition-property: width, height, top left opacity;
+  transition-property: width, height, top left opacity;
+  -webkit-transition-duration: 1s, 1s, 1s;
+  -moz-transition-duration: 1s, 1s, 1s;
+  -o-transition-duration: 1s, 1s, 1s;
+  transition-duration: 1s, 1s, 1s;
+  -webkit-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -o-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  top: 0px;
+  left: 140px;
+}
+.desktop-device .screen {
+  position: absolute;
+  background-color: #4a92cc;
+  top: 22px;
+  left: 22px;
+  width: 376px;
+  height: 184px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  height: 206px;
+}
+.desktop-device .text {
+  position: absolute;
+  padding: 40px 40px 55px 55px;
+  font-size: 28px;
+  color: #ffffff;
+  font-family: 'HPSimplifiedLight';
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.desktop-device .text .header {
+  font-family: 'HPSimplifiedBold';
+  font-size: 28px;
+  color: #ffffff;
+}
+.desktop-device .mask {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  border-bottom: 184px solid #407fb1;
+  border-left: 376px solid transparent;
+  border-bottom: 206px solid #407fb1;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+.desktop-device .button {
+  position: absolute;
+  background-color: #ffffff;
+  bottom: 13px;
+  left: 198;
+  width: 24px;
+  height: 12px;
+}
+.desktop-device .watchvideo {
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+  position: absolute;
+  right: 45px;
+  bottom: 10px;
+  font-family: HPSimplifiedBold;
+  font-size: 14px;
+  color: white;
+}
+.desktop-device .watchvideo .play {
+  position: absolute;
+  left: 80px;
+  bottom: -3px;
+  width: 25px;
+  height: 25px;
+  background: url('../resources/sprite.png') -380px -85px;
+}
+.desktop-device .watchvideo:hover {
+  color: orangered;
+  right: 40px;
+  cursor: pointer;
+}
+.desktop-device .body {
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
+  position: absolute;
+  top: 250px;
+}
+.desktop-device .body .frame {
+  width: 420px;
+  height: 40px;
+  background-color: #b9b8bb;
+}
+.desktop-device .body .stand .top {
+  position: relative;
+  height: 5px;
+  width: 100px;
+  left: 160px;
+  background-color: #767676;
+}
+.desktop-device .body .stand .middle {
+  position: relative;
+  height: 40px;
+  width: 98px;
+  left: 161px;
+  background-color: #b9b8bb;
+}
+.desktop-device .body .stand .bottom .top {
+  position: relative;
+  height: 20px;
+  width: 100px;
+  left: 160px;
+  background-color: #87898b;
+}
+.desktop-device .body .stand .bottom .corner {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 85px;
+  left: 260px;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #87898b;
+}
+.desktop-device .body .stand .bottom .bottom {
+  position: relative;
+  height: 10px;
+  width: 140px;
+  left: 140px;
+  background-color: #b9b8bb;
+}
+.mobile-device {
+  position: absolute;
+  -webkit-border-radius: 22px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 22px;
+  -moz-background-clip: padding;
+  border-radius: 22px;
+  background-clip: padding-box;
+  background-color: #000000;
+  width: 80;
+  height: 160;
+  top: 260px;
+  left: 450px;
+}
+.mobile-device .screen {
+  position: absolute;
+  background-color: #4a92cc;
+  top: 18px;
+  left: 11px;
+  width: 58px;
+  height: 106px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.mobile-device .text {
+  position: absolute;
+  padding: 40px 40px 55px 55px;
+  font-size: 28px;
+  color: #ffffff;
+  font-family: 'HPSimplifiedLight';
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.mobile-device .text .header {
+  font-family: 'HPSimplifiedBold';
+  font-size: 28px;
+  color: #ffffff;
+}
+.mobile-device .mask {
+  position: absolute;
+  top: 18px;
+  left: 11px;
+  border-bottom: 106px solid #407fb1;
+  border-left: 58px solid transparent;
+  top: 54px;
+  border-bottom: 36px solid #407fb1;
+  -webkit-box-shadow: 0px 36px 0px 0px #407fb1;
+  -moz-box-shadow: 0px 36px 0px 0px #407fb1;
+  box-shadow: 0px 36px 0px 0px #407fb1;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+.mobile-device .button {
+  position: absolute;
+  background-color: #ffffff;
+  bottom: 13px;
+  left: 28;
+  width: 24px;
+  height: 12px;
+}
+.mobile-device .hplogo {
+  position: absolute;
+  top: 55px;
+  left: 18px;
+  width: 42px;
+  height: 49px;
+  background: url('../resources/sprite.png') -320px 0px;
+}
+/*
+  Tube
+*/
+.tubeshl {
+  width: 28px;
+  height: 12px;
+  background: url('../resources/tube/tubeshl.png');
+}
+.tubeshlf {
+  width: 28px;
+  height: 12px;
+  background: url('../resources/tube/tubeshlf.png');
+}
+.tubeshr {
+  width: 16px;
+  height: 12px;
+  background: url('../resources/tube/tubeshr.png');
+}
+.tubeshrf {
+  width: 16px;
+  height: 12px;
+  background: url('../resources/tube/tubeshrf.png');
+}
+.tubesvu {
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvu.png');
+}
+.tubesvuf {
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvuf.png');
+}
+.tubesvd {
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvd.png');
+}
+.tubesvdf {
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvdf.png');
+}
+.tubebhl {
+  width: 29px;
+  height: 18px;
+  background: url('../resources/tube/tubebhl.png');
+}
+.tubebhr {
+  width: 29px;
+  height: 18px;
+  background: url('../resources/tube/tubebhr.png');
+}
+.tubebvu {
+  width: 23px;
+  height: 30px;
+  background: url('../resources/tube/tubebvu.png');
+}
+.tubebvd {
+  width: 23px;
+  height: 30px;
+  background: url('../resources/tube/tubebvd.png');
+}
+.tubebvuf {
+  width: 23px;
+  height: 30px;
+  background: url('../resources/tube/tubebvuf.png');
+}
+.tubebvdf {
+  width: 23px;
+  height: 30px;
+  background: url('../resources/tube/tubebvdf.png');
+}
+/*
+  Meters
+*/
+.basecatimage {
+  position: absolute;
+  right: 0px;
+  top: 30px;
+}
+.lior {
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  width: 150px;
+  height: 147px;
+  background: url('../resources/sprite.png') 288px 446px;
+  -webkit-box-shadow: 0px 0px 10px 5px #4e4848;
+  -moz-box-shadow: 0px 0px 10px 5px #4e4848;
+  box-shadow: 0px 0px 10px 5px #4e4848;
+}
+.arik {
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  width: 150px;
+  height: 150px;
+  background: url('../resources/sprite.png') -1px 448px;
+  -webkit-box-shadow: 0px 0px 15px 10px #000000;
+  -moz-box-shadow: 0px 0px 15px 10px #000000;
+  box-shadow: 0px 0px 15px 10px #000000;
+}
+.pablo {
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  width: 150px;
+  height: 150px;
+  background: url('../resources/sprite.png') 288px 608px;
+  -webkit-box-shadow: 0px 0px 10px 5px #4e3d2b;
+  -moz-box-shadow: 0px 0px 10px 5px #4e3d2b;
+  box-shadow: 0px 0px 10px 5px #4e3d2b;
+}
+.ran {
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  width: 150px;
+  height: 150px;
+  background: url('../resources/sprite.png') 0px 608px;
+  -webkit-box-shadow: 0px 0px 10px 5px #f3e9b4;
+  -moz-box-shadow: 0px 0px 10px 5px #f3e9b4;
+  box-shadow: 0px 0px 10px 5px #f3e9b4;
+}
+.custom_scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.custom_scrollbar::-webkit-scrollbar-track {
+  background-color: rgba(113, 112, 107, 0.1);
+}
+.custom_scrollbar::-webkit-scrollbar-thumb:vertical {
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px white;
+  -webkit-border-radius: 3px;
+}
+.custom_scrollbar::-webkit-scrollbar-thumb:vertical:hover,
+.custom_scrollbar::-webkit-scrollbar-thumb:horizontal:hover {
+  background: gray;
+}
+.custom_scrollbar::-webkit-scrollbar-thumb:horizontal {
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 6px white;
+}
+li {
+  padding-top: 8px;
+}
+#container {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: none;
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
+}
+.cat {
+  width: 100%;
+  height: 2230px;
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
+}
+.choochooA .connector1,
+.choochooB .connector1,
+.choochooC .connector1 {
+  position: relative;
+  width: 15px;
+  height: 25px;
+  background-color: #575354;
+  position: absolute;
+  left: 47px;
+  top: 315px;
+}
+.choochooA .connector2,
+.choochooB .connector2,
+.choochooC .connector2 {
+  position: relative;
+  width: 15px;
+  height: 25px;
+  background-color: #575354;
+  position: absolute;
+  left: -45px;
+  top: 315px;
+}
+.choochooA .choochooTube .hat,
+.choochooB .choochooTube .hat,
+.choochooC .choochooTube .hat {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 100px;
+  left: 110px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #535354;
+}
+.choochooA .choochooTube .tube,
+.choochooB .choochooTube .tube,
+.choochooC .choochooTube .tube {
+  position: absolute;
+  top: 140px;
+  left: 120px;
+  position: relative;
+  width: 20px;
+  height: 60px;
+  background-color: #bfbbbd;
+}
+.choochooA .choochooTube .tube .exhaust,
+.choochooB .choochooTube .tube .exhaust,
+.choochooC .choochooTube .tube .exhaust {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 20px;
+  left: 10px;
+  border-left: 10px solid transparent;
+  border-right: 0px solid transparent;
+  border-top: 20px solid #cce0f2;
+}
+.choochooA .choochooTube .tube .smoke,
+.choochooB .choochooTube .tube .smoke,
+.choochooC .choochooTube .tube .smoke {
+  position: absolute;
+  top: -80px;
+  left: 20px;
+  width: 100px;
+  height: 120px;
+  background: url('../resources/sprite.png') 250px -134px;
+}
+.choochooA .choochooTube .connector,
+.choochooB .choochooTube .connector,
+.choochooC .choochooTube .connector {
+  position: relative;
+  width: 32px;
+  height: 17px;
+  background-color: #575354;
+  position: absolute;
+  left: 114px;
+  top: 200px;
+}
+.choochooA .tube1,
+.choochooB .tube1,
+.choochooC .tube1 {
+  position: absolute;
+  width: 28px;
+  height: 12px;
+  background: url('../resources/tube/tubeshlf.png');
+  width: 235px;
+  left: -100px;
+  top: 322px;
+  -webkit-border-radius: 0px 0px 10px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 10px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 10px 0px;
+  background-clip: padding-box;
+}
+.choochooA .tube2,
+.choochooB .tube2,
+.choochooC .tube2 {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvdf.png');
+  height: 120px;
+  left: 123px;
+  top: 212px;
+  -webkit-border-radius: 0px 0px 10px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 10px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 10px 0px;
+  background-clip: padding-box;
+}
+.choochooB {
+  position: absolute;
+  top: 232px;
+  left: 105px;
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.choochooB .tube1 {
+  position: absolute;
+  width: 28px;
+  height: 12px;
+  background: url('../resources/tube/tubeshlf.png');
+  width: 135px;
+  left: 0px;
+  top: 322px;
+  -webkit-border-radius: 0px 0px 10px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 10px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 10px 0px;
+  background-clip: padding-box;
+}
+.choochooC {
+  position: absolute;
+  top: -420px;
+  left: 300px;
+  display: none;
+}
+.choochooC .choochooTube .hat {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 100px;
+  left: 110px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #535354;
+}
+.choochooC .choochooTube .tube {
+  position: absolute;
+  top: 140px;
+  left: 120px;
+  position: relative;
+  width: 20px;
+  height: 60px;
+  background-color: #bfbbbd;
+}
+.choochooC .choochooTube .tube .exhaust {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 20px;
+  left: 10px;
+  border-left: 10px solid transparent;
+  border-right: 0px solid transparent;
+  border-top: 20px solid #ffffff;
+}
+.choochooC .choochooTube .tube .smoke {
+  position: absolute;
+  top: -80px;
+  left: 20px;
+  width: 100px;
+  height: 120px;
+  background: url('../resources/sprite.png') 250px -134px;
+}
+.choochooC .choochooTube .connector {
+  position: relative;
+  width: 32px;
+  height: 17px;
+  background-color: #575354;
+  position: absolute;
+  left: 114px;
+  top: 200px;
+}
+.choochooC .tube1 {
+  position: absolute;
+  width: 28px;
+  height: 12px;
+  background: url('../resources/tube/tubeshlf.png');
+  width: 135px;
+  left: 0px;
+  top: 322px;
+  -webkit-border-radius: 0px 0px 10px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 10px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 10px 0px;
+  background-clip: padding-box;
+}
+.choochooC .tube2 {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvd.png');
+  height: 120px;
+  left: 123px;
+  top: 212px;
+  -webkit-border-radius: 0px 0px 10px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 10px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 10px 0px;
+  background-clip: padding-box;
+}
+.view .catheader {
+  position: absolute;
+  width: 100%;
+  height: 440px;
+  background-color: #cce0f2;
+}
+.view .catheadercontent {
+  width: 100%;
+  position: absolute;
+  top: 440px;
+  border: 1px solid black;
+}
+.view .catworkspace {
+  position: absolute;
+  height: 440px;
+  width: 100%;
+  left: 200px;
+}
+.view .catworkspace .devices {
+  position: absolute;
+  top: 50px;
+  left: 350px;
+}
+.view .catworkspace .devices .tubeGroupA {
+  position: absolute;
+  top: 50px;
+}
+.view .catworkspace .devices .tubeGroupA .connectorB1 {
+  position: relative;
+  width: 20px;
+  height: 25px;
+  background-color: #575354;
+  position: absolute;
+  left: 132px;
+  top: 22px;
+}
+.view .catworkspace .devices .tubeGroupA .connectorB2 {
+  position: relative;
+  width: 20px;
+  height: 25px;
+  background-color: #575354;
+  position: absolute;
+  left: 104px;
+  top: 120px;
+}
+.view .catworkspace .devices .tubeGroupA .tubeB1 {
+  position: absolute;
+  width: 28px;
+  height: 12px;
+  background: url('../resources/tube/tubeshlf.png');
+  width: 24px;
+  left: 108px;
+  top: 27px;
+  -webkit-border-radius: 10px 0px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px 0px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 10px 0px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .devices .tubeGroupA .tubeB2 {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvuf.png');
+  height: 100px;
+  left: 106px;
+  top: 30px;
+  -webkit-border-radius: 10px 0px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px 0px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 10px 0px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .devices .tubeGroupB {
+  position: absolute;
+  left: 623px;
+  top: 0px;
+}
+.view .catworkspace .devices .tubeGroupB .meterA {
+  position: absolute;
+  left: -34px;
+  top: 296px;
+}
+.view .catworkspace .devices .tubeGroupB .meterA .gauge .front {
+  position: absolute;
+  width: 85px;
+  height: 65px;
+  background-color: #4f8d25;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+.view .catworkspace .devices .tubeGroupB .meterA .gauge .back {
+  position: absolute;
+  width: 85px;
+  height: 65px;
+  top: -8px;
+  background-color: #355c32;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+.view .catworkspace .devices .tubeGroupB .meterA .gauge .glass {
+  top: 2px;
+  left: 12px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 50px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 50px;
+  -moz-background-clip: padding;
+  border-radius: 50px;
+  background-clip: padding-box;
+  background-color: #ffffff;
+  border: 5px solid #868686;
+}
+.view .catworkspace .devices .tubeGroupB .meterA .gauge .glass .gauge-arrow {
+  position: absolute;
+  left: 12px;
+  top: 2px;
+  width: 25px;
+  height: 32px;
+  background: url('../resources/sprite.png') 132px -46px;
+}
+.view .catworkspace .devices .tubeGroupC {
+  position: absolute;
+  left: 623px;
+  top: 0px;
+}
+.view .catworkspace .devices .tubeGroupC .connectorC1 {
+  position: relative;
+  width: 20px;
+  height: 25px;
+  background-color: #575354;
+  position: absolute;
+  left: -71px;
+  top: 43px;
+}
+.view .catworkspace .devices .tubeGroupC .tubeC1 {
+  position: absolute;
+  width: 28px;
+  height: 12px;
+  background: url('../resources/tube/tubeshlf.png');
+  width: 65px;
+  left: -51px;
+  top: 50px;
+  -webkit-border-radius: 0px 10px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 10px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 10px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .devices .tubeGroupC .tubeC2 {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvu.png');
+  height: 120px;
+  left: 2px;
+  top: 50px;
+  -webkit-border-radius: 0px 10px 4px 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 10px 4px 4px;
+  -moz-background-clip: padding;
+  border-radius: 0px 10px 4px 4px;
+  background-clip: padding-box;
+}
+.view .catworkspace .devices .tubeGroupC .tubeC3 {
+  position: absolute;
+  width: 23px;
+  height: 30px;
+  background: url('../resources/tube/tubebvdf.png');
+  height: 120px;
+  left: -3px;
+  top: 172px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .devices .tubeGroupC .tubePlug {
+  width: 17px;
+  height: 18px;
+  position: absolute;
+  left: -3px;
+  top: 158px;
+  border: 3px solid #373737;
+  background-color: #000;
+  -webkit-border-radius: 30px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 30px;
+  -moz-background-clip: padding;
+  border-radius: 30px;
+  background-clip: padding-box;
+  -webkit-transform: rotateX(70deg);
+  -moz-transform: rotateX(70deg);
+  -o-transform: rotateX(70deg);
+  -ms-transform: rotateX(70deg);
+  transform: rotateX(70deg);
+}
+.view .catworkspace .description {
+  position: absolute;
+  top: 50px;
+  display: table;
+  text-align: center;
+  color: #000000;
+  font-size: 28px;
+}
+.view .catworkspace .description .row {
+  display: table-row;
+}
+.view .catworkspace .description .row lesshat-selector {
+  -lh-property: 0; } 
+@-webkit-keyframes logoanimopen{ 0%{ -webkit-transform: scale(1.1); } 100%{ -webkit-transform: scale(1.2); }}
+@-moz-keyframes logoanimopen{ 0%{ -moz-transform: scale(1.1); } 100%{ -moz-transform: scale(1.2); }}
+@-o-keyframes logoanimopen{ 0%{ -o-transform: scale(1.1); } 100%{ -o-transform: scale(1.2); }}
+@keyframes logoanimopen{ 0%{-webkit-transform: scale(1.1);-moz-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1); } 100%{-webkit-transform: scale(1.2);-moz-transform: scale(1.2);-ms-transform: scale(1.2);transform: scale(1.2); };
+}
+.view .catworkspace .description .row lesshat-selector {
+  -lh-property: 0; } 
+@-webkit-keyframes logoanimclose{ 0%{ -webkit-transform: scale(1.2); } 100%{ -webkit-transform: scale(1); }}
+@-moz-keyframes logoanimclose{ 0%{ -moz-transform: scale(1.2); } 100%{ -moz-transform: scale(1); }}
+@-o-keyframes logoanimclose{ 0%{ -o-transform: scale(1.2); } 100%{ -o-transform: scale(1); }}
+@keyframes logoanimclose{ 0%{-webkit-transform: scale(1.2);-moz-transform: scale(1.2);-ms-transform: scale(1.2);transform: scale(1.2); } 100%{-webkit-transform: scale(1);-moz-transform: scale(1);-ms-transform: scale(1);transform: scale(1); };
+}
+.view .catworkspace .description .row lesshat-selector {
+  -lh-property: 0; } 
+@-webkit-keyframes logoanimtext{ 0%{ left:-50px; opacity:.3 } 25%{ opacity:.5 } 50%{ left: -100px; opacity:1 } 75%{  opacity:.5 } 100%{ left: -50px; opacity:0 }}
+@-moz-keyframes logoanimtext{ 0%{ left:-50px; opacity:.3 } 25%{ opacity:.5 } 50%{ left: -100px; opacity:1 } 75%{  opacity:.5 } 100%{ left: -50px; opacity:0 }}
+@-o-keyframes logoanimtext{ 0%{ left:-50px; opacity:.3 } 25%{ opacity:.5 } 50%{ left: -100px; opacity:1 } 75%{  opacity:.5 } 100%{ left: -50px; opacity:0 }}
+@keyframes logoanimtext{ 0%{ left:-50px; opacity:.3 } 25%{ opacity:.5 } 50%{ left: -100px; opacity:1 } 75%{  opacity:.5 } 100%{ left: -50px; opacity:0 };
+}
+.view .catworkspace .description .row .logo {
+  cursor: pointer;
+  position: relative;
+  left: 17%;
+  text-align: center;
+  background-repeat: no-repeat;
+  width: 196px;
+  height: 100px;
+  background: url('../resources/sprite.png') 0px 0px;
+  -webkit-animation: logoanimclose 0.5s 1;
+  -moz-animation: logoanimclose 0.5s 1;
+  -o-animation: logoanimclose 0.5s 1;
+  animation: logoanimclose 0.5s 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.view .catworkspace .description .row .logo .home {
+  position: absolute;
+  opacity: 0;
+  top: 80px;
+  width: 150px;
+  left: -50px;
+  font-size: 16px;
+  color: gray;
+  -webkit-animation: logoanimtext 3s 1;
+  -moz-animation: logoanimtext 3s 1;
+  -o-animation: logoanimtext 3s 1;
+  animation: logoanimtext 3s 1;
+}
+.view .catworkspace .description .row .logo:hover {
+  -webkit-animation: logoanimopen 0.5s 1;
+  -moz-animation: logoanimopen 0.5s 1;
+  -o-animation: logoanimopen 0.5s 1;
+  animation: logoanimopen 0.5s 1;
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.view .catworkspace .description .row .logo:hover .home {
+  opacity: .3;
+  -webkit-animation: logoanimtext 3s infinite;
+  -moz-animation: logoanimtext 3s infinite;
+  -o-animation: logoanimtext 3s infinite;
+  animation: logoanimtext 3s infinite;
+}
+.view .catworkspace .description .row .line {
+  display: table-cell;
+  white-space: nowrap;
+  vertical-align: bottom;
+  height: 50px;
+}
+.view .catworkspace .description .row .light {
+  font-family: HPSimplifiedLight;
+  font-size: 20px;
+  height: 35px;
+}
+.view .catworkspace .download {
+  position: absolute;
+  top: 250px;
+  line-height: 85px;
+}
+.view .catworkspace .download .front {
+  position: absolute;
+  width: 300px;
+  height: 85px;
+  text-align: center;
+  vertical-align: middle;
+  color: #ffffff;
+  font-size: 24px;
+  background-color: #f05332;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+.view .catworkspace .download .front .header {
+  font-family: HPSimplifiedBold;
+}
+.view .catworkspace .download .front .text {
+  font-family: HPSimplified;
+}
+.view .catworkspace .download .back {
+  position: absolute;
+  width: 300px;
+  height: 25px;
+  top: -8px;
+  background-color: #ae3c25;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+.view .catworkspace .download .tubeA {
+  position: absolute;
+  width: 29px;
+  background: url('../resources/tube/tubebhl.png');
+  width: 125px;
+  height: 18px;
+  left: 300px;
+  top: 30px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .download .connectorA {
+  position: relative;
+  width: 15px;
+  height: 25px;
+  background-color: #575354;
+  position: absolute;
+  left: 300px;
+  top: 26px;
+}
+.view .catworkspace .download .connectorB {
+  position: relative;
+  width: 15px;
+  height: 25px;
+  background-color: #575354;
+  position: absolute;
+  left: 394px;
+  top: 26px;
+}
+.view .catworkspace .download .tubeGroupD {
+  position: absolute;
+  left: -40px;
+}
+.view .catworkspace .download .tubeGroupD .connectorC {
+  position: relative;
+  width: 34px;
+  height: 12px;
+  background-color: #575354;
+  position: absolute;
+  left: 120px;
+  top: 85px;
+}
+.view .catworkspace .download .tubeGroupD .tubeB {
+  position: absolute;
+  width: 23px;
+  height: 30px;
+  background: url('../resources/tube/tubebvd.png');
+  height: 145px;
+  left: 126px;
+  top: 95px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .download .tubeGroupD .tubeC {
+  position: absolute;
+  width: 23px;
+  height: 30px;
+  background: url('../resources/tube/tubebvd.png');
+  height: 145px;
+  left: 126px;
+  top: 95px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace {
+  position: absolute;
+  width: 100%;
+}
+.view .catworkspace .workspace .workspacecontent {
+  position: absolute;
+  top: 2230px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupA {
+  position: absolute;
+  left: -40px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupA .bullet {
+  position: absolute;
+  top: 496px;
+  left: 76px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupA .bullet .front {
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 100px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 100px;
+  -moz-background-clip: padding;
+  border-radius: 100px;
+  background-clip: padding-box;
+  background-color: #4f8d41;
+  border: 0px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupA .bullet .back {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  -webkit-border-radius: 120px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 120px;
+  -moz-background-clip: padding;
+  border-radius: 120px;
+  background-clip: padding-box;
+  background-color: #7d877a;
+  border: 0px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupA .bullet .image {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  width: 70px;
+  height: 50px;
+  background: url('../resources/sprite.png') 0px -350px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupA .bullet .connectorA {
+  position: relative;
+  width: 30px;
+  height: 14px;
+  background-color: #575354;
+  position: absolute;
+  left: 45px;
+  top: 115px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupA .bullet .connectorB {
+  position: relative;
+  width: 30px;
+  height: 14px;
+  background-color: #575354;
+  position: absolute;
+  left: 46px;
+  top: -8px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupA .bullet .text-section {
+  position: absolute;
+  left: 150px;
+  top: 0px;
+  width: 600px;
+  -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -o-transition-delay: 500ms;
+  transition-delay: 500ms;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupA .bullet .text-section .headerX {
+  font-size: 30px;
+  font-family: HPSimplified;
+  color: #4e95cb;
+  line-height: 1.15;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupA .bullet .text-section .headerX .headerX-bullet {
+  color: #989da0;
+  padding-right: 8px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupA .bullet .text-section .text {
+  font-family: HPSimplified;
+  font-size: 18px;
+  color: #000000;
+  padding-top: 10px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupA .tubeA {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvuf.png');
+  height: 70px;
+  left: 130px;
+  top: 625px;
+  -webkit-border-radius: 0px 0px 0px 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 0px 10px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 0px 10px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .workspacecontent .tubeC {
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  background: url('../resources/tube/tubeshr.png');
+  width: 778px;
+  left: 91px;
+  top: 683px;
+  -webkit-border-radius: 0px 0px 0px 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 0px 10px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 0px 10px;
+  background-clip: padding-box;
+  z-index: 100;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupB {
+  position: absolute;
+  left: 736px;
+  top: 265px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupB .bullet {
+  position: absolute;
+  top: 496px;
+  left: 76px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupB .bullet .front {
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 100px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 100px;
+  -moz-background-clip: padding;
+  border-radius: 100px;
+  background-clip: padding-box;
+  background-color: #4f8d41;
+  border: 0px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupB .bullet .back {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  -webkit-border-radius: 120px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 120px;
+  -moz-background-clip: padding;
+  border-radius: 120px;
+  background-clip: padding-box;
+  background-color: #7d877a;
+  border: 0px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupB .bullet .image {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  width: 70px;
+  height: 60px;
+  background: url('../resources/sprite.png') -70px -335px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupB .bullet .connectorA {
+  position: relative;
+  width: 30px;
+  height: 14px;
+  background-color: #575354;
+  position: absolute;
+  left: 45px;
+  top: 115px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupB .bullet .connectorB {
+  position: relative;
+  width: 30px;
+  height: 14px;
+  background-color: #575354;
+  position: absolute;
+  left: 46px;
+  top: -8px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupB .bullet .text-section {
+  position: absolute;
+  left: -626px;
+  top: -20px;
+  width: 600px;
+  -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -o-transition-delay: 500ms;
+  transition-delay: 500ms;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupB .bullet .text-section .headerX {
+  font-size: 30px;
+  font-family: HPSimplified;
+  color: #4e95cb;
+  line-height: 1.15;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupB .bullet .text-section .headerX .headerX-bullet {
+  color: #989da0;
+  padding-right: 8px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupB .bullet .text-section .text {
+  font-family: HPSimplified;
+  font-size: 18px;
+  color: #000000;
+  padding-top: 10px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupB .tubeA {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvu.png');
+  height: 70px;
+  left: 131px;
+  top: 625px;
+  -webkit-border-radius: 0px 0px 10px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 10px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 10px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupB .tubeB {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvdf.png');
+  height: 70px;
+  left: 131px;
+  top: 418px;
+  -webkit-border-radius: 0px 10px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 10px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 10px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .workspacecontent .tubeD {
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  background: url('../resources/tube/tubeshr.png');
+  width: 783px;
+  left: 96px;
+  top: 948px;
+  -webkit-border-radius: 0px 0px 10px 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 10px 10px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 10px 10px;
+  background-clip: padding-box;
+  z-index: 100;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupC {
+  position: absolute;
+  left: -40px;
+  top: 530px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupC .bullet {
+  position: absolute;
+  top: 496px;
+  left: 76px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupC .bullet .front {
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 100px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 100px;
+  -moz-background-clip: padding;
+  border-radius: 100px;
+  background-clip: padding-box;
+  background-color: #4f8d41;
+  border: 0px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupC .bullet .back {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  -webkit-border-radius: 120px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 120px;
+  -moz-background-clip: padding;
+  border-radius: 120px;
+  background-clip: padding-box;
+  background-color: #7d877a;
+  border: 0px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupC .bullet .image {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 70px;
+  height: 60px;
+  background: url('../resources/sprite.png') -153px -334px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupC .bullet .connectorA {
+  position: relative;
+  width: 30px;
+  height: 14px;
+  background-color: #575354;
+  position: absolute;
+  left: 45px;
+  top: 115px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupC .bullet .connectorB {
+  position: relative;
+  width: 30px;
+  height: 14px;
+  background-color: #575354;
+  position: absolute;
+  left: 46px;
+  top: -8px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupC .bullet .text-section {
+  position: absolute;
+  left: 150px;
+  top: -20px;
+  width: 600px;
+  -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -o-transition-delay: 500ms;
+  transition-delay: 500ms;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupC .bullet .text-section .headerX {
+  font-size: 30px;
+  font-family: HPSimplified;
+  color: #4e95cb;
+  line-height: 1.15;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupC .bullet .text-section .headerX .headerX-bullet {
+  color: #989da0;
+  padding-right: 8px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupC .bullet .text-section .text {
+  font-family: HPSimplified;
+  font-size: 18px;
+  color: #000000;
+  padding-top: 10px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupC .tubeA {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvuf.png');
+  height: 70px;
+  left: 131px;
+  top: 625px;
+  -webkit-border-radius: 0px 0px 0px 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 0px 10px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 0px 10px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupC .tubeB {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvdf.png');
+  height: 70px;
+  left: 131px;
+  top: 418px;
+  -webkit-border-radius: 10px 10px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px 10px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 10px 10px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .workspacecontent .tubeE {
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  background: url('../resources/tube/tubeshr.png');
+  width: 778px;
+  left: 92px;
+  top: 1213px;
+  -webkit-border-radius: 10px 0px 0px 20px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px 0px 0px 20px;
+  -moz-background-clip: padding;
+  border-radius: 10px 0px 0px 20px;
+  background-clip: padding-box;
+  z-index: 100;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupD {
+  position: absolute;
+  left: 736px;
+  top: 795px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupD .bullet {
+  position: absolute;
+  top: 496px;
+  left: 76px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupD .bullet .front {
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 100px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 100px;
+  -moz-background-clip: padding;
+  border-radius: 100px;
+  background-clip: padding-box;
+  background-color: #4f8d41;
+  border: 0px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupD .bullet .back {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  -webkit-border-radius: 120px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 120px;
+  -moz-background-clip: padding;
+  border-radius: 120px;
+  background-clip: padding-box;
+  background-color: #7d877a;
+  border: 0px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupD .bullet .image {
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  width: 70px;
+  height: 68px;
+  background: url('../resources/sprite.png') -225px -329px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupD .bullet .connectorA {
+  position: relative;
+  width: 30px;
+  height: 14px;
+  background-color: #575354;
+  position: absolute;
+  left: 45px;
+  top: 115px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupD .bullet .connectorB {
+  position: relative;
+  width: 30px;
+  height: 14px;
+  background-color: #575354;
+  position: absolute;
+  left: 46px;
+  top: -8px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupD .bullet .text-section {
+  position: absolute;
+  left: -626px;
+  top: -20px;
+  width: 600px;
+  -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -o-transition-delay: 500ms;
+  transition-delay: 500ms;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupD .bullet .text-section .headerX {
+  font-size: 30px;
+  font-family: HPSimplified;
+  color: #4e95cb;
+  line-height: 1.15;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupD .bullet .text-section .headerX .headerX-bullet {
+  color: #989da0;
+  padding-right: 8px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupD .bullet .text-section .text {
+  font-family: HPSimplified;
+  font-size: 18px;
+  color: #000000;
+  padding-top: 10px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupD .tubeA {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvu.png');
+  height: 70px;
+  left: 131px;
+  top: 625px;
+  -webkit-border-radius: 0px 0px 10px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 10px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 10px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupD .tubeB {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvdf.png');
+  height: 70px;
+  left: 131px;
+  top: 418px;
+  -webkit-border-radius: 0px 10px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 10px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 10px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .workspacecontent .tubeF {
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  background: url('../resources/tube/tubeshr.png');
+  width: 783px;
+  left: 96px;
+  top: 1478px;
+  -webkit-border-radius: 0px 0px 10px 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 10px 10px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 10px 10px;
+  background-clip: padding-box;
+  z-index: 100;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE {
+  position: absolute;
+  left: -40px;
+  top: 1060px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE .bullet {
+  position: absolute;
+  top: 496px;
+  left: 76px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE .bullet .front {
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 100px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 100px;
+  -moz-background-clip: padding;
+  border-radius: 100px;
+  background-clip: padding-box;
+  background-color: #4f8d41;
+  border: 0px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE .bullet .back {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  -webkit-border-radius: 120px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 120px;
+  -moz-background-clip: padding;
+  border-radius: 120px;
+  background-clip: padding-box;
+  background-color: #7d877a;
+  border: 0px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE .bullet .image {
+  position: absolute;
+  top: 15px;
+  left: 21px;
+  width: 70px;
+  height: 68px;
+  background: url('../resources/sprite.png') -295px -329px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE .bullet .connectorA {
+  position: relative;
+  width: 30px;
+  height: 14px;
+  background-color: #575354;
+  position: absolute;
+  left: 45px;
+  top: 115px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE .bullet .connectorB {
+  position: relative;
+  width: 30px;
+  height: 14px;
+  background-color: #575354;
+  position: absolute;
+  left: 46px;
+  top: -8px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE .bullet .text-section {
+  position: absolute;
+  left: 150px;
+  top: -20px;
+  width: 600px;
+  -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -o-transition-delay: 500ms;
+  transition-delay: 500ms;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE .bullet .text-section .headerX {
+  font-size: 30px;
+  font-family: HPSimplified;
+  color: #4e95cb;
+  line-height: 1.15;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE .bullet .text-section .headerX .headerX-bullet {
+  color: #989da0;
+  padding-right: 8px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE .bullet .text-section .text {
+  font-family: HPSimplified;
+  font-size: 18px;
+  color: #000000;
+  padding-top: 10px;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE .tubeA {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvuf.png');
+  height: 207px;
+  left: 131px;
+  top: 625px;
+  -webkit-border-radius: 0px 0px 0px 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 0px 10px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 0px 10px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE .tubeB {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvdf.png');
+  height: 70px;
+  left: 131px;
+  top: 418px;
+  -webkit-border-radius: 10px 10px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px 10px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 10px 10px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .workspacecontent .bulletGroupE .tubeC {
+  position: absolute;
+  width: 23px;
+  height: 30px;
+  background: url('../resources/tube/tubebvdf.png');
+  height: 230px;
+  left: 125px;
+  top: 625px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .workspacecontent .tubeG {
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  background: url('../resources/tube/tubeshr.png');
+  width: 360px;
+  left: 92px;
+  top: 1880px;
+  -webkit-border-radius: 10px 20px 0px 20px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px 20px 0px 20px;
+  -moz-background-clip: padding;
+  border-radius: 10px 20px 0px 20px;
+  background-clip: padding-box;
+  z-index: 100;
+}
+.view .catworkspace .workspace .footerMachine {
+  width: 100%;
+  position: absolute;
+  left: 358px;
+  top: 0xp;
+  height: 160px;
+  /*left: 158px;
+        top: 1943px;*/
+}
+.view .catworkspace .workspace .footerMachine .connectorA {
+  position: relative;
+  width: 34px;
+  height: 18px;
+  background-color: #575354;
+  position: absolute;
+  left: -278px;
+  top: -83px;
+  z-index: 101;
+}
+.view .catworkspace .workspace .footerMachine .tubeA {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvuf.png');
+  height: 50px;
+  left: 280px;
+  top: -49px;
+  -webkit-border-radius: 0px 10px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 10px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 10px 0px 0px;
+  background-clip: padding-box;
+  z-index: 101;
+}
+.view .catworkspace .workspace .footerMachine .tubeG {
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  background: url('../resources/tube/tubeshr.png');
+  width: 560px;
+  left: -267px;
+  top: -50px;
+  -webkit-border-radius: 10px 20px 0px 20px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px 20px 0px 20px;
+  -moz-background-clip: padding;
+  border-radius: 10px 20px 0px 20px;
+  background-clip: padding-box;
+  z-index: 101;
+}
+.view .catworkspace .workspace .footerMachine .tubeH {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvuf.png');
+  height: 37px;
+  left: -268px;
+  top: -75px;
+  -webkit-border-radius: 0px 10px 0px 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 10px 0px 10px;
+  -moz-background-clip: padding;
+  border-radius: 0px 10px 0px 10px;
+  background-clip: padding-box;
+  z-index: 100;
+}
+.view .catworkspace .workspace .footerMachine .footer {
+  position: absolute;
+  z-index: 101;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+.view .catworkspace .workspace .footerMachine .footer .cat {
+  position: absolute;
+  left: -10px;
+  width: 200px;
+  height: 150px;
+  background: url('../resources/sprite.png') 0px 898px;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine {
+  position: absolute;
+  top: 100px;
+  left: 210px;
+  width: 100%;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .tubeGroupA {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  width: 100%;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .tubeGroupA .meterA {
+  position: absolute;
+  left: 280px;
+  top: -122px;
+  z-index: 101;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .tubeGroupA .meterA .gauge .front {
+  position: absolute;
+  width: 85px;
+  height: 65px;
+  background-color: #4f8d25;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .tubeGroupA .meterA .gauge .back {
+  position: absolute;
+  width: 85px;
+  height: 65px;
+  top: -8px;
+  background-color: #355c32;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .tubeGroupA .meterA .gauge .glass {
+  top: 2px;
+  left: 12px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 50px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 50px;
+  -moz-background-clip: padding;
+  border-radius: 50px;
+  background-clip: padding-box;
+  background-color: #ffffff;
+  border: 5px solid #868686;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .tubeGroupA .meterA .gauge .glass .gauge-arrow {
+  position: absolute;
+  left: 12px;
+  top: 2px;
+  width: 25px;
+  height: 32px;
+  background: url('../resources/sprite.png') 132px -46px;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .tubeGroupA .meterA .connector1 {
+  position: relative;
+  width: 15px;
+  height: 25px;
+  background-color: #575354;
+  position: absolute;
+  left: 80px;
+  top: 17px;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .tubeGroupA .meterA .connector2 {
+  position: relative;
+  width: 15px;
+  height: 25px;
+  background-color: #575354;
+  position: absolute;
+  left: -10px;
+  top: 17px;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .tubeGroupA .tubeA {
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  background: url('../resources/tube/tubeshr.png');
+  width: 628px;
+  left: 208px;
+  top: -98px;
+  -webkit-border-radius: 10px 0px 10px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px 0px 10px 0px;
+  -moz-background-clip: padding;
+  border-radius: 10px 0px 10px 0px;
+  background-clip: padding-box;
+  width: 100%;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .tubeGroupA .tubeB {
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  background: url('../resources/tube/tubeshr.png');
+  width: 38px;
+  left: 182px;
+  top: -16px;
+  -webkit-border-radius: 0px 0px 10px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 10px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 10px 0px;
+  background-clip: padding-box;
+  z-index: 100;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .tubeGroupA .tubeC {
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: url('../resources/tube/tubesvd.png');
+  height: 92px;
+  left: 208px;
+  top: -96px;
+  -webkit-border-radius: 10px 0px 10px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px 0px 10px 0px;
+  -moz-background-clip: padding;
+  border-radius: 10px 0px 10px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .tubeGroupA .tubeD {
+  position: absolute;
+  width: 23px;
+  height: 30px;
+  background: url('../resources/tube/tubebvdf.png');
+  height: 108px;
+  left: 312px;
+  top: -75px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 0px 0px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .body {
+  position: absolute;
+  width: 180px;
+  height: 122px;
+  left: -6px;
+  top: -101px;
+  -webkit-border-radius: 8px 8px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 8px 8px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 8px 8px 0px 0px;
+  background-clip: padding-box;
+  background-color: #4f8d41;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .body .glassL {
+  top: 12px;
+  left: 12px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 50px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 50px;
+  -moz-background-clip: padding;
+  border-radius: 50px;
+  background-clip: padding-box;
+  background-color: #ffffff;
+  border: 5px solid #868686;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .body .glassL .gauge-arrow {
+  position: absolute;
+  left: 12px;
+  top: 2px;
+  width: 25px;
+  height: 32px;
+  background: url('../resources/sprite.png') 132px -46px;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .body .glassR {
+  top: 12px;
+  left: 105px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 50px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 50px;
+  -moz-background-clip: padding;
+  border-radius: 50px;
+  background-clip: padding-box;
+  background-color: #ffffff;
+  border: 5px solid #868686;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .body .glassR .gauge-arrow {
+  position: absolute;
+  left: 12px;
+  top: 2px;
+  width: 25px;
+  height: 32px;
+  background: url('../resources/sprite.png') 132px -46px;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .body .motor {
+  position: absolute;
+  left: 60px;
+  top: 65px;
+  width: 55px;
+  height: 55px;
+  background: url('../resources/sprite.png') 0px 742px;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .body .connector1 {
+  position: relative;
+  width: 25px;
+  height: 12px;
+  background-color: #575354;
+  position: absolute;
+  left: 71px;
+  top: -12px;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .body .connector2 {
+  position: relative;
+  width: 8px;
+  height: 30px;
+  background-color: #575354;
+  position: absolute;
+  left: 180px;
+  top: 80px;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .base {
+  position: absolute;
+  top: 21px;
+  left: -16px;
+  height: 16px;
+  width: 200px;
+  background-color: #868686;
+  -webkit-border-radius: 8px 8px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 8px 8px 0px 0px;
+  -moz-background-clip: padding;
+  border-radius: 8px 8px 0px 0px;
+  background-clip: padding-box;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .wheelL {
+  top: 18px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 20px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 20px;
+  -moz-background-clip: padding;
+  border-radius: 20px;
+  background-clip: padding-box;
+  background-color: #dbdbdb;
+  border: 9px solid #575254;
+}
+.view .catworkspace .workspace .footerMachine .footer .machine .wheelR {
+  top: 18px;
+  left: 130px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 20px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 20px;
+  -moz-background-clip: padding;
+  border-radius: 20px;
+  background-clip: padding-box;
+  background-color: #dbdbdb;
+  border: 9px solid #575254;
+}
+.view .catworkspace .workspace .ground {
+  background-color: #b0aeaf;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  left: -560px;
+  top: 137px;
+  z-index: 100;
+}
+.view .catworkspace .workspace .ground .wrapper {
+  text-align: center;
+  width: 565px;
+  margin: 0px auto;
+  padding: 20px 10px 10px 10px;
+}
+.view .catworkspace .workspace .ground .wrapper .text,
+.view .catworkspace .workspace .ground .wrapper .facebook,
+.view .catworkspace .workspace .ground .wrapper .twitter {
+  color: #FFFFFF;
+  font-family: HPSimplifiedLight;
+  font-size: 18px;
+  float: left;
+  padding: 20px;
+  text-decoration: none;
+  outline: none;
+}
+.view .catworkspace .workspace .ground .wrapper .text-disabled {
+  color: #FFFFFF;
+  font-family: HPSimplifiedLight;
+  font-size: 18px;
+  float: left;
+  padding: 20px;
+  text-decoration: none;
+  outline: none;
+  text-shadow: 0px -0.5px 1px #444444;
+  cursor: default;
+}
+.view .catworkspace .workspace .ground .wrapper .text:hover,
+.view .catworkspace .workspace .ground .wrapper .facebook:hover,
+.view .catworkspace .workspace .ground .wrapper .twitter:hover {
+  color: #323232;
+  text-decoration: underline;
+}
+.view .catworkspace .workspace .ground .wrapper .facebook {
+  margin: 15px;
+  padding: 0px;
+  width: 25px;
+  height: 25px;
+  background: url('../resources/sprite.png') -320px -85px;
+}
+.view .catworkspace .workspace .ground .wrapper .twitter {
+  margin: 15px;
+  padding: 0px;
+  width: 25px;
+  height: 25px;
+  background: url('../resources/sprite.png') -350px -85px;
+}

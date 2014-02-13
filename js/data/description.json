@@ -1,0 +1,33 @@
+[
+    {
+        "title": "Agility",
+        "text": "We understand that testing and continuous feedback is important to you. And we understand that you need to integrate testing into your development life cycle. So we made it as easy as possible for developers to write tests.  You don’t need to learn a new tool or scripting language; just add a JavaScript annotation and you’re done. CAT is a new, easy to use and efficient approach to automated testing, built by developers for developers. "
+    },
+    {
+        "title": "Integration",
+        "text": "We understand that you need to continue working with your own tools and existing development ecosystem.  CAT Core integrates with any IDE and Continuous Integration provider to give you full end-to-end mobile test automation.  All of CAT’s test results are made available to your CI   in a configurable, industry-standard format."
+    },
+    {
+        "title": "Flexibility",
+        "text": "We understand that in today’s world, you need to run your tests on multiple devices, operating systems and browsers.  CAT runs on any device, any operating system, and any browser without the need to rewrite your tests.  It’s real ‘write once, run anywhere’.  And we added Phantom support  so your tests will run on all mobile device form factors."
+    },
+    {
+        "title": "Extensibility",
+        "text": "CAT’s architecture is fully extendable.  Want to use one of your exiting assertion libraries?  No problem, a simple configuration lets you integrate it with CAT.  Need to support new technology? Adding an extension is really simple.  Check out our documentation to see how easy it is.  And the best part?  It’s free open-source!"
+    },
+    {
+        "title": "Goodies",
+        "text": [
+            "Build NodeJS functionality with a simple project configuration that can be used as a module or the command line",
+            "Task Manager (Run or Create custom tasks OOTB and Grunt is supported)",
+            "File system crawler with actions (Watch is supported)",
+            [
+                "Copy with filters",
+                " Parse the folder name, file name and its content",
+                "Inject / Replace content",
+                "Runnable command line (Web Server, PhantomJS, Watcher)"
+            ],
+            "Spawn an external process"
+        ]
+    }
+]
