@@ -306,6 +306,7 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                     _ground.css("height", (_groundHeightConst) + "px");
                 }
 
+
                 _lastAction = _scrollTop;
 
                 // set the initial vertical tube height
@@ -316,8 +317,11 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                 if (_footerMachine) {
 
                     bodyDimension = _getDimensions(document.body);
+
                     _scrollHeight = bodyDimension.height;
                     _scrollWidth = bodyDimension.width;
+
+                    _ground.css("width", (_scrollWidth) + "px");
 
                     calccontent = (_scrollWidth > 1000 ? ( ((_scrollWidth - 1000) / 2) >= 150 ? 200 : ((_scrollWidth - 1000) / 2) ) : 50);
                     _catworkspace.css("left", calccontent + "px");
@@ -433,6 +437,17 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
         },
 
         listeners: function () {
+
+            if ($("#catvideotvback")) {
+                $("#catvideotvback").empty();
+                $("#catvideotvback").remove();
+            }
+
+            if ($("#catvideotv")) {
+                $("#catvideotv").empty();
+                $("#catvideotv").remove();
+            }
+
             $(window).unbind("resize");
             $(window).bind("resize", _footerResize);
         },
@@ -473,19 +488,19 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                     wh, h;
 
                 desktopDimension = desktop.get(0).getBoundingClientRect();
-                tvscale += 0.1;
+                tvscale = 5;
 
                 h = parseInt(desktopDimension.height);
                 wh = parseInt(document.body.clientHeight);
                 w = parseInt(desktopDimension.width);
                 ww = parseInt(document.body.clientWidth);
 
-                desktop.css("top", "0px");
-
                 desktop.css({
                     '-moz-transform': 'scale(' + tvscale + ')',
                     '-webkit-transform': 'scale(' + tvscale + ')'
                 });
+
+                desktop.css("top", "0px");
 
                 if (w < ww) {
                     desktop.css("left", (Math.abs(ww - w) / 2) + "px");
@@ -498,7 +513,7 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                     if (h > (wh + 30)) {
 
                         tvscale -= 0.2;
-                        setTimeout(_tvshow, 20);
+                        setTimeout(_tvshow, 100);
                     }
 
                     if (!$("#catvideotv").get(0)) {
@@ -512,13 +527,11 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                             '-webkit-transform': 'scale(1)'
                         });
 
+                        $(desktop).find(".screen").before("<div id=\"catvideotvback\" class=\"watchvideo\">&lt; BACK &gt;</div>");
+                        $(desktop).find(".screen").before('<video autoplay  id="catvideotv" x-webkit-airplay="allow" style="z-index:1000000; position:absolute;" > <source src="resources/cathd.mp4" type="video/mp4">Your browser does not support this HTML5 video tag.</video>');
+
                         setTimeout(function () {
 
-                            $("#catvideotvback").empty();
-                            $("#catvideotvback").remove();
-//                           $('body').append('<iframe id="catvideotv"  src="//www.youtube.com/embed/_PnQKZu7Ml0?rel=0" frameborder="0" allowfullscreen></iframe>');
-                            $(desktop).find(".screen").before("<div id=\"catvideotvback\" class=\"watchvideo\">&lt; BACK &gt;</div>");
-                            $(desktop).find(".screen").before('<video autoplay controls  id="catvideotv" x-webkit-airplay="allow" style="z-index:1000000; position:absolute" > <source src="resources/cathd.mp4" type="video/mp4">Your browser does not support this HTML5 video tag.</video>');
 
                             $("#catvideotv").get(0).volume = 0.6;
                             $("#catvideotv").css("border", "1px solid #ffffff");
@@ -527,15 +540,13 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                             $("#catvideotv").css("position", "absolute");
                             $("#catvideotv").css("left", "30px");
                             $("#catvideotv").css("top", "18px");
+                            $("#catvideotv").attr("controls", "true");
 
-                            $("#catvideotvback").unbind("click");
+                            //$("#catvideotvback").unbind("click");
                             $("#catvideotvback").bind("click", function () {
 
                                 $("#catvideotv").css("opacity", "0");
                                 $("#catvideotvback").css("opacity", "0");
-
-                                $("#catvideotv").empty();
-                                $("#catvideotv").remove();
 
 
                                 tvscale = 3;
@@ -551,35 +562,24 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                                 setTimeout(function () {
                                     _module.watch("off");
 
-                                }, 1000);
+                                }, 100);
                             });
 
-                        }, 1000);
+                        }, 500);
                     }
 
                 } else {
+
+
                     setTimeout(_tvshow, 20);
                 }
-
-                if (tvscale > 1.5) {
-                    _catelt.css("display", "none");
-
-                }
-
-                if (tvscale > 1.2) {
-                    _catelt.css("opacity", "0");
-                    desktop.find(".body").css("opacity", "0");
-
-                }
-
             };
 
             _tvoff = function () {
 
                 var desktopDimension = desktop.get(0).getBoundingClientRect(),
-                    h = parseInt(desktopDimension.height),
-                    wh = parseInt(document.body.clientHeight),
-                    ww = parseInt(document.body.clientWidth);
+                    dock = tablet.get(0).getBoundingClientRect(),
+                    h = parseInt(desktopDimension.height);
 
                 if (h > 260) {
                     tvscale -= 0.1;
@@ -597,7 +597,7 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                     desktop.css({
                         'width': "420px",
                         'height': "250px",
-                        'left': (580 + (200 - (calccontent))) + "px",
+                        'left': (dock.left + 84) + "px",
                         'top': '50px',
                         '-moz-transform': 'scale(' + tvscale + ')',
                         '-webkit-transform': 'scale(' + tvscale + ')'
@@ -609,6 +609,12 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                         tablet.before(desktop);
                         desktop.find(".body").css("opacity", "1");
                         _catelt.css("opacity", "1");
+
+                        desktop.css({
+                            'width': "420px",
+                            'height': "250px"
+                        });
+
                     }, 800);
 
                 }
@@ -620,6 +626,8 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
             };
 
             if (mode === "on") {
+
+                _module.listeners("resize");
 
                 $(window).bind("resize", _tvresize);
 
@@ -641,16 +649,22 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
 
                     }, 100);
 
-                    setTimeout(_tvshow, 400);
+                    setTimeout(function() {
+
+                        desktop.find(".body").css("opacity", "0");
+
+                        _catelt.css("opacity", "0");
+                        _catelt.css("display", "none");
+
+                        setTimeout(_tvshow, 600);
+
+                    }, 270);
+
 
                 }, 1500);
 
 
             } else if (mode === "off") {
-
-                _module.listeners("resize");
-
-                $("#catvideotv").detach();
 
                 $("body").css("overflow-y", "scroll");
                 _catelt.css("display", "");
@@ -662,6 +676,28 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                 text.css("opacity", "1");
 
                 setTimeout(_tvoff, 400);
+
+                setTimeout(function() {
+
+                    $("#catvideotv").detach();
+
+                    if ($("#catvideotvback")) {
+                        $("#catvideotvback").empty();
+                        $("#catvideotvback").remove();
+                    }
+
+                    if ($("#catvideotv")) {
+                        $("#catvideotv").empty();
+                        $("#catvideotv").remove();
+                    }
+
+                    $(window).unbind("resize");
+                    desktop.css({
+                        'width': "420px",
+                        'height': "250px"
+                    });
+                }, 1500);
+
 
             }
         }
