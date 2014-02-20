@@ -1,0 +1,8 @@
+{
+    "type": "jqm-test",
+    "ip": null,
+    "port": null,
+    "tests":[],
+    "run-mode": "all",
+    "test-failure-timeout": 30
+}
