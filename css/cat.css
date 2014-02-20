@@ -167,6 +167,22 @@ BODY {
   width: 24px;
   height: 12px;
 }
+.tablet-device .text {
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+  text-decoration: none;
+}
+.tablet-device .text:hover {
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+  text-decoration: underline;
+}
 .tablet-device .opensourcesign {
   -webkit-transform: rotateZ(90deg);
   -moz-transform: rotateZ(90deg);
@@ -267,7 +283,7 @@ BODY {
   transition: all 300ms ease;
   position: absolute;
   right: 45px;
-  bottom: 10px;
+  bottom: 20px;
   font-family: HPSimplifiedBold;
   font-size: 14px;
   color: white;
@@ -579,6 +595,25 @@ li {
   -moz-transition: all 2s ease;
   -o-transition: all 2s ease;
   transition: all 2s ease;
+}
+#livedemo {
+  position: absolute;
+  font-size: 23;
+  font-family: HPSimplified;
+  line-height: 25px;
+  white-space: normal;
+  /*top: 50px;
+  left: 70px;*/
+  white-space: nowrap;
+  top: -38px;
+  left: 30px;
+}
+#examples {
+  position: absolute;
+  font-size: 26;
+  font-family: HPSimplified;
+  top: -45px;
+  left: 30px;
 }
 .choochooA .connector1,
 .choochooB .connector1,
@@ -1300,12 +1335,12 @@ li {
   -moz-transition-delay: 500ms;
   -o-transition-delay: 500ms;
   transition-delay: 500ms;
+  line-height: 1.15;
 }
 .view .catworkspace .workspace .workspacecontent .bulletGroupA .bullet .text-section .headerX {
   font-size: 30px;
   font-family: HPSimplified;
   color: #4e95cb;
-  line-height: 1.15;
 }
 .view .catworkspace .workspace .workspacecontent .bulletGroupA .bullet .text-section .headerX .headerX-bullet {
   color: #989da0;
@@ -1421,12 +1456,12 @@ li {
   -moz-transition-delay: 500ms;
   -o-transition-delay: 500ms;
   transition-delay: 500ms;
+  line-height: 1.15;
 }
 .view .catworkspace .workspace .workspacecontent .bulletGroupB .bullet .text-section .headerX {
   font-size: 30px;
   font-family: HPSimplified;
   color: #4e95cb;
-  line-height: 1.15;
 }
 .view .catworkspace .workspace .workspacecontent .bulletGroupB .bullet .text-section .headerX .headerX-bullet {
   color: #989da0;
@@ -1557,12 +1592,12 @@ li {
   -moz-transition-delay: 500ms;
   -o-transition-delay: 500ms;
   transition-delay: 500ms;
+  line-height: 1.15;
 }
 .view .catworkspace .workspace .workspacecontent .bulletGroupC .bullet .text-section .headerX {
   font-size: 30px;
   font-family: HPSimplified;
   color: #4e95cb;
-  line-height: 1.15;
 }
 .view .catworkspace .workspace .workspacecontent .bulletGroupC .bullet .text-section .headerX .headerX-bullet {
   color: #989da0;
@@ -1693,12 +1728,12 @@ li {
   -moz-transition-delay: 500ms;
   -o-transition-delay: 500ms;
   transition-delay: 500ms;
+  line-height: 1.15;
 }
 .view .catworkspace .workspace .workspacecontent .bulletGroupD .bullet .text-section .headerX {
   font-size: 30px;
   font-family: HPSimplified;
   color: #4e95cb;
-  line-height: 1.15;
 }
 .view .catworkspace .workspace .workspacecontent .bulletGroupD .bullet .text-section .headerX .headerX-bullet {
   color: #989da0;
@@ -1829,12 +1864,12 @@ li {
   -moz-transition-delay: 500ms;
   -o-transition-delay: 500ms;
   transition-delay: 500ms;
+  line-height: 1.15;
 }
 .view .catworkspace .workspace .workspacecontent .bulletGroupE .bullet .text-section .headerX {
   font-size: 30px;
   font-family: HPSimplified;
   color: #4e95cb;
-  line-height: 1.15;
 }
 .view .catworkspace .workspace .workspacecontent .bulletGroupE .bullet .text-section .headerX .headerX-bullet {
   color: #989da0;

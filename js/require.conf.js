@@ -16,15 +16,6 @@ require.config({
     shim: {
         underscorejs: {
             exports: '_'
-        },
-        'tween': {
-            deps: ['three']
-        },
-        'css3renderer': {
-            deps: ['three']
-        },
-        'trackball': {
-            deps: ['three']
         }
     },
 
@@ -42,18 +33,19 @@ window.onload = function() {
 
     ], function ($, site) {
 
+        var config;
         $.browser = {};
         $.browser.device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
 
         if ($.browser.device) {
-            console.log( $.browser.device);
-
-        } else {
-
+            // device in specific
+            config = {
+                alignLeft: 200
+            };
         }
 
         if (site) {
-            site.initialize();
+            site.initialize(config);
         }
     });
 };

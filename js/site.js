@@ -4,7 +4,7 @@
  *
  */
 //define(["jquery", "underscorejs", "utils", "3D.dad"], function ($, _, utils, EDdad) {
-define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
+define(["jquery", "utils", "examples"], function ($, utils, examples) {
 
     var _initBool = false,
         _downloadTubeBHeightConst = 0,
@@ -16,6 +16,7 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
         _downloadTubeB,
         _downloadTubeC,
         _workspacecontent,
+        _workspacecontentHTML,
         _catworkspace,
         _bulletgroupEtubeC,
         _catelt,
@@ -33,7 +34,9 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
         _module,
         tvscale = 1,
         _footerResize,
-        _tvresize;
+        _tvresize,
+        _mobileConfig,
+        tablet = $(".tablet-device");
 
     _.templateSettings = {
         interpolate: /\{\{(.+?)\}\}/g
@@ -41,7 +44,27 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
 
     function _getDimensions(elt) {
 
+        var bb = elt.getBoundingClientRect();
+
+        return {
+
+            width: bb.width,
+            height: bb.height
+        }
+    }
+
+    function _getClientDimensions(elt) {
+
         // using that due to issue with jquery height on scroll on firefox browse
+        if (!elt) {
+            return {
+
+                width: 0,
+                height: 0
+            }
+
+        }
+
         return {
 
             width: elt.clientWidth,
@@ -59,17 +82,21 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
         _navigate("home", callback);
 
         $("#navHome").click(function () {
+            _module.restoreWorkspace();
             _module.home();
             $('body,html').animate({scrollTop: 400}, 500);
         });
         $("#navTeam").click(function () {
+            _module.restoreWorkspace();
             _module.team();
             $('body,html').animate({scrollTop: 400}, 500);
         });
         $("#catLogo").click(function () {
+            _module.restoreWorkspace();
             _module.home();
             $('body,html').animate({scrollTop: 400}, 500);
         });
+
 
         $('body,html').css("opacity", "1");
 
@@ -258,11 +285,28 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
 
         _initBool = true;
 
-        var video = $(".desktop-device").find(".watchvideo");
+        var video = $(".desktop-device").find(".watchvideo"),
+            examples, livevideo;
+
+
+        tablet.find(".header").append('<a id="livedemo" class="text" href="examples/jqm/index.html" target="_blank">Live Demo</a>');
+
+        if (false) {//if (!_mobileConfig) {
+            examples = tablet.find(".header").append('<a id="examples" class="text" href="javascript:void(0)">Examples</a>');
+            $("#examples").click(function () {
+                examples.init();
+                _module.cleanWorkspace();
+                $('body,html').animate({scrollTop: 400}, 500);
+            });
+        }
 
         video.bind("click", function () {
             tvscale = 1;
-            _module.watch("on");
+            if (!_mobileConfig) {
+                _module.watch("on");
+            } else {
+                window.open("http://www.youtube.com/watch?v=O3Bwn3iH5CQ&autoplay=1", "_blank");
+            }
         });
 
         _catelt = $(".cat");
@@ -288,7 +332,8 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                     downloadTubeBHeight,
                     groundHeight,
                     groundHeightOffset = -23,
-                    bodyDimension;
+                    bodyDimension,
+                    bodyRealDimension;
 
                 function _reset() {
                     _downloadTubeB.removeClass("transitionHeightSlow");
@@ -314,21 +359,23 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                     _downloadTubeBHeightConst = new Number(_downloadTubeB.height());
                 }
 
+                $(".catheader").css("width", ($("body")[0].scrollWidth) + "px");
+                _ground.css("width", ($("body")[0].scrollWidth) + "px");
+
                 if (_footerMachine) {
 
-                    bodyDimension = _getDimensions(document.body);
+                    bodyDimension = _getClientDimensions(document.body);
+                    bodyRealDimension = _getDimensions(document.body);
 
                     _scrollHeight = bodyDimension.height;
                     _scrollWidth = bodyDimension.width;
 
-                    _ground.css("width", (_scrollWidth) + "px");
-
-                    calccontent = (_scrollWidth > 1000 ? ( ((_scrollWidth - 1000) / 2) >= 150 ? 200 : ((_scrollWidth - 1000) / 2) ) : 50);
+                    calccontent = ( _mobileConfig ? _mobileConfig.alignLeft : ((_scrollWidth > 1000 ? ( ((_scrollWidth - 1000) / 2) >= 150 ? 200 : ((_scrollWidth - 1000) / 2) ) : 50)) );
                     _catworkspace.css("left", calccontent + "px");
                     _ground.css("left", (-560 + (200 - (calccontent))) + "px");
 
                     // get the page height
-                    dh = (_scrollTop ? $(document.body).height() : _scrollHeight);
+                    dh = (_scrollTop || _mobileConfig ? bodyRealDimension.height : _scrollHeight);
 
                     // calc the main element
                     footerMachineHeight = _footerMachine.height();
@@ -343,7 +390,7 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                     }
 
 
-                    if (!_scrollTop) {
+                    if (!_scrollTop && !_mobileConfig) {
 
                         _timeouthandleFrontPage = setTimeout(function () {
 
@@ -427,9 +474,10 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
 
     _module = {
 
-        initialize: function () {
+        initialize: function (config) {
 
             console.log("[cat site] Initialized");
+            _mobileConfig = config;
             _load(_init);
 
             //EDdad.startup(function(config) {});
@@ -452,6 +500,20 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
             $(window).bind("resize", _footerResize);
         },
 
+        cleanWorkspace: function() {
+            _workspacecontentHTML = _workspacecontent.detach();
+        },
+
+        restoreWorkspace: function() {
+            if (_workspacecontentHTML) {
+                _footerMachine.before(_workspacecontentHTML);
+            }
+        },
+
+        getWorkspaceContent: function() {
+            return _workspacecontent;
+        },
+
         team: function (callback) {
             _navigate("team", callback);
         },
@@ -465,7 +527,6 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
             var desktop = $(".desktop-device"),
                 container = $("#container"),
                 text = desktop.find(".text"),
-                tablet = $(".tablet-device"),
                 _tvshow, _tvoff;
 
             _tvresize = function () {
@@ -497,7 +558,10 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
 
                 desktop.css({
                     '-moz-transform': 'scale(' + tvscale + ')',
-                    '-webkit-transform': 'scale(' + tvscale + ')'
+                    '-webkit-transform': 'scale(' + tvscale + ')',
+                    '-o-transform': 'scale(' + tvscale + ')',
+                    '-ms-transform': 'scale(' + tvscale + ')',
+                    'transform': 'scale(' + tvscale + ')'
                 });
 
                 desktop.css("top", "0px");
@@ -510,7 +574,7 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
 
                 if (h >= (wh)) {
 
-                    if (h > (wh + 30)) {
+                    if (h > (wh + 50)) {
 
                         tvscale -= 0.2;
                         setTimeout(_tvshow, 100);
@@ -524,7 +588,10 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                             'left': '0px',
                             'top': '0px',
                             '-moz-transform': 'scale(1)',
-                            '-webkit-transform': 'scale(1)'
+                            '-webkit-transform': 'scale(1)',
+                            '-o-transform': 'scale(1)',
+                            '-ms-transform': 'scale(1)',
+                            'transform': 'scale(1)'
                         });
 
                         $(desktop).find(".screen").before("<div id=\"catvideotvback\" class=\"watchvideo\">&lt; BACK &gt;</div>");
@@ -549,10 +616,13 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                                 $("#catvideotvback").css("opacity", "0");
 
 
-                                tvscale = 3;
+                                tvscale = 4;
                                 desktop.css({
                                     '-moz-transform': 'scale(' + tvscale + ')',
                                     '-webkit-transform': 'scale(' + tvscale + ')',
+                                    '-o-transform': 'scale(' + tvscale + ')',
+                                    '-ms-transform': 'scale(' + tvscale + ')',
+                                    'transform': 'scale(' + tvscale + ')',
                                     'width': "420px",
                                     'height': "250px",
                                     'left': '0px',
@@ -582,16 +652,19 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                     h = parseInt(desktopDimension.height);
 
                 if (h > 260) {
-                    tvscale -= 0.1;
+                    tvscale = 1;
 
                     desktop.css({
                         '-moz-transform': 'scale(' + tvscale + ')',
-                        '-webkit-transform': 'scale(' + tvscale + ')'
-                    });
+                        '-webkit-transform': 'scale(' + tvscale + ')',
+                        '-o-transform': 'scale(' + tvscale + ')',
+                        '-ms-transform': 'scale(' + tvscale + ')',
+                        'transform': 'scale(' + tvscale + ')'                    });
 
-                    setTimeout(_tvoff, 40);
+                    setTimeout(_tvoff, 0);
 
                 } else {
+                    _catelt.css("opacity", "1");
                     tvscale = 1;
 
                     desktop.css({
@@ -600,10 +673,13 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
                         'left': (dock.left + 84) + "px",
                         'top': '50px',
                         '-moz-transform': 'scale(' + tvscale + ')',
-                        '-webkit-transform': 'scale(' + tvscale + ')'
+                        '-webkit-transform': 'scale(' + tvscale + ')',
+                        '-o-transform': 'scale(' + tvscale + ')',
+                        '-ms-transform': 'scale(' + tvscale + ')',
+                        'transform': 'scale(' + tvscale + ')'
                     });
 
-                    setTimeout(function() {
+                    setTimeout(function () {
                         desktop.css("left", "");
                         desktop.css("top", "0px");
                         tablet.before(desktop);
@@ -619,10 +695,6 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
 
                 }
 
-                if (tvscale > 2.5) {
-                    _catelt.css("opacity", "1");
-
-                }
             };
 
             if (mode === "on") {
@@ -649,7 +721,7 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
 
                     }, 100);
 
-                    setTimeout(function() {
+                    setTimeout(function () {
 
                         desktop.find(".body").css("opacity", "0");
 
@@ -677,7 +749,7 @@ define(["jquery", "underscorejs", "utils"], function ($, _, utils) {
 
                 setTimeout(_tvoff, 400);
 
-                setTimeout(function() {
+                setTimeout(function () {
 
                     $("#catvideotv").detach();
 
