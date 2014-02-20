@@ -1,19 +1,19 @@
 [
     {
         "title": "Agility",
-        "text": "We understand that testing and continuous feedback is important to you. And we understand that you need to integrate testing into your development life cycle. So we made it as easy as possible for developers to write tests.  You don’t need to learn a new tool or scripting language; just add a JavaScript annotation and you’re done. CAT is a new, easy to use and efficient approach to automated testing, built by developers for developers. "
+        "text": "CAT brings a new approach for automation testing, we understand the importance of testing and continues feedback, we would like to integrate testing  into  the developer life cycle, making it as easy as possible for developers to write test, there is no Need to learn a new tool or scripting language , just add your annotation and that’s it. CAT was built by Developers for Developers to provide maximum efficiency."
     },
     {
         "title": "Integration",
-        "text": "We understand that you need to continue working with your own tools and existing development ecosystem.  CAT Core integrates with any IDE and Continuous Integration provider to give you full end-to-end mobile test automation.  All of CAT’s test results are made available to your CI   in a configurable, industry-standard format."
+        "text": "We understand that you like you work with your own tools & Existing Echo system, CAT Core can integrate to any ide and your CI to provide you real E2E automation process for your mobile tests. All result can be sent to your Jenkins server and be displayed on well know standards."
     },
     {
         "title": "Flexibility",
-        "text": "We understand that in today’s world, you need to run your tests on multiple devices, operating systems and browsers.  CAT runs on any device, any operating system, and any browser without the need to rewrite your tests.  It’s real ‘write once, run anywhere’.  And we added Phantom support  so your tests will run on all mobile device form factors."
+        "text": "In Today’s world it’s important that you can run your tests on multiple device, OS and browser without investing in maintenance. CAT run On Any Device, Any Browser without the need to rewrite your tests, write once – run anywhere. We also added Phantom support to provide full form factors support."
     },
     {
         "title": "Extensibility",
-        "text": "CAT’s architecture is fully extendable.  Want to use one of your exiting assertion libraries?  No problem, a simple configuration lets you integrate it with CAT.  Need to support new technology? Adding an extension is really simple.  Check out our documentation to see how easy it is.  And the best part?  It’s free open-source!"
+        "text": "One of the cool features in CAT architecture, is that it's super extendable. Want to use one of your exiting assertion libs, no problem, with a simple configuration you can integrate it to CAT. Need to support new technology? adding an ext is simple and easy, just look at our documentation. And the best part  is it’s open & free."
     },
     {
         "title": "Goodies",
