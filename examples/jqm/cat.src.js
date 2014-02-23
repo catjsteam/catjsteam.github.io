@@ -4348,7 +4348,7 @@ _cat.core.declare('C:.dev.projects.lastboy.CATCore.test.jqm.cat-project.target.j
     "file": "C:/dev/projects/lastboy/CATCore/test/jqm/cat-project/target/jqm-test/collapsible/index.html",
     "scrapinfo": {
       "start": {
-        "line": 185,
+        "line": 185, 
         "col": 17
       },
       "end": {
