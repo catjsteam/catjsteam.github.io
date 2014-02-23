@@ -4344,7 +4344,7 @@ _cat.core.declare('C:.dev.projects.lastboy.CATCore.test.jqm.cat-project.target.j
     "run@": ["collapsibleManager"],
     "embed": ["true"],
     "jqm": ["setText(\"textinput-f\", \"hello from legend\");"],
-    "assert": ["ok($('#textinput-f').val()=='hellofromlegend','textinput-f text is correct')"],
+    "assert": ["ok($('#textinput-f').val()=='hello from legend','textinput-f text is correct')"],
     "file": "C:/dev/projects/lastboy/CATCore/test/jqm/cat-project/target/jqm-test/collapsible/index.html",
     "scrapinfo": {
       "start": {
@@ -4415,7 +4415,7 @@ _cat.core.define("C:.dev.projects.lastboy.CATCore.test.jqm.cat-project.target.jq
   });
   _cat.core.plugin('jqm').actions.setText("textinput-f", "hello from legend");
   _cat.utils.chai.assert({
-    code: "assert.ok($(\"#textinput-f\").val()==\"hellofromlegend\",\"textinput-f text is correct\")\n",
+    code: "assert.ok($(\"#textinput-f\").val()==\"hello from legend\",\"textinput-f text is correct\")\n",
     fail: true,
     scrap: {
       "config": {
@@ -4423,7 +4423,7 @@ _cat.core.define("C:.dev.projects.lastboy.CATCore.test.jqm.cat-project.target.jq
         "run@": ["collapsibleManager"],
         "embed": ["true"],
         "jqm": ["setText(\"textinput-f\", \"hello from legend\");"],
-        "assert": ["ok($('#textinput-f').val()=='hellofromlegend','textinput-f text is correct')"],
+        "assert": ["ok($('#textinput-f').val()=='hello from legend','textinput-f text is correct')"],
         "file": "C:/dev/projects/lastboy/CATCore/test/jqm/cat-project/target/jqm-test/collapsible/index.html",
         "scrapinfo": {
           "start": {
@@ -4484,7 +4484,7 @@ _cat.core.define("C:.dev.projects.lastboy.CATCore.test.jqm.cat-project.target.jq
         "$$context": {
           "name": "setTextLegend",
           "run@": "collapsibleManager",
-          "assert": ["ok($('#textinput-f').val()=='hellofromlegend','textinput-f text is correct')"],
+          "assert": ["ok($('#textinput-f').val()=='hello from legend','textinput-f text is correct')"],
           "embed": "true",
           "jqm": ["setText(\"textinput-f\", \"hello from legend\");"]
         }
