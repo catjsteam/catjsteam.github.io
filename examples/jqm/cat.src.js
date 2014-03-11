@@ -294,7 +294,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_17",
+    "id": "scrap_2",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.appMenuClick"
   }
@@ -369,7 +369,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_18",
+    "id": "scrap_3",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.checkboxVerticalScroll"
   }
@@ -444,7 +444,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_19",
+    "id": "scrap_4",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.checkboxVerticalGroupScroll"
   }
@@ -522,7 +522,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_20",
+    "id": "scrap_5",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.setCheckC"
   }
@@ -601,7 +601,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_20",
+        "id": "scrap_5",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'setCheckC', desc: 'setCheck(\"checkbox-v-2c\");',tips: ''});", "_cat.core.plugin('jqm').actions.setCheck(\"checkbox-v-2c\");"],
@@ -677,7 +677,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_21",
+    "id": "scrap_6",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.setCheckB"
   }
@@ -756,7 +756,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_21",
+        "id": "scrap_6",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'setCheckB', desc: 'setCheck(\"checkbox-v-2b\");',tips: ''});", "_cat.core.plugin('jqm').actions.setCheck(\"checkbox-v-2b\");"],
@@ -829,7 +829,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_22",
+    "id": "scrap_7",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.checkboxHorizontalScroll"
   }
@@ -907,7 +907,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_23",
+    "id": "scrap_8",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.setHCheckC"
   }
@@ -986,7 +986,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_23",
+        "id": "scrap_8",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'setHCheckC', desc: 'setCheck(\"checkbox-h-2a\");',tips: ''});", "_cat.core.plugin('jqm').actions.setCheck(\"checkbox-h-2a\");"],
@@ -1062,7 +1062,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_24",
+    "id": "scrap_9",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.setHCheckB"
   }
@@ -1141,7 +1141,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_24",
+        "id": "scrap_9",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'setHCheckB', desc: 'setCheck(\"checkbox-h-2c\");',tips: ''});", "_cat.core.plugin('jqm').actions.setCheck(\"checkbox-h-2c\");"],
@@ -1214,7 +1214,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_25",
+    "id": "scrap_10",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.scrollTopCheckbox"
   }
@@ -1289,7 +1289,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_26",
+    "id": "scrap_11",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.sliderScroll1"
   }
@@ -1364,7 +1364,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_27",
+    "id": "scrap_12",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.sliderMenuClick"
   }
@@ -1439,7 +1439,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_28",
+    "id": "scrap_13",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.sliderScroll2"
   }
@@ -1514,7 +1514,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_29",
+    "id": "scrap_14",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.sliderRef"
   }
@@ -1594,7 +1594,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_30",
+    "id": "scrap_15",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-checkbox.index.html.scrapCheckboxManager"
   }
@@ -1949,7 +1949,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_32",
+    "id": "scrap_17",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.appMenuRadioClick"
   }
@@ -2024,7 +2024,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_33",
+    "id": "scrap_18",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.verDivScroll"
   }
@@ -2102,7 +2102,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_34",
+    "id": "scrap_19",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.verGroupRadio"
   }
@@ -2181,7 +2181,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_34",
+        "id": "scrap_19",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'verGroupRadio', desc: 'checkRadio(\"verRadioGroup\", \"radio-choice-v-2c\");',tips: ''});", "_cat.core.plugin('jqm').actions.checkRadio(\"verRadioGroup\", \"radio-choice-v-2c\");"],
@@ -2257,7 +2257,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_35",
+    "id": "scrap_20",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.verGroupRadio2"
   }
@@ -2336,7 +2336,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_35",
+        "id": "scrap_20",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'verGroupRadio2', desc: 'checkRadio(\"verRadioGroup\", \"radio-choice-v-2a\");',tips: ''});", "_cat.core.plugin('jqm').actions.checkRadio(\"verRadioGroup\", \"radio-choice-v-2a\");"],
@@ -2412,7 +2412,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_36",
+    "id": "scrap_21",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.verGroupRadio3"
   }
@@ -2491,7 +2491,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_36",
+        "id": "scrap_21",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'verGroupRadio3', desc: 'checkRadio(\"verRadioGroup\", \"radio-choice-v-2d\");',tips: ''});", "_cat.core.plugin('jqm').actions.checkRadio(\"verRadioGroup\", \"radio-choice-v-2d\");"],
@@ -2564,7 +2564,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_37",
+    "id": "scrap_22",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.horDivScroll"
   }
@@ -2642,7 +2642,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_38",
+    "id": "scrap_23",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.horGroupRadio"
   }
@@ -2721,7 +2721,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_38",
+        "id": "scrap_23",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'horGroupRadio', desc: 'checkRadio(\"horGroup\", \"radio-choice-h-2c\");',tips: ''});", "_cat.core.plugin('jqm').actions.checkRadio(\"horGroup\", \"radio-choice-h-2c\");"],
@@ -2797,7 +2797,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_39",
+    "id": "scrap_24",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.horGroupRadio2"
   }
@@ -2876,7 +2876,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_39",
+        "id": "scrap_24",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'horGroupRadio2', desc: 'checkRadio(\"horGroup\", \"radio-choice-h-2b\");',tips: ''});", "_cat.core.plugin('jqm').actions.checkRadio(\"horGroup\", \"radio-choice-h-2b\");"],
@@ -2949,7 +2949,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_40",
+    "id": "scrap_25",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.agreeDivScroll"
   }
@@ -3027,7 +3027,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_41",
+    "id": "scrap_26",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.agreeGroupRadio"
   }
@@ -3106,7 +3106,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_41",
+        "id": "scrap_26",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'agreeGroupRadio', desc: 'checkRadio(\"agreeClass\", \"radio-enhanced\");',tips: ''});", "_cat.core.plugin('jqm').actions.checkRadio(\"agreeClass\", \"radio-enhanced\");"],
@@ -3179,7 +3179,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_42",
+    "id": "scrap_27",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.collapsibleMenuScroll"
   }
@@ -3254,7 +3254,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_43",
+    "id": "scrap_28",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.collapsibleMenuClick"
   }
@@ -3329,7 +3329,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_44",
+    "id": "scrap_29",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.collapsibleMenuScroll2"
   }
@@ -3404,7 +3404,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_45",
+    "id": "scrap_30",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.collapsibleRef"
   }
@@ -3484,7 +3484,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_46",
+    "id": "scrap_31",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.checkboxradio-radio.index.html.radioManager"
   }
@@ -3859,7 +3859,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_2",
+    "id": "scrap_33",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.appMenuCollapsibleClick"
   }
@@ -3934,7 +3934,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_3",
+    "id": "scrap_34",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.basicCollapsibleScroll"
   }
@@ -4012,7 +4012,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_4",
+    "id": "scrap_35",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.basicCollapsibleClick"
   }
@@ -4091,7 +4091,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_4",
+        "id": "scrap_35",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'basicCollapsibleClick', desc: 'collapsible(\"basicCollapsible\");',tips: ''});", "_cat.core.plugin('jqm').actions.collapsible(\"basicCollapsible\");"],
@@ -4164,7 +4164,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_5",
+    "id": "scrap_36",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.legendScroll"
   }
@@ -4242,7 +4242,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_6",
+    "id": "scrap_37",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.legendClick"
   }
@@ -4321,7 +4321,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_6",
+        "id": "scrap_37",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'legendClick', desc: 'collapsible(\"legendClick\");',tips: ''});", "_cat.core.plugin('jqm').actions.collapsible(\"legendClick\");"],
@@ -4397,7 +4397,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_7",
+    "id": "scrap_38",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.setTextLegend"
   }
@@ -4476,7 +4476,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_7",
+        "id": "scrap_38",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'setTextLegend', desc: 'setText(\"textinput-f\", \"hello from legend\");',tips: ''});", "_cat.core.plugin('jqm').actions.setText(\"textinput-f\", \"hello from legend\");"],
@@ -4552,7 +4552,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_8",
+    "id": "scrap_39",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.setCheckCollaps3"
   }
@@ -4631,7 +4631,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_8",
+        "id": "scrap_39",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'setCheckCollaps3', desc: 'setCheck(\"checkbox-3-a\");',tips: ''});", "_cat.core.plugin('jqm').actions.setCheck(\"checkbox-3-a\");"],
@@ -4707,7 +4707,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_9",
+    "id": "scrap_40",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.setCheckCollaps1"
   }
@@ -4786,7 +4786,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_9",
+        "id": "scrap_40",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'setCheckCollaps1', desc: 'setCheck(\"checkbox-1-a\");',tips: ''});", "_cat.core.plugin('jqm').actions.setCheck(\"checkbox-1-a\");"],
@@ -4862,7 +4862,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_10",
+    "id": "scrap_41",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.legendUnClick"
   }
@@ -4941,7 +4941,7 @@ _cat.core.define("C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.j
           "$type": -1
         },
         "arguments": [],
-        "id": "scrap_10",
+        "id": "scrap_41",
         "$type": "html"
       },
       "output": ["_cat.core.ui.setContent({style: 'color:#0080FF', header: 'legendUnClick', desc: 'collapsible(\"legendClick\");',tips: ''});", "_cat.core.plugin('jqm').actions.collapsible(\"legendClick\");"],
@@ -5014,7 +5014,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_11",
+    "id": "scrap_42",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.selectMenuScroll"
   }
@@ -5089,7 +5089,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_12",
+    "id": "scrap_43",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.selectMenuClick"
   }
@@ -5164,7 +5164,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_13",
+    "id": "scrap_44",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.selectMenuScroll2"
   }
@@ -5239,7 +5239,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_14",
+    "id": "scrap_45",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.selectmenuRef"
   }
@@ -5319,7 +5319,7 @@ _cat.core.declare('C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.
       "$type": -1
     },
     "arguments": [],
-    "id": "scrap_15",
+    "id": "scrap_46",
     "$type": "html",
     "pkgName": "C:.Users.snirr.workspace.CATCore.test.jqm.cat-project.target.jqm-test.collapsible.index.html.collapsibleManager"
   }
