@@ -105,6 +105,23 @@ _cat.core = function () {
                 }
             };
 
+            this.getTests = function () {
+                var innerConfigMap = {};
+
+                if (innerConfig.tests) {
+                    for (var i = 0; i < innerConfig.tests.length; i++) {
+                        innerConfig.tests[i].wasRun = false;
+                        innerConfigMap[innerConfig.tests[i].name] = innerConfig.tests[i];
+                    }
+                }
+
+                return innerConfigMap;
+            };
+
+            this.getRunMode = function () {
+                return innerConfig["run-mode"];
+            };
+
         }
 
         this.hasPhantom = function () {
@@ -253,7 +270,7 @@ _cat.core = function () {
                 manager.scrapsOrder.forEach(function (scrapName) {
                     matchvalue = {};
                     var packageName = "";
-                    for(var i = 0; i < matchValuesCalls.length; i++) {
+                    for (var i = 0; i < matchValuesCalls.length; i++) {
                         if (matchValuesCalls[i].implKey.indexOf((scrapName + "$$cat"), matchValuesCalls[i].implKey.length - (scrapName + "$$cat").length) !== -1) {
                             matchvalue = matchValuesCalls[i];
                             break;
@@ -331,25 +348,35 @@ _cat.core = function () {
         action: function (thiz, config) {
             var scrap = config.scrap,
                 runat, manager,
-                pkgname, args = arguments;
+                pkgname, args = arguments,
+                catConfig = _cat.core.getConfig(),
 
-            runat = (("run@" in scrap) ? scrap["run@"][0] : undefined);
-            if (runat) {
-                manager = _cat.core.getManager(runat);
-                if (manager) {
-                    pkgname = scrap.pkgName;
-                    if (!pkgname) {
-                        _cat.core.log("[CAT action] Scrap's Package name is not valid");
-                    } else {
-                        _cat.core.defineImpl(pkgname, function () {
-                            _cat.core.actionimpl.apply(this, args);
-                        });
+                tests = catConfig ? catConfig.getTests() : [];
+
+            //TODO: make this more readable
+            if (typeof catConfig === 'undefined' || catConfig.getRunMode() === 'all' ||
+                (catConfig.getRunMode() === 'test-manager' && tests[scrap.name[0]])) {
+                runat = (("run@" in scrap) ? scrap["run@"][0] : undefined);
+                if (runat) {
+                    manager = _cat.core.getManager(runat);
+                    if (manager) {
+                        pkgname = scrap.pkgName;
+                        if (!pkgname) {
+                            _cat.core.log.error("[CAT action] Scrap's Package name is not valid");
+                        } else {
+                            _cat.core.defineImpl(pkgname, function () {
+                                _cat.core.actionimpl.apply(this, args);
+                            });
+                        }
+
                     }
-
+                } else {
+                    _cat.core.actionimpl.apply(this, arguments);
                 }
             } else {
-                _cat.core.actionimpl.apply(this, arguments);
+                _cat.core.log.info("[CAT action] " + scrap.name[0] + " was not run as it does not appears in testManager");
             }
+
         },
 
         getConfig: function () {
@@ -534,7 +561,8 @@ _cat.utils.chai = function () {
                         style: ( (testdata.getStatus() === "success") ? "color:green" : "color:red" ),
                         header: testdata.getDisplayName(),
                         desc: testdata.getMessage(),
-                        tips: _cat.core.TestManager.getTestCount()
+                        tips: _cat.core.TestManager.getTestCount(),
+                        elementType : ( (testdata.getStatus() === "success") ? "listImageCheck" : "listImageCross" )
                     });
                     _sendTestResult(testdata);
 
@@ -835,8 +863,8 @@ function TestDB (){
     };
 }
 _cat.core.ui = function () {
-
     function _create() {
+
 
         var catElement;
         if (typeof document !== "undefined") {
@@ -849,15 +877,18 @@ _cat.core.ui = function () {
             catElement.style.bottom = "10px";
             catElement.style.zIndex = "10000000";
             catElement.style.display = "none";
-            catElement.innerHTML = '<div id="cat-status" class="cat-dynamic cat-status-open">' +
-                '<div id=loading></div>' +
-                '<div id="catlogo"></div>' +
-                '<div id="cat-status-content">' +
-                '<div class="text-tips"></div>' +
-                '<div class="text-top"><span style="color:green"></span></div>' +
-                '<div class="text"></div>' +
+            catElement.innerHTML =
+
+                '<div id="cat-status" class="cat-dynamic cat-status-open">' +
+                            '<div id=loading></div>' +
+                            '<div id="catlogo"></div>' +
+                            '<div id="catHeader">CAT - Tests</div>' +
+                            '<div class="text-tips"></div>' +
+                            '<div id="cat-status-content">' +
+                               '<ul id="testList"></ul>' +
+                            '</div>' +
                 '</div>' +
-                '</div>';
+                '<div class="fadeMe"></div>';
 
             if (document.body) {
                 document.body.appendChild(catElement);
@@ -892,7 +923,7 @@ _cat.core.ui = function () {
         if (catElement) {
             catStatusElt = _getCATStatusElt();
             if (catStatusElt) {
-                catStatusContentElt = catStatusElt.childNodes[2];
+                catStatusContentElt = catStatusElt.childNodes[3];
             }
         }
 
@@ -907,6 +938,8 @@ _cat.core.ui = function () {
             reset: true
         });
     }
+
+    var testNumber = 0;
 
     var _me =  {
 
@@ -1024,6 +1057,12 @@ _cat.core.ui = function () {
             return false;
         },
 
+
+        markedElement : function(elementId ) {
+            var element = document.getElementById(elementId);
+            element.className = element.className + " markedElement";
+        },
+
         /**
          *  Set the displayable content for CAT status widget
          *
@@ -1039,6 +1078,8 @@ _cat.core.ui = function () {
                 isOpen = false,
                 reset = ("reset" in config ? config.reset : false);
 
+
+
             function _setText(elt, text, style) {
 
                 var styleAttrs = (style ? style.split(";") : []);
@@ -1051,10 +1092,7 @@ _cat.core.ui = function () {
                         }
                     });
 
-                        elt.textContent = text;
-
-
-
+                    elt.textContent = text;
                 }
             }
 
@@ -1076,21 +1114,49 @@ _cat.core.ui = function () {
                                 }, 300);
                             }
                         }
+                        var innerListElement =
 
-                        setTimeout(function() {
+                                '<div class="text-top"><span style="color:green"></span></div>' +
+                                '<div class="text"></div>';
 
-                            if ("header" in config) {
-                                _setText(catStatusContentElt.childNodes[1]  , config.header, config.style);
-                            }
-                            if ("desc" in config) {
-                                _setText(catStatusContentElt.childNodes[2], config.desc, config.style);
+                        if (config.header || config.desc || config.tips) {
+                            var ul = document.getElementById("testList");
+                            var newLI = document.createElement("LI");
+                            ul.insertBefore(newLI, ul.children[0]);
+                            newLI.innerHTML = innerListElement;
 
-                            }
-                            if ("tips" in config) {
-                                _setText(catStatusContentElt.childNodes[0], config.tips, config.style);
-                            }
+                            var textTips =  document.getElementsByClassName("text-tips")[0];
 
-                        }, 300);
+                            setTimeout(function() {
+
+                                // add element to ui test list
+                                if ("header" in config) {
+                                    _setText(newLI.childNodes[0]  , config.header, config.style);
+                                }
+                                if ("desc" in config) {
+                                    _setText(newLI.childNodes[1], config.desc, config.style);
+                                }
+
+                                if ("tips" in config) {
+                                    if (config.tips) {
+                                        testNumber  = config.tips;
+                                        _setText(textTips, "Number of test passed : " + testNumber, config.style);
+                                    } else {
+                                        _setText(textTips, "Number of test passed : " + testNumber, "color : green");
+                                    }
+
+                                }
+
+                                if ("elementType" in config) {
+                                    newLI.className = newLI.className + " " + config.elementType;
+
+                                } else {
+                                    newLI.className = newLI.className + " listImageInfo";
+                                }
+
+                            }, 300);
+                        }
+
                     }
                 }
             }
@@ -1339,6 +1405,16 @@ var animation = false;
 
 _cat.plugins.jqm = function () {
 
+    var oldElement = "";
+    var setBoarder = function(element) {
+        if (oldElement) {
+
+            oldElement.classList.remove("markedElement");
+        }
+        element.className = element.className + " markedElement";
+        oldElement = element;
+    };
+
     return {
 
         actions: {
@@ -1350,6 +1426,8 @@ _cat.plugins.jqm = function () {
                     var stop = $('#' + idName).offset().top;
                     var delay = 1000;
                     $('body,html').animate({scrollTop: stop}, delay);
+
+                    setBoarder( $('#' + idName).eq(0)[0]);
                 });
 
             },
@@ -1373,6 +1451,7 @@ _cat.plugins.jqm = function () {
                     var stop = $('#' + idName).offset().top;
                     var delay = 1000;
                     $('#' + rapperId).animate({scrollTop: stop}, delay);
+                    setBoarder( $('#' + idName).eq(0)[0]);
                 });
 
             },
@@ -1381,6 +1460,8 @@ _cat.plugins.jqm = function () {
                 $(document).ready(function(){
                     $('#' + idName).trigger('click');
                     window.location = $('#' + idName).attr('href');
+
+                    setBoarder( $('#' + idName).eq(0)[0]);
                 });
 
             },
@@ -1391,6 +1472,8 @@ _cat.plugins.jqm = function () {
                     $('.ui-btn').removeClass('ui-focus');
                     $('#' + idName).trigger('click');
                     $('#' + idName).closest('.ui-btn').addClass('ui-focus');
+
+                    setBoarder( $('#' + idName).eq(0)[0]);
                 });
 
             },
@@ -1398,6 +1481,8 @@ _cat.plugins.jqm = function () {
             selectTab: function (idName) {
                 $(document).ready(function(){
                     $('#' + idName).trigger('click');
+
+                    setBoarder( $('#' + idName).eq(0)[0]);
                 });
 
             },
@@ -1412,6 +1497,8 @@ _cat.plugins.jqm = function () {
                         $("#" + selectId + " option[id=" + value + "]").attr('selected','selected');
                     }
                     $( "#" + selectId).selectmenu("refresh", true);
+
+                    setBoarder( $('#' + selectId).eq(0)[0]);
                 });
 
             },
@@ -1421,6 +1508,8 @@ _cat.plugins.jqm = function () {
             swipeItemLeft : function(idName) {
                 $(document).ready(function(){
                     $("#" + idName).swipeleft();
+
+                    setBoarder( $('#' + idName).eq(0)[0]);
                 });
             },
 
@@ -1428,6 +1517,8 @@ _cat.plugins.jqm = function () {
             swipeItemRight : function(idName) {
                 $(document).ready(function(){
                     $("#" + idName).swiperight();
+
+                    setBoarder( $('#' + idName).eq(0)[0]);
                 });
             },
 
@@ -1435,11 +1526,6 @@ _cat.plugins.jqm = function () {
             swipePageLeft : function() {
                 $(document).ready(function(){
                     $( ".ui-page-active" ).swipeleft();
-//                    var next = $( ".ui-page-active" ).jqmData( "next" );
-//                    $( ":mobile-pagecontainer" ).pagecontainer( "change", next + ".html", {
-//
-//                    });
-
 
                 });
 
@@ -1449,12 +1535,9 @@ _cat.plugins.jqm = function () {
 
             swipePageRight : function() {
                 $(document).ready(function(){
-//                    $( ".ui-page-active" ).swiperight();
-                    var prev = $( ".ui-page-active" ).jqmData( "prev" );
-                    $( ":mobile-pagecontainer" ).pagecontainer( "change", prev + ".html", {
 
-                        reverse: true
-                    });
+                    var prev = $( ".ui-page-active" ).jqmData( "prev" );
+
                 });
             },
 
@@ -1462,6 +1545,8 @@ _cat.plugins.jqm = function () {
             click: function (idName) {
                 $(document).ready(function(){
                     $('#' + idName).trigger('click');
+
+                    setBoarder( $('#' + idName).eq(0)[0]);
                 });
 
             },
@@ -1469,6 +1554,8 @@ _cat.plugins.jqm = function () {
             setCheck: function (idName) {
                 $(document).ready(function(){
                     $("#"+ idName).prop("checked",true).checkboxradio("refresh");
+
+                    setBoarder( $('#' + idName).eq(0)[0]);
                 });
 
             },
@@ -1476,12 +1563,19 @@ _cat.plugins.jqm = function () {
             slide : function (idName, value) {
                 $(document).ready(function(){
                     $("#"+ idName).val(value).slider("refresh");
+
+                    setBoarder( $('#' + idName).eq(0)[0]);
                 });
             },
 
             setText : function (idName, value) {
                 $(document).ready(function(){
+                    $("#"+ idName).focus();
                     $("#"+ idName).val(value);
+                    $("#"+ idName).trigger( 'change' );
+                    $("#"+ idName).blur();
+
+                    setBoarder( $('#' + idName).eq(0)[0]);
                 });
             },
 
@@ -1490,6 +1584,10 @@ _cat.plugins.jqm = function () {
                 $(document).ready(function(){
                     $( "." + className ).prop( "checked", false ).checkboxradio( "refresh" );
                     $( "#" + idName ).prop( "checked", true ).checkboxradio( "refresh" );
+
+
+                    setBoarder($("label[for='" + idName + "']").eq(0)[0]);
+
                 });
 
             },
@@ -1497,6 +1595,8 @@ _cat.plugins.jqm = function () {
             collapsible : function(idName) {
                 $(document).ready(function(){
                     $('#' + idName).children( ".ui-collapsible-heading" ).children(".ui-collapsible-heading-toggle").click();
+
+                    setBoarder( $('#' + idName).eq(0)[0]);
                 });
 
             }
@@ -1735,6 +1835,11 @@ _cat.plugins.sencha = function () {
                 list.select(index);
             },
 
+
+            changeView : function (viewName) {
+                var firststep = Ext.create(viewName);
+                Ext.Viewport.setActiveItem(firststep);
+            },
 
             removePanel : function (panelId) {
 
