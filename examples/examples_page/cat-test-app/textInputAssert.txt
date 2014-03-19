@@ -1,0 +1,12 @@
+<div>
+	<!--
+		@[scrap
+			@@name simpleSetText
+            @@embed true
+            @@jqm setText("textInput", "hello world");
+			@@assert ok($('#textInput').val()=='hello world','textInput text == hello world')
+		]@
+	-->
+    <label for="textInput">Text input:</label>
+    <input type="text" name="textInput" id="textInput" value="">
+</div>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CAT</title>
+
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.0.min.js"></script>
+
+<script src="src-min/ace.js" type="text/javascript"
+            charset="utf-8"></script>
+    
+	
+    <script src="demo-js/example1_simple_manager.js"></script>
+
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.0.min.css">
+    <link rel="stylesheet" href="_assets/css/jqm-demos.css">
+    <link rel="stylesheet" href="css/demo_app.css">
+
+    <!--
+ @[scrap
+    @@name catImport
+    @@import[
+        cat.js
+        cat.css
+        cat.src.js
+    ]
+ ]@
+--><script src="cat.js"></script> 
+ <link rel="stylesheet" href="cat.css" type="text/css" charset="utf-8" /> 
+ <script src="cat.src.js"></script>
+
+    <style type="text/css">
+        .editor {
+            /*border: 3px solid blue;*/
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        div.fadeMe {
+            display: none;
+        }
+
+        #catheadermask {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div data-role="page" id="managerPage">
+
+
+    <div class="demoBlock">
+        <div class="editorBlock box-sizing">
+            <div class="editor" id="managerEditor">
+
+            </div>
+
+
+        </div>
+
+        <div class="exampleBlock box-sizing">
+
+            <div id="managerExample" data-demo-html="true">
+                <!--
+                @[scrap
+                    @@name setTextInput
+                    @@run@ managerExample
+                    @@embed true
+                    @@jqm setText("textInput", "hello world");
+                    @@assert ok($('#textInput').val()=='hello world','textInput text == hello world')
+                ]@
+                --><script>_cat.core.action(this, { scrap:{"name":["setTextInput"],"run@":["managerExample"],"embed":["true"],"jqm":["setText(\"textInput\", \"hello world\");"],"assert":["ok($('#textInput').val()=='hello world','textInput text == hello world')"],"file":"C:/dev/projects/lastboy/CAT/apps/site/examples/examples_page/cat-project/target/cat-site-test/example1_simple_manager.html","scrapinfo":{"start":{"line":72,"col":16},"end":{"line":78,"col":18}},"commentinfo":{"start":{"line":71,"col":16},"end":{"line":79,"col":19}},"single":{"name":true,"run@":true,"embed":true,"jqm":false,"assert":false,"file":true,"scrapinfo":true,"commentinfo":true,"single":true,"singleton":true,"arguments":true,"id":true,"$type":true},"singleton":{"name":-1,"run@":-1,"embed":-1,"jqm":-1,"assert":-1,"file":-1,"scrapinfo":-1,"commentinfo":-1,"single":-1,"singleton":-1,"arguments":-1,"id":-1,"$type":-1},"arguments":[],"id":"scrap_9","$type":"html","pkgName":"C:.dev.projects.lastboy.CAT.apps.site.examples.examples_page.cat-project.target.cat-site-test.example1_simple_manager.html.setTextInput"}});</script>
+                <label for="textInput">Text input:</label>
+                <input type="text" name="textInput" id="textInput" value="">
+
+                <!--
+                @[scrap
+                    @@name setSlider
+                    @@run@ managerExample
+                    @@embed true
+                    @@jqm slide("slider" , 25);
+                    @@assert ok($('#slider').val()=='25','slide value is 25')
+                ]@
+                --><script>_cat.core.action(this, { scrap:{"name":["setSlider"],"run@":["managerExample"],"embed":["true"],"jqm":["slide(\"slider\" , 25);"],"assert":["ok($('#slider').val()=='25','slide value is 25')"],"file":"C:/dev/projects/lastboy/CAT/apps/site/examples/examples_page/cat-project/target/cat-site-test/example1_simple_manager.html","scrapinfo":{"start":{"line":84,"col":16},"end":{"line":90,"col":18}},"commentinfo":{"start":{"line":83,"col":16},"end":{"line":91,"col":19}},"single":{"name":true,"run@":true,"embed":true,"jqm":false,"assert":false,"file":true,"scrapinfo":true,"commentinfo":true,"single":true,"singleton":true,"arguments":true,"id":true,"$type":true},"singleton":{"name":-1,"run@":-1,"embed":-1,"jqm":-1,"assert":-1,"file":-1,"scrapinfo":-1,"commentinfo":-1,"single":-1,"singleton":-1,"arguments":-1,"id":-1,"$type":-1},"arguments":[],"id":"scrap_10","$type":"html","pkgName":"C:.dev.projects.lastboy.CAT.apps.site.examples.examples_page.cat-project.target.cat-site-test.example1_simple_manager.html.setSlider"}});</script>
+                <form>
+                    <label for="slider">Slider:</label>
+                    <input type="range" name="slider" id="slider" min="0" max="100" value="50">
+                </form>
+
+                <!--
+                @[scrap
+                    @@name managerExample
+                    @@perform[
+                        @@setTextInput repeat(1)
+                        @@setSlider repeat(1)
+                    ]
+                    @@manager true
+                    @@embed true
+                    @@catui on
+                    @@signal TESTEND
+                ]@
+                --><script>_cat.core.action(this, { scrap:{"name":["managerExample"],"perform":["@@setTextInput repeat(1)","@@setSlider repeat(1)"],"manager":["true"],"embed":["true"],"catui":["on"],"signal":["TESTEND"],"file":"C:/dev/projects/lastboy/CAT/apps/site/examples/examples_page/cat-project/target/cat-site-test/example1_simple_manager.html","scrapinfo":{"start":{"line":98,"col":16},"end":{"line":108,"col":18}},"commentinfo":{"start":{"line":97,"col":16},"end":{"line":109,"col":19}},"single":{"name":true,"perform":false,"manager":false,"embed":true,"catui":true,"signal":true,"file":true,"scrapinfo":true,"commentinfo":true,"single":true,"singleton":true,"arguments":true,"id":true,"$type":true},"singleton":{"name":-1,"perform":-1,"manager":1,"embed":-1,"catui":-1,"signal":-1,"file":-1,"scrapinfo":-1,"commentinfo":-1,"single":-1,"singleton":-1,"arguments":-1,"id":-1,"$type":-1},"arguments":[],"id":"scrap_11","$type":"html","pkgName":"C:.dev.projects.lastboy.CAT.apps.site.examples.examples_page.cat-project.target.cat-site-test.example1_simple_manager.html.managerExample"}});</script>
+            </div>
+
+            <label id="displayTextHeader">Text Input Value:</label>
+            <div id="displayText"></div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

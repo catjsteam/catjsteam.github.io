@@ -1,0 +1,41 @@
+<div id="managerExample" data-demo-html="true">
+    <!--
+		@[scrap
+			@@name setTextInput
+            @@run@ managerExample
+            @@embed true
+            @@jqm setText("textInput", "hello world");
+            @@assert ok($('#textInput').val()=='hello world','textInput text == hello world')
+		]@
+    -->
+    <label for="textInput">Text input:</label>
+    <input type="text" name="textInput" id="textInput" value="">
+
+    <!--
+		@[scrap
+			@@name setSlider
+            @@run@ managerExample
+            @@embed true
+            @@jqm slide("slider" , 25);
+            @@assert ok($('#slider').val()=='25','slide value is 25')
+        ]@
+    -->
+    <form>
+		<label for="slider">Slider:</label>
+        <input type="range" name="slider" id="slider" min="0" max="100" value="50">
+    </form>
+
+    <!--
+		@[scrap
+			@@name     managerExample
+            @@perform[
+				@@setTextInput repeat(1)
+                @@setSlider repeat(1)
+            ]
+			@@manager true
+            @@embed true
+            @@catui on
+            @@signal TESTEND
+        ]@
+    -->
+</div>

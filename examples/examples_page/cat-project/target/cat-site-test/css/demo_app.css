@@ -1,0 +1,96 @@
+body {
+    overflow: hidden !important;
+}
+
+H4, H3 {
+    color: #6F6F6F;
+    font-weight: normal;
+}
+
+.ui-content, .ui-page {
+    background: #fff;
+}
+
+Label {
+    font-weight: bold !important;
+    font-size: 18px !important;
+    color: #38c;
+}
+
+.demoBlock {
+    height: 400px;
+    margin-top: 20px;
+    width: 100%;
+    /*border: 3px solid black;*/
+    overflow: hidden;
+}
+.editorBlock {
+    padding : 15px;
+    height: 90%;
+    text-shadow: none !important;
+    width: 50%;
+    float:left;
+    border: 1px solid #cce0f2;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.exampleBlock {
+    padding : 15px;
+    float:left;
+    height: 90%;
+    width: 30%;
+    /*border: 3px solid green;*/
+    overflow: hidden;
+    border: 1px solid #cce0f2;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.tryDemo {
+    float:left;
+    width: 140px;
+}
+
+.box-sizing {
+    box-sizing: border-box;
+    margin: 0px 20px 0px 20px;
+    padding: 15px;
+}
+
+.menubutton {
+    margin: 0px 20px 0px 20px;
+    width: 300px;
+    height: 10%;
+}
+
+.hideme
+{
+    opacity:0;
+}
+
+/* ACE THEME */
+.ace_editor .ace_sb {
+    overflow-y: hidden !important;
+}
+.ace_scroller {
+    overflow-x: hidden !important;
+}
+
+.ace_gutter .ace_layer {
+    background-color: #F7F7F7 !important;
+}
+
+.greeninput {
+    -webkit-box-shadow: 0 0 12px forestgreen !important;
+    -moz-box-shadow: 0 0 12px forestgreen !important;
+    box-shadow: 0 0 12px forestgreen !important;
+}
+
+.ace_marker-layer .ace_selection, .ace_active_line {
+    position: absolute;
+    z-index: 4;
+    background: rgb(181, 213, 255);
+}

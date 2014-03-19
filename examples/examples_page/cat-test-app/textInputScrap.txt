@@ -1,0 +1,11 @@
+<div>
+	<!--
+		@[scrap
+			@@name simpleSetText
+            @@embed true
+            @@jqm setText("textInput", "hello world");
+		]@
+	-->
+    <label for="textInput">Text input:</label>
+    <input type="text" name="textInput" id="textInput" value="">
+</div>

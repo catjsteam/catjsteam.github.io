@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.0.min.js"></script>
+
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.0.min.css">
+    <link rel="stylesheet" href="_assets/css/jqm-demos.css">
+    <link rel="stylesheet" href="css/demo_app.css">
+
+    <style>
+        body {
+              overflow: hidden;
+        }
+
+        .sampleIframe {
+            width: 100%;
+            height: 500px;
+            background-color: #FFFFFF;
+            border: 0px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#tryManager").click(function() {
+                $(".sampleIframe")[0].src = "example1_simple_manager.html";
+                //$(".sampleIframe").contents().find("#tryManager").click();
+            });
+        });
+    </script>
+</head>
+<body >
+<div  style="margin: 20px 0px 40px 0px ">
+    <h2 style="margin: 0px 0px 0px 20px ">Manager - controlling scraps execute order</h2>
+    <h4 style="margin: 10px 0px 0px 20px ">Sometimes we want that our scraps will execute in a specific order. The manager scrap controls the execute scrap order</h4>
+    <!--<h4 style="margin: 0px 0px 0px 20px">In this example in addition to our textInput scrap we added a scrap that change the slider value.</h4>-->
+    <h4 style="margin: 0px 0px 0px 20px">
+            <span style="float:left">
+            Our manager will execute the textInput scrap and afterwards the slider scrap</span>
+        <div class="tryDemo menubutton">
+            <a id="tryManager" style="cursor:pointer; padding-right: 10px; padding-left: 10px;float:left; border-right: 1px solid; border-left: 1px solid; color:forestgreen">Try Me </a>
+            <div style="float:left; padding-left: 10px"> </div>
+        </div>
+    </h4>
+</div>
+
+<div>
+    <iframe class="sampleIframe" width="100%" height="100%" src="blank.html"></iframe>
+</div>
+
+</body>
+</html>

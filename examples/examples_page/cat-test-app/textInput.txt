@@ -1,0 +1,4 @@
+<div>
+    <label for="textInput">Text input:</label>
+    <input type="text" name="textInput" id="textInput" value="">
+</div>

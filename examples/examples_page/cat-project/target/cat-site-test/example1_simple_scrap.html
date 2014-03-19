@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CAT</title>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.0.min.js"></script>
+
+	<script src="src-min/ace.js" type="text/javascript"
+            charset="utf-8"></script>
+    
+
+    <script src="demo-js/example1_simple_scrap.js"></script>
+
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.0.min.css">
+    <link rel="stylesheet" href="_assets/css/jqm-demos.css">
+    <link rel="stylesheet" href="css/demo_app.css">
+
+    <!--
+ @[scrap
+    @@name catImport
+    @@import[
+        cat.js
+        cat.css
+        cat.src.js
+    ]
+ ]@
+--><script src="cat.js"></script> 
+ <link rel="stylesheet" href="cat.css" type="text/css" charset="utf-8" /> 
+ <script src="cat.src.js"></script>
+
+    <style type="text/css">
+        .editor {
+            /*border: 3px solid blue;*/
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div data-role="page" id="simpleScrapPage">
+    <div id="trySimpleSetText" style="opacity:0">Try Me </div>
+    <div id="trySimpleReset" style="opacity:0">Reset</div>
+
+
+    <div class="demoBlock">
+        <div class="editorBlock box-sizing">
+            <div class="editor" id="setTextEditor">
+
+            </div>
+
+
+        </div>
+
+        <div class="exampleBlock box-sizing">
+
+            <div id="simpleSetText" data-demo-html="true">
+                <!--
+                @[scrap
+                    @@name simpleSetText
+                    @@run@ simpleManager
+                    @@embed true
+                    @@jqm setText("simpleText", "hello world");
+                ]@
+                --><script>_cat.core.action(this, { scrap:{"name":["simpleSetText"],"run@":["simpleManager"],"embed":["true"],"jqm":["setText(\"simpleText\", \"hello world\");"],"file":"C:/dev/projects/lastboy/CAT/apps/site/examples/examples_page/cat-project/target/cat-site-test/example1_simple_scrap.html","scrapinfo":{"start":{"line":64,"col":16},"end":{"line":69,"col":18}},"commentinfo":{"start":{"line":63,"col":16},"end":{"line":70,"col":19}},"single":{"name":true,"run@":true,"embed":true,"jqm":false,"file":true,"scrapinfo":true,"commentinfo":true,"single":true,"singleton":true,"arguments":true,"id":true,"$type":true},"singleton":{"name":-1,"run@":-1,"embed":-1,"jqm":-1,"file":-1,"scrapinfo":-1,"commentinfo":-1,"single":-1,"singleton":-1,"arguments":-1,"id":-1,"$type":-1},"arguments":[],"id":"scrap_5","$type":"html","pkgName":"C:.dev.projects.lastboy.CAT.apps.site.examples.examples_page.cat-project.target.cat-site-test.example1_simple_scrap.html.simpleSetText"}});</script>
+                <label for="simpleText">Text input:</label>
+                <input class="normalinput" type="text" name="simpleText" id="simpleText" value="">
+
+            </div>
+            <label id="displayTextHeader">Text Input Value:</label>
+            <div id="displayText"></div>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- /page -->
+</body>
+</html>
