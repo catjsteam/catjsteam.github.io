@@ -4,7 +4,7 @@
  *
  */
 //define(["jquery", "underscorejs", "utils", "3D.dad"], function ($, _, utils, EDdad) {
-define(["jquery", "utils", "examples"], function ($, utils, examples) {
+define(["jquery", "utils", "examples", "userguide", "faq"], function ($, utils, examples, userguide, faq) {
 
     var _initBool = false,
         _downloadTubeBHeightConst = 0,
@@ -14,6 +14,7 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
         _groundLeft,
         _download,
         _downloadTubeB,
+        _downloadTubeVisible = false,
         _downloadTubeC,
         _workspacecontent,
         _workspacecontentHTML,
@@ -29,14 +30,19 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
         _timeouthandleFrontPage,
         _navigation = {
             home: _loadDescription,
-            team: _loadTeam
+            team: _loadTeam,
+            examples: _loadExamples,
+            userguide: _loadUserguide,
+            faq: _loadFaq
         },
         _module,
         tvscale = 1,
         _footerResize,
         _tvresize,
         _mobileConfig,
-        tablet = $(".tablet-device");
+        tablet = $(".tablet-device"),
+        _dynamicRoll = false,
+        _entityHeight = 0;
 
     _.templateSettings = {
         interpolate: /\{\{(.+?)\}\}/g
@@ -72,6 +78,18 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
         }
     }
 
+    function _baseHandler() {
+        _module.setDynamicRoll(false);
+        _module.mainPipeVisible(false);
+        examples.reset();
+        examples.remove();
+        userguide.reset();
+        userguide.remove();
+        faq.reset();
+        faq.remove();
+
+    }
+
     /**
      * load the data
      *
@@ -79,22 +97,37 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
      */
     function _load(callback) {
 
+        _baseHandler();
         _navigate("home", callback);
 
+        examples.init(_module, _mobileConfig);
+        userguide.init(_module, _mobileConfig);
+        faq.init(_module, _mobileConfig);
+
         $("#navHome").click(function () {
+            _baseHandler();
             _module.restoreWorkspace();
             _module.home();
-            $('body,html').animate({scrollTop: 400}, 500);
+            $('body,html').animate({scrollTop: 10}, 500);
+        });
+        $("#navExamples").click(function () {
+            $("#examples").click();
+        });
+        $("#navFaq").click(function () {
+            $("#userguide").click();
+//            $("#faq").click();
         });
         $("#navTeam").click(function () {
+            _baseHandler();
             _module.restoreWorkspace();
             _module.team();
-            $('body,html').animate({scrollTop: 400}, 500);
+            $('body,html').animate({scrollTop: 10}, 500);
         });
         $("#catLogo").click(function () {
+            _baseHandler();
             _module.restoreWorkspace();
             _module.home();
-            $('body,html').animate({scrollTop: 400}, 500);
+            $('body,html').animate({scrollTop: 10}, 500);
         });
 
 
@@ -103,6 +136,7 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
     }
 
     function _navigate(to, callback) {
+        // set navigation state
         var nav = (to ? _navigation[to] : undefined);
         if (nav) {
             nav.call(this, callback);
@@ -276,6 +310,29 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
         });
     }
 
+    function _loadExamples() {
+        _module.cleanWorkspace();
+        if (!isScrolled()) {
+            $('body,html').animate({scrollTop: 10}, 500);
+        }
+    }
+
+    function _loadUserguide() {
+        _module.cleanWorkspace();
+        if (!isScrolled()) {
+            $('body,html').animate({scrollTop: 10}, 500);
+        }
+    }
+
+    function _loadFaq() {
+        _module.cleanWorkspace();
+        $('body,html').animate({scrollTop: 10}, 500);
+    }
+
+    function isScrolled() {
+        return ( $('body').prop("scrollTop") > 0 );
+    }
+
     /**
      * Site initialization
      *
@@ -285,18 +342,27 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
 
         _initBool = true;
 
-        var video = $(".desktop-device").find(".watchvideo"),
-            examples, livevideo;
+        var video = $(".desktop-device").find(".watchvideo");
 
 
-        tablet.find(".header").append('<a id="livedemo" class="text" href="examples/jqm/index.html" target="_blank">Live Demo</a>');
 
-        if (false) {//if (!_mobileConfig) {
-            examples = tablet.find(".header").append('<a id="examples" class="text" href="javascript:void(0)">Examples</a>');
+        if (true) {//if (!_mobileConfig) {
+            tablet.find(".header").append('<a id="examples" class="text" href="javascript:void(0)">&gt;Examples</a>');
+            tablet.find(".header").append('<a id="userguide" class="text" href="javascript:void(0)">&gt;User Guide</a>');
+            tablet.find(".header").append('<a id="livedemo" class="text" href="examples/jqm/index.html" target="_blank">&gt;Live Demo</a>');
+            tablet.find(".header").append('<a id="faq" style="opacity:0" href="javascript:void(0)" target="_blank"></a>');
             $("#examples").click(function () {
-                examples.init();
-                _module.cleanWorkspace();
-                $('body,html').animate({scrollTop: 400}, 500);
+                $('body,html').animate({scrollTop: 10}, 500);
+                 _module.nav2Examples();
+            });
+            $("#faq").click(function () {
+                $('body,html').animate({scrollTop: 10}, 500);
+                 _module.docs();
+            });
+            $("#userguide").click(function () {
+                $('body,html').animate({scrollTop: 10}, 500);
+                _module.docs();
+
             });
         }
 
@@ -375,7 +441,10 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
                     _ground.css("left", (-560 + (200 - (calccontent))) + "px");
 
                     // get the page height
-                    dh = (_scrollTop || _mobileConfig ? bodyRealDimension.height : _scrollHeight);
+                    if (!_entityHeight) {
+                        _entityHeight =  $("body")[0].scrollHeight;
+                    }
+                    dh = (_scrollTop || _mobileConfig ? (_dynamicRoll ? _entityHeight : bodyRealDimension.height) : _scrollHeight);
 
                     // calc the main element
                     footerMachineHeight = _footerMachine.height();
@@ -397,7 +466,7 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
                             _reset();
 
                             setTimeout(function () {
-                                _downloadTubeB.css("opacity", .2);
+                                _downloadTubeB.css("opacity", 0);
                                 _bulletgroupEtubeC.css("opacity", 1);
                             }, 1000);
 
@@ -425,10 +494,13 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
                         _timeouthandleScrollDown = setTimeout(function () {
 
                             _reset();
-
-                            setTimeout(function () {
-                                _downloadTubeB.css("opacity", 0);
-                            }, 1000);
+                            if (!_dynamicRoll) {
+                                setTimeout(function () {
+                                    if (!_downloadTubeVisible) {
+                                        _downloadTubeB.css("opacity", 0);
+                                    }
+                                }, 1000);
+                            }
 
                             // scroll down - scroll > 0
                             _downloadTubeC.addClass("transitionHeight");
@@ -484,6 +556,14 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
 
         },
 
+        setDynamicRoll: function(bool) {
+            _dynamicRoll = bool;
+        },
+
+        mainPipeVisible: function(bool) {
+            _downloadTubeVisible = bool;
+        },
+
         listeners: function () {
 
             if ($("#catvideotvback")) {
@@ -500,11 +580,23 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
             $(window).bind("resize", _footerResize);
         },
 
+        isHome: function() {
+            var bool = false;
+
+            if (_lastAction === 0 && !_mobileConfig) {
+                bool = true;
+            }
+
+            return bool;
+        },
+
         cleanWorkspace: function() {
             _workspacecontentHTML = _workspacecontent.detach();
         },
 
         restoreWorkspace: function() {
+            //remove samples
+            $('#samplesContainer').remove();
             if (_workspacecontentHTML) {
                 _footerMachine.before(_workspacecontentHTML);
             }
@@ -514,12 +606,51 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
             return _workspacecontent;
         },
 
+        getFooter : function() {
+            return _footerMachine;
+        },
         team: function (callback) {
+            _baseHandler();
+            $("body").addClass("catbg");
             _navigate("team", callback);
         },
 
         home: function (callback) {
+            _baseHandler();
+            $("body").addClass("catbg");
             _navigate("home", callback);
+        },
+
+        nav2Examples: function (callback) {
+            _baseHandler();
+
+            _module.mainPipeVisible(true);
+            _module.setDynamicRoll(true);
+
+            _entityHeight = examples.getHeight();
+            $("body").removeClass("catbg");
+            _navigate("examples");
+        },
+        
+        docs: function() {
+            _baseHandler();
+
+            _module.mainPipeVisible(true);
+            _module.setDynamicRoll(true);
+
+            _entityHeight = userguide.getHeight();
+            $("body").removeClass("catbg");
+            _navigate("userguide");            
+        },
+
+        nav2Faq: function (callback) {
+            _baseHandler();
+
+            _module.mainPipeVisible(true);
+            _module.setDynamicRoll(true);
+
+            _entityHeight = examples.getHeight();
+            _navigate("faq");
         },
 
         watch: function (mode) {
@@ -549,7 +680,7 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
                     wh, h;
 
                 desktopDimension = desktop.get(0).getBoundingClientRect();
-                tvscale = 5;
+                tvscale = 4;
 
                 h = parseInt(desktopDimension.height);
                 wh = parseInt(document.body.clientHeight);
@@ -595,7 +726,7 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
                         });
 
                         $(desktop).find(".screen").before("<div id=\"catvideotvback\" class=\"watchvideo\">&lt; BACK &gt;</div>");
-                        $(desktop).find(".screen").before('<video autoplay  id="catvideotv" x-webkit-airplay="allow" style="z-index:1000000; position:absolute;" > <source src="resources/cathd.mp4" type="video/mp4">Your browser does not support this HTML5 video tag.</video>');
+                        $(desktop).find(".screen").before('<video autoplay  id="catvideotv" x-webkit-airplay="allow" style="z-index:1000000; position:absolute;" > <source src="resources/cathd.mp4" type="video/mp4">Your browser does not support this HTML5 video tag. <a target="_blank" href="resources/cathd.mp4">Direct Link</a></video>');
 
                         setTimeout(function () {
 
@@ -609,7 +740,6 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
                             $("#catvideotv").css("top", "18px");
                             $("#catvideotv").attr("controls", "true");
 
-                            //$("#catvideotvback").unbind("click");
                             $("#catvideotvback").bind("click", function () {
 
                                 $("#catvideotv").css("opacity", "0");
@@ -667,9 +797,14 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
                     _catelt.css("opacity", "1");
                     tvscale = 1;
 
+//                    desktop.css({
+//                        'width': "420px",
+//                        'height': "250px"
+//                    });
+
                     desktop.css({
-                        'width': "420px",
-                        'height': "250px",
+//                        'width': "420px",
+//                        'height': "250px",
                         'left': (dock.left + 84) + "px",
                         'top': '50px',
                         '-moz-transform': 'scale(' + tvscale + ')',
@@ -683,13 +818,13 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
                         desktop.css("left", "");
                         desktop.css("top", "0px");
                         tablet.before(desktop);
-                        desktop.find(".body").css("opacity", "1");
-                        _catelt.css("opacity", "1");
 
-                        desktop.css({
-                            'width': "420px",
-                            'height': "250px"
-                        });
+                        setTimeout(function() {
+                            desktop.find(".body").css("opacity", "1");
+                            _catelt.css("opacity", "1");
+                        }, 500);
+
+
 
                     }, 800);
 
@@ -730,46 +865,63 @@ define(["jquery", "utils", "examples"], function ($, utils, examples) {
 
                         setTimeout(_tvshow, 600);
 
-                    }, 270);
+                    }, 220);
 
 
-                }, 1500);
+                }, 500);
 
 
             } else if (mode === "off") {
 
-                $("body").css("overflow-y", "scroll");
-                _catelt.css("display", "");
-                desktop.css("left", "690px");
-                desktop.css("top", "50px");
-
-                desktop.find(".screen").css("opacity", "1");
-                desktop.find(".mask").css("opacity", "1");
-                text.css("opacity", "1");
-
-                setTimeout(_tvoff, 400);
+                desktop.css({
+                    '-moz-transform': 'scale(' + 3 + ')',
+                    '-webkit-transform': 'scale(' + 3 + ')',
+                    '-o-transform': 'scale(' + 3 + ')',
+                    '-ms-transform': 'scale(' + 3 + ')',
+                    'transform': 'scale(' + 3 + ')'
+                });
 
                 setTimeout(function () {
 
-                    $("#catvideotv").detach();
+                    $("body").css("overflow-y", "scroll");
+                    _catelt.css("display", "");
 
-                    if ($("#catvideotvback")) {
-                        $("#catvideotvback").empty();
-                        $("#catvideotvback").remove();
+                    if ($.browser.whoami.indexOf("Firefox") != -1) {
+                        desktop.css("left", "0px");
+                        desktop.css("top", "0px");
+                    } else {
+                        desktop.css("left", "690px");
+                        desktop.css("top", "50px");
+
                     }
 
-                    if ($("#catvideotv")) {
-                        $("#catvideotv").empty();
-                        $("#catvideotv").remove();
-                    }
+                    desktop.find(".screen").css("opacity", "1");
+                    desktop.find(".mask").css("opacity", "1");
 
-                    $(window).unbind("resize");
-                    desktop.css({
-                        'width': "420px",
-                        'height': "250px"
-                    });
-                }, 1500);
+                    setTimeout(_tvoff, 1000);
 
+                    setTimeout(function () {
+
+                        $("#catvideotv").detach();
+
+                        if ($("#catvideotvback")) {
+                            $("#catvideotvback").empty();
+                            $("#catvideotvback").remove();
+                        }
+
+                        if ($("#catvideotv")) {
+                            $("#catvideotv").empty();
+                            $("#catvideotv").remove();
+                        }
+
+                        $(window).unbind("resize");
+                        desktop.css({
+                            'width': "420px",
+                            'height': "250px"
+                        });
+                        text.css("opacity", "1");
+                    }, 1500);
+                }, 400);
 
             }
         }

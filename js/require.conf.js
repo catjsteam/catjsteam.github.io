@@ -34,7 +34,21 @@ window.onload = function() {
     ], function ($, site) {
 
         var config;
-        $.browser = {};
+        $( document ).ready(function() {
+            // Handler for .ready() called.
+        });
+
+        $.browser = { whoami: navigator.sayswho= (function(){
+            var ua= navigator.userAgent, tem,
+                M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*([\d\.]+)/i) || [];
+            if(/trident/i.test(M[1])){
+                tem=  /\brv[ :]+(\d+(\.\d+)?)/g.exec(ua) || [];
+                return 'IE '+(tem[1] || '');
+            }
+            M= M[2]? [M[1], M[2]]:[navigator.appName, navigator.appVersion, '-?'];
+            if((tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+            return M.join(' ');
+        })() };
         $.browser.device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
 
         if ($.browser.device) {
