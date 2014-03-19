@@ -1,0 +1,142 @@
+<h1>CAT Core</h1>
+
+<p><em>CAT Core</em> is an automation framework for mobile-web applications testing.<br/>With simple annotations added to your HTML5 code, an automated functional tests will be available as part of your application lifecycle.</p>
+
+<h3>Code once, deploy it anywhere</h3>
+
+<p>Once you added the test code you can run it using <a href="https://www.npmjs.org/package/mobilerunner">CAT runner</a>, on any platform that your application supports.  <br/>CAT runner can deploy your application on multiple devices and desktop browsers.</p>
+
+<h3>A few facts</h3>
+
+<ul><li>The annotations will be coded in comments thus no additional code is required</li><li>Once you wish to test your application, with a simple command, a new deployment will be generated for you to use including the test code</li><li>You get to document your tests and test your code</li><li>When you are ready for production the additional annotations will be removed on the minify process.</li><li>CAT is an <a href="https://www.npmjs.org/">NPM</a> and can be used as a command-line and/or as a module (The module will be available in the next releases)</li></ul>
+
+<p><a href="http://catjsteam.github.io/">cat.js.team</a> @catjsteam</p>
+
+<h2>Quick start</h2>
+
+<h3>First, install CAT command line</h3>
+
+<p>In order to get started, you&#39;ll want to install CAT&#39;s CLI (command line interface) globally. <code>catcli</code> command will be set into your system path.</p>
+
+<pre><code>npm install -g catjs</code></pre>
+
+<h3>Then, for an easy start create a sample CAT project</h3>
+
+<ol><li><p>Create an initial CAT project with a simple example application included</p><pre><code>catcli --init example</code></pre></li><li><p>Test the application with CAT - build the test application and run CAT server</p><pre><code>catcli -bs</code></pre><ul><li>-b stands for build</li><li>-s stands for running the web-server with the test application deployed</li></ul></li><li><p>Open your favorite browser and go to: http://localhost:8089</p><ul><li>CAT&#39;s tests will start running</li><li>CAT&#39;s console will appear in the right top corner<ul><li>Assertions and test information display</li></ul></li><li>Application description<ul><li>The application has one page that contains a test button</li><li>On each button click a text will be displayed, describing the number of clicks</li></ul></li><li>Application test<ul><li>Automates the button&#39;s click a few times</li><li>Validating that the number of clicks are not greater than two clicks<ul><li>It will fail the test in that case</li></ul></li></ul></li></ul></li></ol>
+
+<h3>Example application description</h3>
+
+<p>Look into the file system where your generated project was created. At the root folder, two sub-folders were created:</p>
+
+<ul><li><em>cat-project</em> - folder that contains CAT project&#39;s resources</li><li><p><em>app folder</em>  - that contains a basic HTML5 application powered by JQuery</p></li><li><p>A Brief description</p><ol><li><p>Files  </p><ul><li>CAT Project<ul><li>catproject.json is CAT&#39;s configuration file that contains<ul><li>Environment settings</li><li>plugins declarations</li><li>tasks declarations                               </li></ul></li></ul></li><li><p>Example Application </p><ul><li>Standard JQuery application resources (css, js, html)</li><li><p>Annotation tests code included</p><ul><li><p>Browse to the JavaScript file: app/app.js and look for the scrap annotation.</p></li></ul></li></ul></li></ul></li><li><p>CAT build process (catcli -b)</p><ul><li>CAT is looking for its configuration project (catproject.json file)</li><li>CAT then scan the source application (./app folder)</li><li><p>While scanning, CAT looks for its annotations, interpreter it, generates the test code and create the folders</p><ul><li><em>src</em> - CAT generated sources according to the annotations functionality</li><li><p><em>target</em> - Cloned application with the additional CAT&#39;s test deployment resources</p></li></ul></li></ul></li><li><p>CAT server (catcli -s)</p><ul><li>Built in NodeJS&#39;s Express module</li><li>Point to CAT generated test deployment (./cat-project/target)</li></ul></li></ol></li></ul>
+
+<h3>Try it, it&#39;s cool - Add your own scrap</h3>
+
+<p>CAT&#39;s annotation term for a single test unit is &quot;Scrap&quot;.</p>
+
+<ol><li><p>Try adding your own scrap in your JavaScript file:</p><pre><code>/*
+    @[scrap
+        @@name simpleSetText
+        @@log This is my first scrap
+    ]@
+*/</code></pre></li><li><p>In case it&#39;s in an HTML code add &#39;embed&#39; property:</p><pre><code>&lt;!--
+    @[scrap
+        @@name simpleSetText
+        @@embed true
+        @@log This is my first scrap
+    ]@
+--&gt;</code></pre></li><li><p>Rebuild your project (kill the former server if it&#39;s still running)</p><pre><code>catcli -bs</code></pre></li></ol>
+
+<h3>Next step</h3>
+
+<p>Below you can find a more in depth content that will be continuously updated. <br/>Also you can find information in our <a href="http://catjsteam.github.io/">site</a> @catjsteam    </p>
+
+<h1>Documentation (WIP)</h1>
+
+<h2>How the CLI works</h2>
+
+<p>When running <code>catcli</code> command, it looks for a local project file &#39;catproject.json&#39;. It means that you need to run <code>catcli</code> from where your project exists.
+If locally CAT&#39;s project file is found, the CLI loads and applies the configuration from your catproject.json. Since CAT has it&#39;s own task manager system (Grunt is supported) it executes any tasks you&#39;ve requested for it to run.
+    for example, if you wish to build your project you&#39;ll be running the following command: <code>catcli -b</code></p>
+
+<h2>Project creation</h2>
+
+<p>CAT has a built-in system that automates project creation. Currently it has support for two project types:</p>
+
+<h5>Empty project</h5>
+
+<p>Creates a basic CAT project</p>
+
+<pre><code>catcli -i</code></pre>
+
+<ul><li><em>catproject.json</em>   CAT project</li><li><em>package.json</em>      NPM metadata file</li><li><em>phonegap.apk</em>      Android application for loading your testing your app</li><li><em>Gruntfile.js</em>      (optional) For users that want to use Grunt</li></ul>
+
+<h5>Example project</h5>
+
+<p>Create a basic CAT project with example application included</p>
+
+<pre><code>catcli --init example</code></pre>
+
+<h2>Commands</h2>
+
+<p>CAT CLI available commands</p>
+
+<ul><li><p>-b stands for <em>build</em></p><ul><li><strong>Create</strong> a new cloned deployment including the test inside</li><li><strong>Clone</strong> the application into <em>target</em> folder (see cat-project/target)</li><li><strong>Scans</strong> the application<ul><li>Search for CAT&#39;s annotations</li></ul></li><li>Generates <em>src</em> folder containing the user and CAT&#39;s auto generated code</li><li><p><strong>Inject</strong> CAT&#39;s calls for the generated functionality</p></li></ul></li><li><p>-s stands for <em>server</em></p><ul><li>Runs a web server and deploy the cloned application that runs the test</li></ul></li><li>-c stands for <em>clean</em><ul><li>Cleans the cloned deployment</li></ul></li><li>-t stands for <em>test</em><ul><li>Runs the application using PhantomJS (Phantom script is available within the project see phantom-script.js)</li></ul></li><li>-m stands for <em>mobile</em><ul><li>Currently for android (IOS is not published, yet)</li><li>Install and run CAT&#39;s application that runs your application deployment</li></ul></li></ul>
+
+<p>TBD: There are more OOTB tasks that&#39;s need to be documented</p>
+
+<h2>The catproject.json</h2>
+
+<p>This file contains the metadata about the project. The following configuration is a basic CAT&#39;s project skeleton.</p>
+
+<pre><code>{
+    /* The Project&#39;s name */
+    &quot;name&quot;: &quot;example-test&quot;,
+
+    /* Web Application&#39;s source folder */
+    &quot;apppath&quot;: &quot;./../app&quot;,
+
+    /* The source and target folders locations */
+    &quot;source&quot;: &quot;src/&quot;,
+    &quot;target&quot;: &quot;target/&quot;,
+
+    /* CAT&#39;s server details */
+    &quot;host&quot;: &quot;localhost&quot;,
+    &quot;port&quot;: &quot;8089&quot;,
+    &quot;protocol&quot;: &quot;http&quot;,
+
+    /* Application server details (CAT&#39;s server as defaults)*/
+    &quot;appserver&quot;: {
+        &quot;host&quot;: &quot;localhost&quot;,
+        &quot;port&quot;: &quot;8089&quot;,
+        &quot;protocol&quot;: &quot;http&quot;
+    },
+
+    /* Custom CAT&#39;s plugins */
+    &quot;plugins&quot;: [],
+
+    /* Custom CAT&#39;s tasks */
+    &quot;tasks&quot;: []
+}</code></pre>
+
+<p>Note: The comments within the configuration above are not valid for a JSON file and only for documentation purposes.</p>
+
+<h2>Annotations (Scraps)</h2>
+
+<p><strong>Scrap</strong> is a single operation that can be a ui action, a JavaScript code, an assertion or all combined together.</p>
+
+<p>A brief annotations description:</p>
+
+<ul><li><p><em>Scrap</em> block</p><pre><code>@[scrap ]@</code></pre></li><li><p><em>Scrap</em> Properties</p><ul><li><p><em>Code</em> (Any JavaScript code)</p><p>@@code console.log(&#39;test&#39;)</p></li><li><p><em>log</em></p><p>@@code &#39;test&#39;</p></li><li><p><em>assert</em> (Currently <a href="http://chaijs.com/">Chai</a> supported only)</p><p>@@assert ok(true, &#39;a message)</p></li><li><p><em>jqm</em></p><p>@@jqm tap(id)</p></li><li><p><em>sencha</em></p><p>@@sencha fireTap(extElt)</p></li><li><p><em>enyo</em></p><p>@@enyo next(enyoElt)</p></li></ul></li><li><p>TBD plugin API description (jqm, sencha, enyo)</p></li></ul>
+
+<h2>OOTB Plugins</h2>
+
+<h3>TBD</h3>
+
+<h2>Custom Annotation</h2>
+
+<h3>TBD</h3>
+
+<h2>Custom Plugin</h2>
+
+<h3>TBD</h3>
