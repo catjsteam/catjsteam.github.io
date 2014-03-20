@@ -1342,16 +1342,16 @@ li {
 .view .catworkspace .download {
   position: absolute;
   top: 250px;
-  line-height: 85px;
 }
 .view .catworkspace .download .front {
   position: absolute;
   width: 300px;
-  height: 85px;
-  text-align: center;
-  vertical-align: middle;
+  height: 160px;
+  top: 0px;
+  text-align: left;
+  line-height: 25px;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 20px;
   background-color: #f05332;
   -webkit-border-radius: 10px;
   -webkit-background-clip: padding-box;
@@ -1363,8 +1363,21 @@ li {
 .view .catworkspace .download .front .header {
   font-family: HPSimplifiedBold;
 }
-.view .catworkspace .download .front .text {
+.view .catworkspace .download .front .textinstall {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24x;
+  font-family: HPSimplifiedBold;
+}
+.view .catworkspace .download .front .textstart {
+  position: relative;
+  top: 45px;
+  left: 10px;
+  font-size: 14px;
   font-family: HPSimplified;
+  line-height: 20px;
+  color: #FFDAD3;
 }
 .view .catworkspace .download .back {
   position: absolute;
@@ -1418,21 +1431,21 @@ li {
 }
 .view .catworkspace .download .tubeGroupD .connectorC {
   position: relative;
-  width: 34px;
+  width: 36px;
   height: 12px;
   background-color: #575354;
   position: absolute;
   left: 120px;
-  top: 85px;
+  top: 160px;
 }
 .view .catworkspace .download .tubeGroupD .tubeB {
   position: absolute;
   width: 23px;
   height: 30px;
   background: url('../resources/tube/tubebvd.png');
-  height: 145px;
+  height: 85px;
   left: 126px;
-  top: 95px;
+  top: 160px;
   -webkit-border-radius: 0px 0px 0px 0px;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 0px 0px 0px 0px;
@@ -1445,9 +1458,9 @@ li {
   width: 23px;
   height: 30px;
   background: url('../resources/tube/tubebvd.png');
-  height: 145px;
+  height: 85px;
   left: 126px;
-  top: 95px;
+  top: 160px;
   -webkit-border-radius: 0px 0px 0px 0px;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 0px 0px 0px 0px;
@@ -2154,11 +2167,11 @@ li {
 .view .catworkspace .workspace .footerMachine .connectorA {
   position: relative;
   width: 34px;
-  height: 18px;
+  height: 16px;
   background-color: #575354;
   position: absolute;
   left: -278px;
-  top: -83px;
+  top: -81px;
   z-index: 101;
 }
 .view .catworkspace .workspace .footerMachine .tubeA {
