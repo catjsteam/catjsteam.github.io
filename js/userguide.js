@@ -96,7 +96,6 @@ define(["jquery"], function ($) {
                     $(this).animate({'opacity': 1}, 500, function() {
                         $('#userguideContainer .sampleheader').html("User Guide");
                         $(this).css("height", _module.getHeight()-1000 + "px");
-                        $(this).css("height", _module.getHeight()-1000 + "px");
                         $(this).css({'opacity': 1, 'visibility': 'visible'});
 
                     });
