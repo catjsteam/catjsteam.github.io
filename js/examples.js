@@ -70,11 +70,10 @@ define(["jquery"], function ($) {
 
                                 if (_elementInViewport($(this)[0])) {
 
-                                    if (iframeelt && iframeelt.src === "about:blank") {
-                                        iframeelt.src = ifarmesSrcArr[i];
-                                        console.log($(this)[0].src);
+                                   // if (iframeelt && iframeelt.src === "about:blank") {
+//                                        iframeelt.src = ifarmesSrcArr[i];
                                         $(this).animate({'opacity': 1}, 400);
-                                    }
+                                   // }
                                 }
                             });
 
@@ -115,13 +114,13 @@ define(["jquery"], function ($) {
                             '<iframe   class="sampleIframe" src="examples/examples_page/cat-project/target/cat-site-test/example1.html"></iframe>' +
                         '</li> ' +
                         '<li class="hideme"><span id="loadingid1"></span>' +
-                            '<iframe class="sampleIframe" src="about:blank"></iframe>' +
+                            '<iframe class="sampleIframe" src="examples/examples_page/cat-project/target/cat-site-test/example2.html"></iframe>' +
                         '</li>' +
                         '<li class="hideme"><span id="loadingid2"></span>' +
-                            '<iframe class="sampleIframe" src="about:blank"></iframe>' +
+                            '<iframe class="sampleIframe" src="examples/examples_page/cat-project/target/cat-site-test/example3.html"></iframe>' +
                         '</li>' +
                         '<li class="hideme"><span id="loadingid3"></span>' +
-                            '<iframe class="sampleIframe" src="about:blank"></iframe>' +
+                            '<iframe class="sampleIframe" src="examples/examples_page/cat-project/target/cat-site-test/example4.html"></iframe>' +
                         '</li>' +
                     '</ul>' +
                 '</div>');
