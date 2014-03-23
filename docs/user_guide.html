@@ -1,95 +1,337 @@
-<h1>CAT Core</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/prettify.css"/>
+    <style>/*
 
-<p><em>CAT Core</em> is an automation framework for mobile-web applications testing.<br/>With simple annotations added to your HTML5 code, an automated functional tests will be available as part of your application lifecycle.</p>
+Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
 
-<h3>Code once, deploy it anywhere</h3>
+*/
 
-<p>Once you added the test code you can run it using <a href="https://www.npmjs.org/package/mobilerunner">CAT runner</a>, on any platform that your application supports.  <br/>CAT runner can deploy your application on multiple devices and desktop browsers.</p>
+.hljs {
+  display: block; padding: 0.5em;
+  color: #000;
+  background: #fff;
+}
 
-<h3>A few facts</h3>
+.hljs-subst,
+.hljs-title {
+  font-weight: normal;
+  color: #000;
+}
 
-<ul><li>The annotations will be coded in comments thus no additional code is required</li><li>Once you wish to test your application, with a simple command, a new deployment will be generated for you to use including the test code</li><li>You get to document your tests and test your code</li><li>When you are ready for production the additional annotations will be removed on the minify process.</li><li>CAT is an <a href="https://www.npmjs.org/">NPM</a> and can be used as a command-line and/or as a module (The module will be available in the next releases)</li></ul>
+.hljs-comment,
+.hljs-template_comment,
+.hljs-javadoc,
+.diff .hljs-header {
+  color: #808080;
+  font-style: italic;
+}
 
+.hljs-annotation,
+.hljs-decorator,
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-doctype,
+.hljs-pi,
+.hljs-chunk,
+.hljs-shebang,
+.apache .hljs-cbracket,
+.hljs-prompt,
+.http .hljs-title {
+  color: #808000;
+}
+
+.hljs-tag,
+.hljs-pi {
+  background: #efefef;
+}
+
+.hljs-tag .hljs-title,
+.hljs-id,
+.hljs-attr_selector,
+.hljs-pseudo,
+.hljs-literal,
+.hljs-keyword,
+.hljs-hexcolor,
+.css .hljs-function,
+.ini .hljs-title,
+.css .hljs-class,
+.hljs-list .hljs-title,
+.clojure .hljs-title,
+.nginx .hljs-title,
+.tex .hljs-command,
+.hljs-request,
+.hljs-status {
+  font-weight: bold;
+  color: #000080;
+}
+
+.hljs-attribute,
+.hljs-rules .hljs-keyword,
+.hljs-number,
+.hljs-date,
+.hljs-regexp,
+.tex .hljs-special {
+  font-weight: bold;
+  color: #0000ff;
+}
+
+.hljs-number,
+.hljs-regexp {
+  font-weight: normal;
+}
+
+.hljs-string,
+.hljs-value,
+.hljs-filter .hljs-argument,
+.css .hljs-function .hljs-params,
+.apache .hljs-tag {
+  color: #008000;
+  font-weight: bold;
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.hljs-char,
+.tex .hljs-formula {
+  color: #000;
+  background: #d0eded;
+  font-style: italic;
+}
+
+.hljs-phpdoc,
+.hljs-yardoctag,
+.hljs-javadoctag {
+  text-decoration: underline;
+}
+
+.hljs-variable,
+.hljs-envvar,
+.apache .hljs-sqbracket,
+.nginx .hljs-built_in {
+  color: #660e7a;
+}
+
+.hljs-addition {
+  background: #baeeba;
+}
+
+.hljs-deletion {
+  background: #ffc8bd;
+}
+
+.diff .hljs-change {
+  background: #bccff9;
+}
+</style><style>body, #wrapper  {
+    padding: 0px !important;
+}</style>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/prettify.js"></script>
+
+  </head>
+<body onload="prettyPrint()">
+
+  <div id="wrapper">
+    <div id="header">
+
+    </div>
+
+    <div class="clear"></div>
+    <div id="main">
+      <div id="content" class="post">
+
+        <a name="cat_core"></a><h1>CAT Core<a class="anchorlink" href="#cat_core"></a></h1>
+<p><em>CAT Core</em> is an automation framework for mobile-web applications testing.<br>With simple annotations added to your HTML5 code, an automated functional tests will be available as part of your application lifecycle.</p>
+<a name="code_once__deploy_it_anywhere"></a><h3>Code once, deploy it anywhere<a class="anchorlink" href="#code_once__deploy_it_anywhere"></a></h3>
+<p>Once you added the test code you can run it using <a href="https://www.npmjs.org/package/mobilerunner">CAT runner</a>, on any platform that your application supports.<br>CAT runner can deploy your application on multiple devices and desktop browsers.</p>
+<a name="a_few_facts"></a><h3>A few facts<a class="anchorlink" href="#a_few_facts"></a></h3>
+<ul class="list">
+<li>The annotations will be coded in comments thus no additional code is required</li>
+<li>Once you wish to test your application, with a simple command, a new deployment will be generated for you to use including the test code</li>
+<li>You get to document your tests and test your code</li>
+<li>When you are ready for production the additional annotations will be removed on the minify process.</li>
+<li>CAT is an <a href="https://www.npmjs.org/">NPM</a> and can be used as a command-line and/or as a module (The module will be available in the next releases)</li>
+</ul>
 <p><a href="http://catjsteam.github.io/">cat.js.team</a> @catjsteam</p>
-
-<h2>Quick start</h2>
-
-<h3>First, install CAT command line</h3>
-
+<a name="quick_start"></a><h2>Quick start<a class="anchorlink" href="#quick_start"></a></h2>
+<a name="first__install_cat_command_line"></a><h3>First, install CAT command line<a class="anchorlink" href="#first__install_cat_command_line"></a></h3>
 <p>In order to get started, you&#39;ll want to install CAT&#39;s CLI (command line interface) globally. <code>catcli</code> command will be set into your system path.</p>
-
-<pre><code>npm install -g catjs</code></pre>
-
-<h3>Then, for an easy start create a sample CAT project</h3>
-
-<ol><li><p>Create an initial CAT project with a simple example application included</p><pre><code>catcli --init example</code></pre></li><li><p>Test the application with CAT - build the test application and run CAT server</p><pre><code>catcli -bs</code></pre><ul><li>-b stands for build</li><li>-s stands for running the web-server with the test application deployed</li></ul></li><li><p>Open your favorite browser and go to: http://localhost:8089</p><ul><li>CAT&#39;s tests will start running</li><li>CAT&#39;s console will appear in the right top corner<ul><li>Assertions and test information display</li></ul></li><li>Application description<ul><li>The application has one page that contains a test button</li><li>On each button click a text will be displayed, describing the number of clicks</li></ul></li><li>Application test<ul><li>Automates the button&#39;s click a few times</li><li>Validating that the number of clicks are not greater than two clicks<ul><li>It will fail the test in that case</li></ul></li></ul></li></ul></li></ol>
-
-<h3>Example application description</h3>
-
+<pre class="prettyprint">npm install -g catjs</pre>
+<a name="then__for_an_easy_start_create_a_sample_cat_project"></a><h3>Then, for an easy start create a sample CAT project<a class="anchorlink" href="#then__for_an_easy_start_create_a_sample_cat_project"></a></h3>
+<ol class="list">
+<li><p>Create an initial CAT project with a simple example application included</p>
+<pre class="prettyprint"> catcli --init example</pre>
+</li>
+<li><p>Test the application with CAT - build the test application and run CAT server</p>
+<pre class="prettyprint"> catcli -bs</pre>
+<ul class="list">
+<li>-b stands for build</li>
+<li>-s stands for running the web-server with the test application deployed</li>
+</ul>
+</li>
+<li><p>Open your favorite browser and go to: <a href="http://localhost:8089">http://localhost:8089</a></p>
+<ul class="list">
+<li>CAT&#39;s tests will start running</li>
+<li>CAT&#39;s console will appear in the right top corner<ul class="list">
+<li>Assertions and test information display</li>
+</ul>
+</li>
+<li>Application description<ul class="list">
+<li>The application has one page that contains a test button</li>
+<li>On each button click a text will be displayed, describing the number of clicks</li>
+</ul>
+</li>
+<li>Application test<ul class="list">
+<li>Automates the button&#39;s click a few times</li>
+<li>Validating that the number of clicks are not greater than two clicks<ul class="list">
+<li>It will fail the test in that case</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<a name="example_application_description"></a><h3>Example application description<a class="anchorlink" href="#example_application_description"></a></h3>
 <p>Look into the file system where your generated project was created. At the root folder, two sub-folders were created:</p>
-
-<ul><li><em>cat-project</em> - folder that contains CAT project&#39;s resources</li><li><p><em>app folder</em>  - that contains a basic HTML5 application powered by JQuery</p></li><li><p>A Brief description</p><ol><li><p>Files  </p><ul><li>CAT Project<ul><li>catproject.json is CAT&#39;s configuration file that contains<ul><li>Environment settings</li><li>plugins declarations</li><li>tasks declarations                               </li></ul></li></ul></li><li><p>Example Application </p><ul><li>Standard JQuery application resources (css, js, html)</li><li><p>Annotation tests code included</p><ul><li><p>Browse to the JavaScript file: app/app.js and look for the scrap annotation.</p></li></ul></li></ul></li></ul></li><li><p>CAT build process (catcli -b)</p><ul><li>CAT is looking for its configuration project (catproject.json file)</li><li>CAT then scan the source application (./app folder)</li><li><p>While scanning, CAT looks for its annotations, interpreter it, generates the test code and create the folders</p><ul><li><em>src</em> - CAT generated sources according to the annotations functionality</li><li><p><em>target</em> - Cloned application with the additional CAT&#39;s test deployment resources</p></li></ul></li></ul></li><li><p>CAT server (catcli -s)</p><ul><li>Built in NodeJS&#39;s Express module</li><li>Point to CAT generated test deployment (./cat-project/target)</li></ul></li></ol></li></ul>
-
-<h3>Try it, it&#39;s cool - Add your own scrap</h3>
-
+<ul class="list">
+<li><em>cat-project</em> - folder that contains CAT project&#39;s resources</li>
+<li><p><em>app folder</em>  - that contains a basic HTML5 application powered by JQuery</p>
+</li>
+<li><p>A Brief description</p>
+<ol class="list">
+<li><p>Files  </p>
+<ul class="list">
+<li>CAT Project<ul class="list">
+<li>catproject.json is CAT&#39;s configuration file that contains<ul class="list">
+<li>Environment settings</li>
+<li>plugins declarations</li>
+<li>tasks declarations                               </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example Application <ul class="list">
+<li>Standard JQuery application resources (css, js, html)</li>
+<li>Annotation tests code included<ul class="list">
+<li>Browse to the JavaScript file: app/app.js and look for the scrap annotation.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CAT build process (catcli -b)</p>
+<ul class="list">
+<li>CAT is looking for its configuration project (catproject.json file)</li>
+<li>CAT then scan the source application (./app folder)</li>
+<li>While scanning, CAT looks for its annotations, interpreter it, generates the test code and create the folders<ul class="list">
+<li><em>src</em> - CAT generated sources according to the annotations functionality</li>
+<li><em>target</em> - Cloned application with the additional CAT&#39;s test deployment resources</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CAT server (catcli -s)</p>
+<ul class="list">
+<li>Built in NodeJS&#39;s Express module</li>
+<li>Point to CAT generated test deployment (./cat-project/target)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<a name="try_it__it__39_s_cool___add_your_own_scrap"></a><h3>Try it, it&#39;s cool - Add your own scrap<a class="anchorlink" href="#try_it__it__39_s_cool___add_your_own_scrap"></a></h3>
 <p>CAT&#39;s annotation term for a single test unit is &quot;Scrap&quot;.</p>
-
-<ol><li><p>Try adding your own scrap in your JavaScript file:</p><pre><code>/*
-    @[scrap
-        @@name simpleSetText
-        @@log This is my first scrap
-    ]@
-*/</code></pre></li><li><p>In case it&#39;s in an HTML code add &#39;embed&#39; property:</p><pre><code>&lt;!--
-    @[scrap
-        @@name simpleSetText
-        @@embed true
-        @@log This is my first scrap
-    ]@
---&gt;</code></pre></li><li><p>Rebuild your project (kill the former server if it&#39;s still running)</p><pre><code>catcli -bs</code></pre></li></ol>
-
-<h3>Next step</h3>
-
-<p>Below you can find a more in depth content that will be continuously updated. <br/>Also you can find information in our <a href="http://catjsteam.github.io/">site</a> @catjsteam    </p>
-
-<h1>Documentation (WIP)</h1>
-
-<h2>How the CLI works</h2>
-
+<ol class="list">
+<li><p>Try adding your own scrap in your JavaScript file:</p>
+<pre class="prettyprint"> /*
+     @[scrap
+         @@name simpleSetText
+         @@log This is my first scrap
+     ]@
+ */</pre>
+</li>
+</ol>
+<ol class="list">
+<li><p>In case it&#39;s in an HTML code add &#39;embed&#39; property:</p>
+<pre class="prettyprint"> &lt;!--
+     @[scrap
+         @@name simpleSetText
+         @@embed true
+         @@log This is my first scrap
+     ]@
+ --&gt;</pre>
+</li>
+<li><p>Rebuild your project (kill the former server if it&#39;s still running)</p>
+<pre class="prettyprint"> catcli -bs</pre>
+</li>
+</ol>
+<a name="next_step"></a><h3>Next step<a class="anchorlink" href="#next_step"></a></h3>
+<p>Below you can find a more in depth content that will be continuously updated.<br>Also you can find information in our <a href="http://catjsteam.github.io/">site</a> @catjsteam    </p>
+<a name="documentation__wip_"></a><h1>Documentation (WIP)<a class="anchorlink" href="#documentation__wip_"></a></h1>
+<a name="how_the_cli_works"></a><h2>How the CLI works<a class="anchorlink" href="#how_the_cli_works"></a></h2>
 <p>When running <code>catcli</code> command, it looks for a local project file &#39;catproject.json&#39;. It means that you need to run <code>catcli</code> from where your project exists.
 If locally CAT&#39;s project file is found, the CLI loads and applies the configuration from your catproject.json. Since CAT has it&#39;s own task manager system (Grunt is supported) it executes any tasks you&#39;ve requested for it to run.
     for example, if you wish to build your project you&#39;ll be running the following command: <code>catcli -b</code></p>
-
-<h2>Project creation</h2>
-
+<a name="project_creation"></a><h2>Project creation<a class="anchorlink" href="#project_creation"></a></h2>
 <p>CAT has a built-in system that automates project creation. Currently it has support for two project types:</p>
-
-<h5>Empty project</h5>
-
+<a name="empty_project"></a><h5>Empty project<a class="anchorlink" href="#empty_project"></a></h5>
 <p>Creates a basic CAT project</p>
-
-<pre><code>catcli -i</code></pre>
-
-<ul><li><em>catproject.json</em>   CAT project</li><li><em>package.json</em>      NPM metadata file</li><li><em>phonegap.apk</em>      Android application for loading your testing your app</li><li><em>Gruntfile.js</em>      (optional) For users that want to use Grunt</li></ul>
-
-<h5>Example project</h5>
-
+<pre class="prettyprint">catcli -i</pre>
+<ul class="list">
+<li><em>catproject.json</em>   CAT project</li>
+<li><em>package.json</em>      NPM metadata file</li>
+<li><em>phonegap.apk</em>      Android application for loading your testing your app</li>
+<li><em>Gruntfile.js</em>      (optional) For users that want to use Grunt</li>
+</ul>
+<a name="example_project"></a><h5>Example project<a class="anchorlink" href="#example_project"></a></h5>
 <p>Create a basic CAT project with example application included</p>
-
-<pre><code>catcli --init example</code></pre>
-
-<h2>Commands</h2>
-
+<pre class="prettyprint">catcli --init example</pre>
+<a name="commands"></a><h2>Commands<a class="anchorlink" href="#commands"></a></h2>
 <p>CAT CLI available commands</p>
-
-<ul><li><p>-b stands for <em>build</em></p><ul><li><strong>Create</strong> a new cloned deployment including the test inside</li><li><strong>Clone</strong> the application into <em>target</em> folder (see cat-project/target)</li><li><strong>Scans</strong> the application<ul><li>Search for CAT&#39;s annotations</li></ul></li><li>Generates <em>src</em> folder containing the user and CAT&#39;s auto generated code</li><li><p><strong>Inject</strong> CAT&#39;s calls for the generated functionality</p></li></ul></li><li><p>-s stands for <em>server</em></p><ul><li>Runs a web server and deploy the cloned application that runs the test</li></ul></li><li>-c stands for <em>clean</em><ul><li>Cleans the cloned deployment</li></ul></li><li>-t stands for <em>test</em><ul><li>Runs the application using PhantomJS (Phantom script is available within the project see phantom-script.js)</li></ul></li><li>-m stands for <em>mobile</em><ul><li>Currently for android (IOS is not published, yet)</li><li>Install and run CAT&#39;s application that runs your application deployment</li></ul></li></ul>
-
+<ul class="list">
+<li><p>-b stands for <em>build</em></p>
+<ul class="list">
+<li><strong>Create</strong> a new cloned deployment including the test inside</li>
+<li><strong>Clone</strong> the application into <em>target</em> folder (see cat-project/target)</li>
+<li><strong>Scans</strong> the application<ul class="list">
+<li>Search for CAT&#39;s annotations</li>
+</ul>
+</li>
+<li>Generates <em>src</em> folder containing the user and CAT&#39;s auto generated code</li>
+<li><strong>Inject</strong> CAT&#39;s calls for the generated functionality</li>
+</ul>
+</li>
+<li><p>-s stands for <em>server</em></p>
+<ul class="list">
+<li>Runs a web server and deploy the cloned application that runs the test</li>
+</ul>
+</li>
+<li>-c stands for <em>clean</em><ul class="list">
+<li>Cleans the cloned deployment</li>
+</ul>
+</li>
+<li>-t stands for <em>test</em><ul class="list">
+<li>Runs the application using PhantomJS (Phantom script is available within the project see phantom-script.js)</li>
+</ul>
+</li>
+<li>-m stands for <em>mobile</em><ul class="list">
+<li>Currently for android (IOS is not published, yet)</li>
+<li>Install and run CAT&#39;s application that runs your application deployment</li>
+</ul>
+</li>
+</ul>
 <p>TBD: There are more OOTB tasks that&#39;s need to be documented</p>
-
-<h2>The catproject.json</h2>
-
+<a name="the_catproject_json"></a><h2>The catproject.json<a class="anchorlink" href="#the_catproject_json"></a></h2>
 <p>This file contains the metadata about the project. The following configuration is a basic CAT&#39;s project skeleton.</p>
-
-<pre><code>{
+<pre class="prettyprint">{
     /* The Project&#39;s name */
     &quot;name&quot;: &quot;example-test&quot;,
 
@@ -117,26 +359,57 @@ If locally CAT&#39;s project file is found, the CLI loads and applies the config
 
     /* Custom CAT&#39;s tasks */
     &quot;tasks&quot;: []
-}</code></pre>
-
+}</pre>
 <p>Note: The comments within the configuration above are not valid for a JSON file and only for documentation purposes.</p>
-
-<h2>Annotations (Scraps)</h2>
-
+<a name="annotations__scraps_"></a><h2>Annotations (Scraps)<a class="anchorlink" href="#annotations__scraps_"></a></h2>
 <p><strong>Scrap</strong> is a single operation that can be a ui action, a JavaScript code, an assertion or all combined together.</p>
-
 <p>A brief annotations description:</p>
+<ul class="list">
+<li><p><em>Scrap</em> block</p>
+<pre class="prettyprint">  @[scrap ]@</pre>
+</li>
+<li><p><em>Scrap</em> Properties</p>
+<ul class="list">
+<li><p><em>Code</em> (Any JavaScript code)</p>
+<p>  @@code console.log(&#39;test&#39;)</p>
+</li>
+<li><p><em>log</em></p>
+<p>  @@code &#39;test&#39;</p>
+</li>
+<li><p><em>assert</em> (Currently <a href="http://chaijs.com/">Chai</a> supported only)</p>
+<p>  @@assert ok(true, &#39;a message)</p>
+</li>
+<li><p><em>jqm</em></p>
+<p>  @@jqm tap(id)</p>
+</li>
+<li><p><em>sencha</em></p>
+<p>  @@sencha fireTap(extElt)</p>
+</li>
+<li><p><em>enyo</em></p>
+<p>  @@enyo next(enyoElt)</p>
+</li>
+</ul>
+</li>
+<li><p>TBD plugin API description (jqm, sencha, enyo)</p>
+</li>
+</ul>
+<a name="ootb_plugins"></a><h2>OOTB Plugins<a class="anchorlink" href="#ootb_plugins"></a></h2>
+<a name="tbd"></a><h3>TBD<a class="anchorlink" href="#tbd"></a></h3>
+<a name="custom_annotation"></a><h2>Custom Annotation<a class="anchorlink" href="#custom_annotation"></a></h2>
+<a name="tbd"></a><h3>TBD<a class="anchorlink" href="#tbd"></a></h3>
+<a name="custom_plugin"></a><h2>Custom Plugin<a class="anchorlink" href="#custom_plugin"></a></h2>
+<a name="tbd"></a><h3>TBD<a class="anchorlink" href="#tbd"></a></h3>
 
-<ul><li><p><em>Scrap</em> block</p><pre><code>@[scrap ]@</code></pre></li><li><p><em>Scrap</em> Properties</p><ul><li><p><em>Code</em> (Any JavaScript code)</p><p>@@code console.log(&#39;test&#39;)</p></li><li><p><em>log</em></p><p>@@code &#39;test&#39;</p></li><li><p><em>assert</em> (Currently <a href="http://chaijs.com/">Chai</a> supported only)</p><p>@@assert ok(true, &#39;a message)</p></li><li><p><em>jqm</em></p><p>@@jqm tap(id)</p></li><li><p><em>sencha</em></p><p>@@sencha fireTap(extElt)</p></li><li><p><em>enyo</em></p><p>@@enyo next(enyoElt)</p></li></ul></li><li><p>TBD plugin API description (jqm, sencha, enyo)</p></li></ul>
 
-<h2>OOTB Plugins</h2>
+<!-- end content -->
+      </div>
+    </div>
 
-<h3>TBD</h3>
+    <div class="clear">
+    </div>
 
-<h2>Custom Annotation</h2>
-
-<h3>TBD</h3>
-
-<h2>Custom Plugin</h2>
-
-<h3>TBD</h3>
+    <div id="footer">
+    </div>
+  </div>
+</body>
+</html>
