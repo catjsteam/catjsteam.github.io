@@ -85,6 +85,7 @@ define(["jquery"], function ($) {
             footer.before('<ul id="userguideContainer">' +
                 '<h1 class="sampleheader"></h1>' +
                 '<li id="l1" class="hideme">' +
+                    '<iframe bordercolor="0" scrolling="no" style="border:0px; overflow: hidden; width:100%; height:100%" src="docs/user_guide.html" ></iframe>' +
                 '</li>' +
 
 
@@ -94,7 +95,8 @@ define(["jquery"], function ($) {
 
                     $(this).animate({'opacity': 1}, 500, function() {
                         $('#userguideContainer .sampleheader').html("User Guide");
-                        $(this).load( "docs/user_guide.html" );
+                        $(this).css("height", _module.getHeight()-1000 + "px");
+                        $(this).css("height", _module.getHeight()-1000 + "px");
                         $(this).css({'opacity': 1, 'visibility': 'visible'});
 
                     });
