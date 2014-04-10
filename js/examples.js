@@ -102,16 +102,17 @@ define(["jquery"], function ($) {
             _reset = 1;
             _site.cleanWorkspace();
             var footer = _site.getFooter(),
-                examplesPageElt;
+                examplesPageElt,
+                frameloaded;
 
             examplesPageElt = footer.before(
 
                 '<div class="examplesPage">' +
 
                     '<ul id="samplesContainer" >' +
-                        '<h1 class="sampleheader"></h1>' +
+                        '<h1 class="sampleheader"></h1><img id="catloader" style="opacity:0; position:absolute; top: 40px; left: 180px;" src="resources/catloader.gif" />' +
                         '<li class="hideme"><span id="loadingid0"></span>' +
-                            '<iframe   class="sampleIframe" src="examples/examples_page/cat-project/target/cat-site-test/example1.html"></iframe>' +
+                            '<iframe id="catframeloader"  class="sampleIframe" src="about:blank"></iframe>' +
                         '</li> ' +
                         '<li class="hideme"><span id="loadingid1"></span>' +
                             '<iframe class="sampleIframe" src="examples/examples_page/cat-project/target/cat-site-test/example2.html"></iframe>' +
@@ -125,21 +126,22 @@ define(["jquery"], function ($) {
                     '</ul>' +
                 '</div>');
 
-            $('#samplesContainer .hideme').each(function (i) {
-/*                if (_mobileConfig) {
-                    $(this).find("#loadingid"+i).html("Loading...");
-                    $(this).find(".sampleIframe").on("load", function() {
-                        _frameloading(i);
-                    });
-                }
+            $("#catframeloader").on("load", function() {
+                $("#catloader").css("opacity","0");
+                frameloaded = true;
+            });
+            $("#catframeloader")[0].src = "examples/examples_page/cat-project/target/cat-site-test/example1.html";
 
-*/                
+            $('#samplesContainer .hideme').each(function (i) {
+
                 if (i>0) {
                     $(this).css({'opacity': 0, 'visibility': 'visible'});
   
                 } else {
                     $(this).animate({'opacity': 1}, 100, function() {
-
+                        if (!frameloaded) {
+                            $("#catloader").css("opacity","1");
+                        }
                         $('#samplesContainer .sampleheader').html("Examples");
                         $(this).css({'opacity': 1, 'visibility': 'visible'});
                     });

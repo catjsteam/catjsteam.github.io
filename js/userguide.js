@@ -81,19 +81,31 @@ define(["jquery"], function ($) {
         create: function () {
             _reset = 1;
             _site.cleanWorkspace();
-            var footer = _site.getFooter();
+
+            var footer = _site.getFooter(),
+                frameloaded = false;
+
             footer.before('<ul id="userguideContainer">' +
-                '<h1 class="sampleheader"></h1>' +
-                '<li id="l1" class="hideme">' +
-                    '<iframe bordercolor="0" scrolling="no" style="border:0px; overflow: hidden; width:100%; height:100%" src="docs/user_guide.html" ></iframe>' +
+                '<h1 class="sampleheader"></h1><img id="catloader" style="opacity:0; position:absolute; top: 40px; left: 180px;" src="resources/catloader.gif" />' +
+                '<li id="l1" class="hideme" >' +
+                    '<iframe id="catframeloader" bordercolor="0" scrolling="no" style="border:0px; overflow: hidden; width:100%; height:100%" src="about:blank" ></iframe>' +
                 '</li>' +
 
 
                 '</ul>');
 
+            $("#catframeloader").on("load", function() {
+                $("#catloader").css("opacity","0");
+                frameloaded = true;
+            });
+            $("#catframeloader")[0].src = "docs/user_guide.html";
+
             $('#userguideContainer .hideme').each(function() {
 
                     $(this).animate({'opacity': 1}, 500, function() {
+                        if (!frameloaded) {
+                            $("#catloader").css("opacity","1");
+                        }
                         $('#userguideContainer .sampleheader').html("User Guide");
                         $(this).css("height", _module.getHeight()-1000 + "px");
                         $(this).css({'opacity': 1, 'visibility': 'visible'});
