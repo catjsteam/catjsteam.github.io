@@ -350,6 +350,8 @@ define(["jquery", "utils", "examples", "userguide", "faq"], function ($, utils, 
             tablet.find(".header").append('<a id="examples" class="text" href="javascript:void(0)">&gt;Examples</a>');
             tablet.find(".header").append('<a id="userguide" class="text" href="javascript:void(0)">&gt;User Guide</a>');
             tablet.find(".header").append('<a id="livedemo" class="text" href="examples/jqm/index.html" target="_blank">&gt;Live Demo</a>');
+
+            tablet.find(".header").append('<a id="feedback" class="text" href="https://groups.google.com/forum/#!forum/catjs" target="_blank"><div class="ggroup"><span>Leave your feedback</span></div></a>');
             tablet.find(".header").append('<a id="faq" style="opacity:0" href="javascript:void(0)" target="_blank"></a>');
             $("#examples").click(function () {
                 $('body,html').animate({scrollTop: 10}, 500);

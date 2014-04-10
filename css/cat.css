@@ -779,7 +779,7 @@ li {
 }
 #examples {
   position: absolute;
-  font-size: 24;
+  font-size: 18px;
   font-family: HPSimplifiedBold;
   height: 30px;
   width: 120px;
@@ -791,29 +791,54 @@ li {
 }
 #userguide {
   position: absolute;
-  font-size: 24;
+  font-size: 18px;
   font-family: HPSimplifiedBold;
   height: 30px;
   width: 120px;
   padding: 0px;
   margin: 0px;
   top: 85px;
-  left: 40px;
+  left: 52px;
   white-space: nowrap;
   color: #D4ECFF;
 }
 #livedemo {
   position: absolute;
-  font-size: 24;
+  font-size: 18px;
   font-family: HPSimplifiedBold;
   height: 30px;
   width: 120px;
   padding: 0px;
   margin: 0px;
   top: 85px;
-  left: 0px;
+  left: 25px;
   white-space: nowrap;
   color: #D4ECFF;
+}
+#feedback {
+  position: absolute;
+  font-size: 20px;
+  font-family: HPSimplified;
+  height: 30px;
+  width: 120px;
+  padding: 0px;
+  margin: 0px;
+  top: 85px;
+  left: -10px;
+  white-space: nowrap;
+  color: #04345A;
+}
+.ggroup {
+  width: 25px;
+  height: 25px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAAZiS0dEAAAAAAAA+UO7fwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB94ECgsBA/KaHkEAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAACkklEQVRIx71VTUwTURD+3r5tty0l7VJFiCEo4olQfxJPCiboTSHqwRATDyqJJxMlJCZyUvRiPHkonjAcwEgIBxMFjBIiDXASKokJQvgrakTaxXbdtrvdtx6aVksqtGlhTm/mvcyX+b6ZecAuGEke3FeeFRU6+YGVhfgr7+MYAYDaq522mdmGIRiMFRKEo2ofmzzi4VMRw2AgHNvjpGK+yZWoEVGiLJokit/8oPaQcDRfkNW1+NKcX11MVZRrgmIbgYnPjVU+l8etzXacq3MgGNJwzxPAnF/PTptsASpKKc7XO0EIgcthxuUz9uwb4H8XJspQ5qIpX44YiGnxlL8h/z1bLQQljhxBOGrgaZsLvR3laGmyAQCkMMOjrgB8c78xOP4L3a9lAECpyKHn/l68fFiG+uPm7DWxCxwOV1gTQ1ptAaAAALw+DV6flDbHFfsonMWJ5DVVJnz4qGYHElIMePoDOFFjxYshORUvcRKUOiliKsPXnzpUjcA3r2FgZAMukWJgRMmtuwYnYhib1hAIM1SW87jd7IC72gJCEhXIioa+9zJ6hsN4/kaGYCaQQnpGBTKCtDQV4VKDHTGN4dqDdTy5JcLlFNIptZlwvVGEqjEQjsPNCyIWv0XQ0SVhdW0bEJsVOLhfwNSshh+SCsEEfPHrgD8zFRwHfF5QMTGTuK+tEuCdVrcGUSJAe2cwLbbZz2Sf5oPZT/zqWnwp390lhXVpS5B/F1vBVv5u/Iw8AKjid8ZxxjDlozmDMp1adIOehEG3/37zMVvd1Fklam0DIeb0zov1s0m3pyB0KWPH3pUUrd8FYRs7qklw9JSvUpy/Q8BWdlT45aHG5dPV462EatM72l2jvTeCFyu72ymvvU3G/gAdSOrgfxocUAAAAABJRU5ErkJggg==);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -5px;
+}
+.ggroup SPAN {
+  position: absolute;
+  left: 28px;
 }
 .choochooA .connector1,
 .choochooB .connector1,
