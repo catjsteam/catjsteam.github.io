@@ -105,25 +105,30 @@ define(["jquery", "utils", "examples", "userguide", "faq"], function ($, utils, 
         faq.init(_module, _mobileConfig);
 
         $("#navHome").click(function () {
+            _module.triggerAnalytics("navHome", "click");
             _baseHandler();
             _module.restoreWorkspace();
             _module.home();
             $('body,html').animate({scrollTop: 10}, 500);
         });
         $("#navExamples").click(function () {
+            _module.triggerAnalytics("navExamples", "click");
             $("#examples").click();
         });
         $("#navFaq").click(function () {
+            _module.triggerAnalytics("navFaq", "click");
             $("#userguide").click();
 //            $("#faq").click();
         });
         $("#navTeam").click(function () {
+            _module.triggerAnalytics("navFaq", "click");
             _baseHandler();
             _module.restoreWorkspace();
             _module.team();
             $('body,html').animate({scrollTop: 10}, 500);
         });
         $("#catLogo").click(function () {
+            _module.triggerAnalytics("catLogo", "click");
             _baseHandler();
             _module.restoreWorkspace();
             _module.home();
@@ -353,26 +358,34 @@ define(["jquery", "utils", "examples", "userguide", "faq"], function ($, utils, 
 
             tablet.find(".header").append('<a id="feedback" class="text" href="https://groups.google.com/forum/#!forum/catjs" target="_blank"><div class="ggroup"><span>Leave your feedback</span></div></a>');
             tablet.find(".header").append('<a id="faq" style="opacity:0" href="javascript:void(0)" target="_blank"></a>');
+
             $("#examples").click(function () {
                 $('body,html').animate({scrollTop: 10}, 500);
-                 _module.nav2Examples();
+                _module.triggerAnalytics("examples", "click");
+                _module.nav2Examples();
             });
             $("#faq").click(function () {
                 $('body,html').animate({scrollTop: 10}, 500);
+                _module.triggerAnalytics("faq", "click");
                  _module.docs();
             });
             $("#userguide").click(function () {
                 $('body,html').animate({scrollTop: 10}, 500);
+                _module.triggerAnalytics("userguide", "click");
                 _module.docs();
 
             });
         }
 
         video.bind("click", function () {
+
             tvscale = 1;
+            _module.triggerAnalytics("watchVideo", "on");
             if (!_mobileConfig) {
+
                 _module.watch("on");
             } else {
+
                 window.open("http://www.youtube.com/watch?v=O3Bwn3iH5CQ&autoplay=1", "_blank");
             }
         });
@@ -655,6 +668,17 @@ define(["jquery", "utils", "examples", "userguide", "faq"], function ($, utils, 
             _navigate("faq");
         },
 
+        triggerAnalytics : function (action, label) {
+            if (_gaq) {
+                if (!_mobileConfig) {
+                    _gaq.push(['_trackEvent', "CATSite-desktop", action, label]);
+                } else {
+                _gaq.push(['_trackEvent', "CATSite-mobile", action, label]);
+            }
+
+            }
+        },
+
         watch: function (mode) {
 
             var desktop = $(".desktop-device"),
@@ -762,6 +786,7 @@ define(["jquery", "utils", "examples", "userguide", "faq"], function ($, utils, 
                                 });
 
                                 setTimeout(function () {
+                                    _module.triggerAnalytics("watchVideo", "off");
                                     _module.watch("off");
 
                                 }, 100);
