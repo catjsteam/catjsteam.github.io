@@ -23,6 +23,8 @@
 
     </script>
 
+
+
     <script>
         (function() {
             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -32,8 +34,24 @@
 
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-48103058-1']); // your ID/profile
+        _gaq.push(['_setDomainName', 'none']);
         _gaq.push(['_trackPageview']);
+
     </script>
+
+    <script>
+        var _triggerAnalytics = function (action, label) {
+            if (_gaq) {
+                if(typeof window.orientation == 'undefined'){
+                    _gaq.push(['_trackEvent', "CATSite-desktop", action, label]);
+                } else {
+                    _gaq.push(['_trackEvent', "CATSite-mobile", action, label]);
+                }
+
+            }
+        };
+    </script>
+
 
 
 </head>

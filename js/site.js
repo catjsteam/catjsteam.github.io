@@ -105,30 +105,30 @@ define(["jquery", "utils", "examples", "userguide", "faq"], function ($, utils, 
         faq.init(_module, _mobileConfig);
 
         $("#navHome").click(function () {
-            _module.triggerAnalytics("navHome", "click");
+            _module.triggerAnalytics("navHomeLink", "click");
             _baseHandler();
             _module.restoreWorkspace();
             _module.home();
             $('body,html').animate({scrollTop: 10}, 500);
         });
         $("#navExamples").click(function () {
-            _module.triggerAnalytics("navExamples", "click");
+            _module.triggerAnalytics("navExamplesLink", "click");
             $("#examples").click();
         });
         $("#navFaq").click(function () {
-            _module.triggerAnalytics("navFaq", "click");
+            _module.triggerAnalytics("navFaqLink", "click");
             $("#userguide").click();
 //            $("#faq").click();
         });
         $("#navTeam").click(function () {
-            _module.triggerAnalytics("navFaq", "click");
+            _module.triggerAnalytics("navTeamLink", "click");
             _baseHandler();
             _module.restoreWorkspace();
             _module.team();
             $('body,html').animate({scrollTop: 10}, 500);
         });
         $("#catLogo").click(function () {
-            _module.triggerAnalytics("catLogo", "click");
+            _module.triggerAnalytics("catLogoLink", "click");
             _baseHandler();
             _module.restoreWorkspace();
             _module.home();
@@ -361,17 +361,17 @@ define(["jquery", "utils", "examples", "userguide", "faq"], function ($, utils, 
 
             $("#examples").click(function () {
                 $('body,html').animate({scrollTop: 10}, 500);
-                _module.triggerAnalytics("examples", "click");
+                _module.triggerAnalytics("examplesLink", "click");
                 _module.nav2Examples();
             });
             $("#faq").click(function () {
                 $('body,html').animate({scrollTop: 10}, 500);
-                _module.triggerAnalytics("faq", "click");
+                _module.triggerAnalytics("faqLink", "click");
                  _module.docs();
             });
             $("#userguide").click(function () {
                 $('body,html').animate({scrollTop: 10}, 500);
-                _module.triggerAnalytics("userguide", "click");
+                _module.triggerAnalytics("userguideLink", "click");
                 _module.docs();
 
             });

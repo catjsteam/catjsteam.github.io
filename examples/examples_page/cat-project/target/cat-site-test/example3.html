@@ -23,11 +23,11 @@
     <script>
         $(document).ready(function() {
             $("#trySimpleSetTextAssert").click(function() {
-                debugger;
+                parent._triggerAnalytics("example3", "clickTry");
                 $(".sampleIframe").contents().find("#trySimpleSetTextAssert").click();
             });
             $("#trySimpleSetTextAssertReset").click(function() {
-                debugger;
+                parent._triggerAnalytics("example3", "clickReset");
                 $(".sampleIframe").contents().find("#trySimpleSetTextAssertReset").click();
             });
         });

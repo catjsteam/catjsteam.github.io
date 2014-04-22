@@ -23,8 +23,8 @@
     <script>
         $(document).ready(function() {
             $("#tryManager").click(function() {
+                parent._triggerAnalytics("example4", "clickTry");
                 $(".sampleIframe")[0].src = "example1_simple_manager.html";
-                //$(".sampleIframe").contents().find("#tryManager").click();
             });
         });
     </script>
