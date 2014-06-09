@@ -383,18 +383,24 @@ define(["jquery", "utils", "examples", "userguide", "faq"], function ($, utils, 
             });
         }
 
-        video.bind("click", function () {
 
-            tvscale = 1;
-            _module.triggerAnalytics("watchVideo", "on");
-            if (!_mobileConfig) {
+        if (_mobileConfig) {
+            $("#watchvideolink").prop("href", "http://www.youtube.com/watch?v=O3Bwn3iH5CQ&autoplay=1");
+            $("#watchvideolink").prop("target", "_blank");
 
-                _module.watch("on");
-            } else {
+            $("#watchvideolink").bind("click", function () {
+                _module.triggerAnalytics("watchVideo", "on");
+            });
+        } else {
+            video.bind("click", function () {
+                tvscale = 1;
+                _module.triggerAnalytics("watchVideo", "on");
+                if (!_mobileConfig) {
+                    _module.watch("on");
+                }
+            });
+        }
 
-                window.open("http://www.youtube.com/watch?v=O3Bwn3iH5CQ&autoplay=1", "_blank");
-            }
-        });
 
         _catelt = $(".cat");
         _workspacecontent = $(".workspacecontent");
