@@ -403,6 +403,7 @@ H3 {
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
+  line-height: 1.2;
 }
 .desktop-device .text .header {
   font-family: 'HPSimplifiedBold';
