@@ -1,4 +1,5 @@
 .contest a {
+    z-index:1;
     position: absolute;
     top: 47px;
     left: 29px;
@@ -837,6 +838,7 @@ faqContainer li em {
 .credits {
   font-size: 10px;
   font-family: HPSimplifiedLight;
+  z-index: 1;
 }
 .credits .less {
   margin: 5px 0px 0px 2px;
@@ -1214,6 +1216,10 @@ li {
   border-radius: 0px 0px 10px 0px;
   background-clip: padding-box;
 }
+.view {
+  height: 2230px;
+ 
+}
 .view .catheader {
   position: absolute;
   width: 100%;
@@ -1228,14 +1234,15 @@ li {
 }
 .view .catworkspace {
   position: absolute;
-  height: 440px;
-  /*width: 100%;*/
+  height: 2230px;
+  width: 600px;
   left: 200px;
 }
 .view .catworkspace .devices {
   position: absolute;
   top: 50px;
   left: 350px;
+  z-index: 1;
 }
 .view .catworkspace .devices .tubeGroupA {
   position: absolute;
@@ -1433,6 +1440,7 @@ li {
   text-align: center;
   color: #000000;
   font-size: 28px;
+  z-index:2;
 }
 .view .catworkspace .description .row {
   display: table-row;
@@ -1522,6 +1530,7 @@ li {
 .view .catworkspace .download {
   position: absolute;
   top: 250px;
+  z-index: 1;
 }
 .view .catworkspace .download .front {
   position: absolute;
@@ -1661,10 +1670,13 @@ li {
 .view .catworkspace .workspace {
   position: absolute;
   width: 100%;
+  height: 2230px;
 }
 .view .catworkspace .workspace .workspacecontent {
   position: absolute;
   top: 2230px;
+  height: 2230px;
+  width: 100%;
 }
 .view .catworkspace .workspace .workspacecontent .bulletGroupA {
   position: absolute;
