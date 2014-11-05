@@ -117,9 +117,6 @@ define(["jquery", "utils", "examples", "userguide", "faq"], function ($, utils, 
         });
         $("#navFaq").click(function () {
             _module.triggerAnalytics("navFaqLink", "click");
-            if (_gaq) {
-                _gaq.push(['_trackEvent', 'navFaqLink']);
-            }
             $("#userguide").click();
 //            $("#faq").click();
         });
