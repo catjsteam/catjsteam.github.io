@@ -149,18 +149,19 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
 
         <a name="catjs"></a><h1>CatJS 0.4.24<a class="anchorlink" href="#catjs"></a></h1>
 <a name="test_data_usage"></a><h3>Test Data Usage<a class="anchorlink" href="#test_data_usage"></a></h3>
-<p>On CatJS project creation a test data file is being generated at the following location: cat-project/src/config.testdata.json<br>This is a JSON file format and you can set your data inside and use that data within CatJS annotation. for example:<br>        /<em>
-            @[scrap
-                @@code alert(@d.find(.users.name))
-            ]@
-        </em>/</p>
+<p>On CatJS project creation a test data file is being generated at the following location: cat-project/src/config.testdata.json<br>This is a JSON file format and you can set your data inside and use that data within CatJS annotation. for example:              </p>
+<pre class="prettyprint">    @[scrap
+        @@code alert(@d.find(.users.name))
+    ]@</pre>
 <p>We have integrated <a href="https://github.com/dfilatov/jspath">JsPath</a> with CatJS core and you can use its syntax for query your data out from the test data JSON.<br>To get the data and use it within scraps definitions use &quot;@d&quot; combined with the blow described API. And as an arguments see <a href="https://github.com/dfilatov/jspath">JSPath documentation</a>.</p>
-<p>Currently we have support for two scrap methods:<br><em> </em>find*<br>Find a specific single entry (In case we get more than one result we&#39;ll take the first)</p>
+<p>Currently we have support for two scrap methods:</p>
 <ul class="list">
-<li><p><em>random</em><br>Get a specific entry out of an Array of items, Each call will result a random entry.</p>
+<li><p><strong>find</strong> Find a specific single entry (In case we get more than one result we&#39;ll take the first)</p>
 </li>
-<li><p><em>next</em><br>Combined with the cat.json configuration the test data can be auto incremented. &quot;repeat&quot; property should be defined to the test configuration below the scenarios. </p>
+<li><p><strong>random</strong> Get a specific entry out of an Array of items, Each call will result a random entry.</p>
 </li>
+<li><p><strong>next</strong>  Combined with the cat.json configuration the test data can be auto incremented. &quot;repeat&quot; property should be defined to the test configuration below the scenarios. Following a simple example: </p>
+<ul class="list">
 <li><p>cat.json </p>
 <pre class="prettyprint">  scenarios&quot;: {
       &quot;general&quot;: {
@@ -185,9 +186,11 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
       @@description Top Menu Actions
       @@jqm click(&quot;#menu a[scroll-to=&quot; + @d.next(.menu).name + &quot;]&quot;)
   ]@</pre>
+<p>The statement @d.next(.menu).name (powered by JSPath) means: go to the next item in the menu array at the testdata.json and get the name out of the menu item. simple as that :) The jqm action is scrolling to the menu item according to the incoming test data.        </p>
 </li>
 </ul>
-<p>the @d.next(.menu).name (powered by JSPath) statement means that go to the next item in the menu array at the testdata.json and get the name out of the menu item. simple as that :) The jqm action is scrolling to the menu item according to the incoming test data.        </p>
+</li>
+</ul>
 
 
 <!-- end content -->
