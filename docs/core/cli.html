@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/prettify.css"/>
+    <style>/*
+
+Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block; padding: 0.5em;
+  color: #000;
+  background: #fff;
+}
+
+.hljs-subst,
+.hljs-title {
+  font-weight: normal;
+  color: #000;
+}
+
+.hljs-comment,
+.hljs-template_comment,
+.hljs-javadoc,
+.diff .hljs-header {
+  color: #808080;
+  font-style: italic;
+}
+
+.hljs-annotation,
+.hljs-decorator,
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-doctype,
+.hljs-pi,
+.hljs-chunk,
+.hljs-shebang,
+.apache .hljs-cbracket,
+.hljs-prompt,
+.http .hljs-title {
+  color: #808000;
+}
+
+.hljs-tag,
+.hljs-pi {
+  background: #efefef;
+}
+
+.hljs-tag .hljs-title,
+.hljs-id,
+.hljs-attr_selector,
+.hljs-pseudo,
+.hljs-literal,
+.hljs-keyword,
+.hljs-hexcolor,
+.css .hljs-function,
+.ini .hljs-title,
+.css .hljs-class,
+.hljs-list .hljs-title,
+.clojure .hljs-title,
+.nginx .hljs-title,
+.tex .hljs-command,
+.hljs-request,
+.hljs-status {
+  font-weight: bold;
+  color: #000080;
+}
+
+.hljs-attribute,
+.hljs-rules .hljs-keyword,
+.hljs-number,
+.hljs-date,
+.hljs-regexp,
+.tex .hljs-special {
+  font-weight: bold;
+  color: #0000ff;
+}
+
+.hljs-number,
+.hljs-regexp {
+  font-weight: normal;
+}
+
+.hljs-string,
+.hljs-value,
+.hljs-filter .hljs-argument,
+.css .hljs-function .hljs-params,
+.apache .hljs-tag {
+  color: #008000;
+  font-weight: bold;
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.hljs-char,
+.tex .hljs-formula {
+  color: #000;
+  background: #d0eded;
+  font-style: italic;
+}
+
+.hljs-phpdoc,
+.hljs-yardoctag,
+.hljs-javadoctag {
+  text-decoration: underline;
+}
+
+.hljs-variable,
+.hljs-envvar,
+.apache .hljs-sqbracket,
+.nginx .hljs-built_in {
+  color: #660e7a;
+}
+
+.hljs-addition {
+  background: #baeeba;
+}
+
+.hljs-deletion {
+  background: #ffc8bd;
+}
+
+.diff .hljs-change {
+  background: #bccff9;
+}
+</style><style>body, #wrapper  {
+    padding: 0px !important;
+    background: #ffffff; 
+}</style>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/prettify.js"></script>
+
+  </head>
+<body onload="prettyPrint()">
+
+  <div id="wrapper">
+    <div id="header">
+
+    </div>
+
+    <div class="clear"></div>
+    <div id="main">
+      <div id="content" class="post">
+
+        <a name="catjs"></a><h1>CatJS 0.4.24<a class="anchorlink" href="#catjs"></a></h1>
+<a name="command_line"></a><h2>Command Line<a class="anchorlink" href="#command_line"></a></h2>
+<p>catjs solution comprised of a few major components, including the <a href="https://www.npmjs.org/package/catjs">command-line tool</a>, an <a href="https://www.npmjs.org/">NPM</a> (Node Packaged Module) that is based on <a href="http://nodejs.org/">nodejs</a> technology.<br>The command-line tool enable to create the test deployment based on a given application project, as described in the <a href="getting_started.html">getting started</a> section.</p>
+<p>After installing catjs module <code>npm install -g catjs</code> the <code>catcli</code> command will be available in the system path.  </p>
+<a name="arguments"></a><h3>arguments<a class="anchorlink" href="#arguments"></a></h3>
+<p>The available arguments that can be passed to the <code>catcli</code> command are described below.
+Some of the available arguments has flag with default values </p>
+<a name="__init__name_"></a><h4>--init [name]<a class="anchorlink" href="#__init__name_"></a></h4>
+<p>Initial a basic catjs project that will prepare the test deployment environment. Prompts will appear along the initial process and it will guide through the project creation.</p>
+<p>example: </p>
+<pre class="prettyprint">catcli --init</pre>
+<p>or using a flag</p>
+<pre class="prettyprint">catcli -i</pre>
+<p>We have prepared an initial example project that is ready to be execute, described in the <a href="getting_started.html">getting started</a> section.
+* example parameter</p>
+<pre class="prettyprint">catcli --init example </pre>
+<a name="__task__name_"></a><h4>--task [name]<a class="anchorlink" href="#__task__name_"></a></h4>
+<p>catjs has a built-in task manager that is plugable (similar to <a href="http://gruntjs.com/">Grunt task runner</a>). The tasks are running synchronously since the dependencies are tight.<br>  The system has OOTB tasks that based on plugins, it means that there are the main flow tasks to be used like build, server and such and there are system tasks. We have created flags that represents those tasks.  </p>
+<p>  Internal tasks names has a prefix: &quot;t@&quot; and for internal plugins we have a prefix: &quot;p@&quot;
+   Any custom plugin or task can have any name as long as it&#39;s unique.</p>
+<ul class="list">
+<li><p>--task t@init --task t@scrap --task t@inject (-b)
+The -b flag is the short term for running initialization, scrap scanning and injection tasks.</p>
+</li>
+<li><p>--task t@clean (-c)
+The -c flag stands for cleaning the project, but this is a soft clean for cleaning the test deployment</p>
+</li>
+<li><p>--task t@wipe
+The wipe task is for cleaning the entire test deployment including the libraries and other environment related resources </p>
+</li>
+<li><p>--task t@server.start (-s)
+The -s flag stand for running the nodejs server. 
+Currently we are running the server pointing to the test deployment locally by default and the same server is serving as a catjs monitoring service. We are going to change that in the near future, splitting the demo server from the monitoring service.</p>
+</li>
+<li><p>--task t@runner.start (-r)
+The -r flag stands for executing the runner according to its default configuration, unless an override will be set in the catproject.json file under &quot;runner&quot; property.  </p>
+<pre class="prettyprint">  &quot;runner&quot;: {
+      &quot;run&quot;: {
+          &quot;devices&quot;: [
+              {
+                  &quot;disable&quot;: false,
+                  &quot;type&quot;: &quot;localpc&quot;,
+                  &quot;runner&quot;: {
+                      &quot;name&quot;: &quot;chrome&quot;,
+                      &quot;address&quot;: &quot;/index.html&quot;,
+                      &quot;options&quot;: {
+                          &quot;instances&quot;: 1
+                      }
+                  }
+              }        
+          ]
+      },
+      &quot;server&quot;: {
+          &quot;host&quot;: &quot;192.168.137.74&quot;,
+          &quot;port&quot;: &quot;8080&quot;
+      }
+  }</pre>
+</li>
+<li><p>--task t@autotest (-a)
+The -a flag stands for auto test. This is actually a helper task that can gather all of the scrap names from your code and set it in the cat.json file under the &quot;scenarios&quot; property with no order.    </p>
+<p>The JavaScript code not always run in the way the test execution are defined. And because we need to define the scenarios, this is a nice helper for getting all the scrap names into the test project and then it can be edited.  </p>
+<p>cat.json scenarios section example:  </p>
+<pre class="prettyprint">  &quot;scenarios&quot;: {
+      &quot;general&quot;: {
+            &quot;tests&quot;: [{
+              &quot;name&quot;: &quot;initTest&quot;
+            }, {
+              &quot;name&quot;: &quot;menuTest&quot;
+            }, {
+              &quot;name&quot;: &quot;menuItemsAction&quot;, &quot;repeat&quot;:3
+            }]
+      }
+  }</pre>
+</li>
+</ul>
+
+
+<!-- end content -->
+      </div>
+    </div>
+
+    <div class="clear">
+    </div>
+
+    <div id="footer">
+    </div>
+  </div>
+<div style="position: fixed; padding: 10px; top: 0; right:0; width:100%; text-align:right; cursor:pointer;" onclick="window.location.href='http://catjsteam.github.io/docs/user_guide.html'" > <span style="position: relative; right: 10px; top: 10px; padding-top:10px; font-size:10px; color:#444444">Applications That Test Themselves</span> <img align="right" width="50" height="24" src="https://raw.githubusercontent.com/catjsteam/catjs/master/resources/images/Logo48x48-01.png"></div><script> (function(){ for(var els = document.getElementsByTagName ('a'), i = els.length; i--;) { var elt = els[i]; elt.setAttribute("target","_blank"); if (elt.href.lastIndexOf(".md") !== -1) {elt.href = elt.href.split(".md").join(".html") } } })(); </script> <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-53626536-1', 'auto'); ga('send', 'pageview');</script></body>
+</html>

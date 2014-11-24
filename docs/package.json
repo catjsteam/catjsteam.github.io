@@ -1,0 +1,22 @@
+{
+  "name": "cat-docs",
+  "description": "Cat Docs",
+  "version": "0.0.1",
+  "author": {
+    "name": "arik",
+    "email": "lewin.arik@gmail.com"
+  },
+  "scripts": {
+    "install": "node ./install.js"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+    "fs.extra": "~1.2.1",
+    "highlight": "~0.2.3",
+    "mds-hljs": "0.0.0",
+    "package-script": "~0.0.8",
+    "line-reader": "^0.2.4"
+  }
+}

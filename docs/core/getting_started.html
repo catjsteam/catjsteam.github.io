@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/prettify.css"/>
+    <style>/*
+
+Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block; padding: 0.5em;
+  color: #000;
+  background: #fff;
+}
+
+.hljs-subst,
+.hljs-title {
+  font-weight: normal;
+  color: #000;
+}
+
+.hljs-comment,
+.hljs-template_comment,
+.hljs-javadoc,
+.diff .hljs-header {
+  color: #808080;
+  font-style: italic;
+}
+
+.hljs-annotation,
+.hljs-decorator,
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-doctype,
+.hljs-pi,
+.hljs-chunk,
+.hljs-shebang,
+.apache .hljs-cbracket,
+.hljs-prompt,
+.http .hljs-title {
+  color: #808000;
+}
+
+.hljs-tag,
+.hljs-pi {
+  background: #efefef;
+}
+
+.hljs-tag .hljs-title,
+.hljs-id,
+.hljs-attr_selector,
+.hljs-pseudo,
+.hljs-literal,
+.hljs-keyword,
+.hljs-hexcolor,
+.css .hljs-function,
+.ini .hljs-title,
+.css .hljs-class,
+.hljs-list .hljs-title,
+.clojure .hljs-title,
+.nginx .hljs-title,
+.tex .hljs-command,
+.hljs-request,
+.hljs-status {
+  font-weight: bold;
+  color: #000080;
+}
+
+.hljs-attribute,
+.hljs-rules .hljs-keyword,
+.hljs-number,
+.hljs-date,
+.hljs-regexp,
+.tex .hljs-special {
+  font-weight: bold;
+  color: #0000ff;
+}
+
+.hljs-number,
+.hljs-regexp {
+  font-weight: normal;
+}
+
+.hljs-string,
+.hljs-value,
+.hljs-filter .hljs-argument,
+.css .hljs-function .hljs-params,
+.apache .hljs-tag {
+  color: #008000;
+  font-weight: bold;
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.hljs-char,
+.tex .hljs-formula {
+  color: #000;
+  background: #d0eded;
+  font-style: italic;
+}
+
+.hljs-phpdoc,
+.hljs-yardoctag,
+.hljs-javadoctag {
+  text-decoration: underline;
+}
+
+.hljs-variable,
+.hljs-envvar,
+.apache .hljs-sqbracket,
+.nginx .hljs-built_in {
+  color: #660e7a;
+}
+
+.hljs-addition {
+  background: #baeeba;
+}
+
+.hljs-deletion {
+  background: #ffc8bd;
+}
+
+.diff .hljs-change {
+  background: #bccff9;
+}
+</style><style>body, #wrapper  {
+    padding: 0px !important;
+    background: #ffffff; 
+}</style>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/prettify.js"></script>
+
+  </head>
+<body onload="prettyPrint()">
+
+  <div id="wrapper">
+    <div id="header">
+
+    </div>
+
+    <div class="clear"></div>
+    <div id="main">
+      <div id="content" class="post">
+
+        <a name="catjs"></a><h1>CatJS 0.4.24<a class="anchorlink" href="#catjs"></a></h1>
+<a name="quick_start"></a><h2>Quick Start<a class="anchorlink" href="#quick_start"></a></h2>
+<p>This is the basics that you need for creating your first test, for your application, using catjs framework.
+For more advanced information explore our docs.</p>
+<a name="first__install_catjs_command_line"></a><h3>First, install CatJS command line<a class="anchorlink" href="#first__install_catjs_command_line"></a></h3>
+<p>In order to get started, you&#39;ll want to install CatJS&#39;s CLI (command line interface) globally. <code>catcli</code> command will be set into your system path.</p>
+<pre class="prettyprint">npm install -g catjs</pre>
+<a name="then__create_a_new_project_with_catjs_tool"></a><h3>Then, create a new project with CatJS tool<a class="anchorlink" href="#then__create_a_new_project_with_catjs_tool"></a></h3>
+<pre class="prettyprint">catcli -i</pre>
+<p>Follow the command inputs:</p>
+<ul class="list">
+<li>Enter the project name: [project name, better with no spaces]</li>
+<li>Enter CatJS server&#39;s host name:  (localhost)</li>
+<li>Enter CatJS server&#39;s port:  (8089)</li>
+<li>Enter CatJS server&#39;s protocol:  (http)</li>
+<li>May catjs anonymously report usage statistics to improve the tool over time?:  (Y) </li>
+<li>Enter your project&#39;s (application) path:  ./../app 
+Relative path from &quot;cat-project&quot; folder to your app. </li>
+</ul>
+<p>&quot;cat-project&quot; folder will be created automatically for you after this process is done.<br>You can find inside all of the project resources including the catproject.json with the above configuration settings.<br>Those settings can be changed later.<br>Any future CatJS command should be running from the &quot;cat-project&quot; folder, since CatJS tool is looking for catproject.json configuration file.</p>
+<a name="and_then__add_scraps_to_your_code"></a><h3>And then, add scraps to your code<a class="anchorlink" href="#and_then__add_scraps_to_your_code"></a></h3>
+<p>Scrap is a single action annotation that can combine one or more operations or assertions.<br>You should put the scrap within comments.</p>
+<ul class="list">
+<li><p>Import catjs library<br>CatJS support a standard JavaScript imports and the <a href="http://requirejs.org">requireJS</a> library style  </p>
+<ul class="list">
+<li><p>standard import<br>Put CatJS library along with the other JavaScript resources<br>You can load other resources with cat annotation, just add a new line after cat.js import   </p>
+<pre class="prettyprint">  &lt;! --
+      @[scrap
+          @@import[
+              /cat/lib/cat.js
+          ]
+      ]@
+  -- &gt;</pre>
+</li>
+<li><p>RequireJS style<br>Put CatJS require configuration just below yours   </p>
+<pre class="prettyprint">  /*
+     @[scrap
+         @@require[
+            /cat/lib/cat.js
+         ]
+     ]@
+  */</pre>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="list">
+<li><p>Add your own scrap</p>
+<pre class="prettyprint">  /*
+      @[scrap
+          @@name myScrap
+          @@log &quot;This is my first scrap&quot;
+      ]@
+  */</pre>
+</li>
+</ul>
+<a name="for_test_deployment_creation__use_the_command_line_tool"></a><h3>For test deployment creation, use the command line tool<a class="anchorlink" href="#for_test_deployment_creation__use_the_command_line_tool"></a></h3>
+<p>CatJS command line tool has to be executed from where the catproject.json configuration file exists<br>You can find this file below cat-project folder. <strong>Don&#39;t forget to change the directory to cat-project first</strong></p>
+<ul class="list">
+<li><p>build your project</p>
+<pre class="prettyprint">  catcli -b</pre>
+</li>
+<li><p>Auto test configuration (optional)
+CatJS has a test project for executing all of your scraps, to be able to see the running steps run this command</p>
+<pre class="prettyprint">  catcli -a</pre>
+</li>
+</ul>
+<ul class="list">
+<li><p>run the server</p>
+<pre class="prettyprint">  catcli -s</pre>
+</li>
+<li><p>rebuild the project and run the server<br>  In case you edit your scraps comments clean first</p>
+<pre class="prettyprint">  catcli -cbas</pre>
+</li>
+</ul>
+<a name="additional_scrap_types"></a><h3>Additional scrap types<a class="anchorlink" href="#additional_scrap_types"></a></h3>
+<ul class="list">
+<li><p><em>code</em> JavaScript code snippet</p>
+<pre class="prettyprint">  /*
+      @[scrap
+          @@code alert(&quot;test&quot;)
+      ]@
+  */</pre>
+</li>
+<li><p><em>context</em> Expose variables from your scope to the test</p>
+<pre class="prettyprint">  /*
+      @[scrap
+          @@context fooElement
+          @@code [
+              fooElement.innerHTML=&quot;foo description&quot;
+              fooElement.style.color =&quot;#000&quot;
+          ]
+      ]@
+  */</pre>
+</li>
+<li><p><em>assert</em> supports <a href="http://chaijs.com/">chai.js</a> library API</p>
+<pre class="prettyprint">  /*
+      @[scrap
+          @@context fooElement
+          @@assert ok(fooElement, &quot;Missing element named: foo&quot;)
+      ]@
+  */</pre>
+</li>
+</ul>
+<p>Currently supported libraries are: JQM, Sencha Touch, (DOM, Enyo with few APIs, Angular is planned for future releases)
+The plugins aimed to give you a syntactic sugar, but you can always use your own code... and of course to code your own custom plugins.</p>
+<ul class="list">
+<li><p><em>jqm</em> supports <a href="http://jquerymobile.com/">JQM</a> library API</p>
+<pre class="prettyprint">  /*
+      @[scrap
+          @@jqm setText(&quot;#fooId&quot;, &quot;Test...&quot;)
+      ]@
+  */</pre>
+</li>
+<li><p><em>sencha touch</em> supports <a href="http://www.sencha.com/products/touch/">Sencha Touch (extjs)</a> library API</p>
+<pre class="prettyprint">  /*
+      @[scrap
+          @@context field
+          @@sencha setText(field, &quot;this is a test&quot;);
+      ]@
+  */</pre>
+</li>
+</ul>
+<a name="it__39_s_about_time_to_run_your_tests"></a><h3>It&#39;s about time to run your tests<a class="anchorlink" href="#it__39_s_about_time_to_run_your_tests"></a></h3>
+<p>Open your favorite browser and go to: <strong><a href="http://localhost:8089">http://localhost:8089</a></strong><br>Here is a short description for the events that occurs after loading the test deployment:</p>
+<ul class="list">
+<li>CatJS library is going to load the test project (cat.json)</li>
+<li>CatJS tests will start running as part of your code</li>
+<li>CatJS UI console will appear in the right top corner and mask will cover your application <ul class="list">
+<li>The UI console displays the assertions and any tests information </li>
+</ul>
+</li>
+<li>In case the scraps includes assertions it will be displayed in the: <ul class="list">
+<li>UI Console </li>
+<li>Terminal
+In additional a JUnit XML will be created that can be used to display reports and\or integrate with Jenkins</li>
+</ul>
+</li>
+</ul>
+<a name="example_application"></a><h2>Example Application<a class="anchorlink" href="#example_application"></a></h2>
+<ul class="list">
+<li><p>Create an initial CatJS project with a simple example application included</p>
+<pre class="prettyprint">  catcli --init example</pre>
+</li>
+</ul>
+<a name="example_application_description"></a><h3>Example application description<a class="anchorlink" href="#example_application_description"></a></h3>
+<p>Look into the file system where your generated project was created. At the root folder, two sub-folders were created:</p>
+<ul class="list">
+<li><em>cat-project</em> - folder that contains CatJS project&#39;s resources</li>
+<li><p><em>app folder</em>  - that contains a basic HTML5 application powered by JQuery</p>
+</li>
+<li><p>A Brief description</p>
+<ul class="list">
+<li>Files  <ul class="list">
+<li>CatJS Project<ul class="list">
+<li>catproject.json is CatJS&#39;s configuration file that contains<ul class="list">
+<li>Environment settings</li>
+<li>plugins declarations</li>
+<li>tasks declarations</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example Application <ul class="list">
+<li>Standard JQuery application resources (css, js, html)</li>
+<li>Annotation tests code included<ul class="list">
+<li>Browse to the JavaScript file: app/app.js and look for the scrap annotation.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Application description</p>
+<ul class="list">
+<li>The application has one page that contains a test button</li>
+<li>On each button click a text will be displayed, describing the number of clicks</li>
+</ul>
+</li>
+<li><p>Application test</p>
+<ul class="list">
+<li>Automates the button&#39;s click a few times</li>
+<li>Validating that the number of clicks are not greater than two clicks<ul class="list">
+<li>It will fail the test in that case</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<!-- end content -->
+      </div>
+    </div>
+
+    <div class="clear">
+    </div>
+
+    <div id="footer">
+    </div>
+  </div>
+<div style="position: fixed; padding: 10px; top: 0; right:0; width:100%; text-align:right; cursor:pointer;" onclick="window.location.href='http://catjsteam.github.io/docs/user_guide.html'" > <span style="position: relative; right: 10px; top: 10px; padding-top:10px; font-size:10px; color:#444444">Applications That Test Themselves</span> <img align="right" width="50" height="24" src="https://raw.githubusercontent.com/catjsteam/catjs/master/resources/images/Logo48x48-01.png"></div><script> (function(){ for(var els = document.getElementsByTagName ('a'), i = els.length; i--;) { var elt = els[i]; elt.setAttribute("target","_blank"); if (elt.href.lastIndexOf(".md") !== -1) {elt.href = elt.href.split(".md").join(".html") } } })(); </script> <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-53626536-1', 'auto'); ga('send', 'pageview');</script></body>
+</html>
