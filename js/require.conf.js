@@ -36,23 +36,6 @@ window.onload = function() {
         var config;
         $( document ).ready(function() {
             // Handler for .ready() called.
-            var contestelt = $(".cat .contest"),
-                to;
-
-            to = setTimeout(function() {
-                
-                contestelt.addClass("element-animation");
-                clearTimeout(to);
-                
-                setInterval(function(){
-                    if (contestelt.hasClass("element-animation")) {
-                        contestelt.removeClass("element-animation");
-                    } else {
-                        contestelt.addClass("element-animation");
-                    }
-                }, 6000);
-                
-            }, 1000);
             
         });
 
