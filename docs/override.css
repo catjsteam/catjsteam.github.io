@@ -2,3 +2,7 @@ body, #wrapper  {
     padding: 0px !important;
     background: #ffffff; 
 }
+
+.post p {
+    max-width: none;
+}
