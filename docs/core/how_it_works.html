@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/prettify.css"/>
+    <style>/*
+
+Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block; padding: 0.5em;
+  color: #000;
+  background: #fff;
+}
+
+.hljs-subst,
+.hljs-title {
+  font-weight: normal;
+  color: #000;
+}
+
+.hljs-comment,
+.hljs-template_comment,
+.hljs-javadoc,
+.diff .hljs-header {
+  color: #808080;
+  font-style: italic;
+}
+
+.hljs-annotation,
+.hljs-decorator,
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-doctype,
+.hljs-pi,
+.hljs-chunk,
+.hljs-shebang,
+.apache .hljs-cbracket,
+.hljs-prompt,
+.http .hljs-title {
+  color: #808000;
+}
+
+.hljs-tag,
+.hljs-pi {
+  background: #efefef;
+}
+
+.hljs-tag .hljs-title,
+.hljs-id,
+.hljs-attr_selector,
+.hljs-pseudo,
+.hljs-literal,
+.hljs-keyword,
+.hljs-hexcolor,
+.css .hljs-function,
+.ini .hljs-title,
+.css .hljs-class,
+.hljs-list .hljs-title,
+.clojure .hljs-title,
+.nginx .hljs-title,
+.tex .hljs-command,
+.hljs-request,
+.hljs-status {
+  font-weight: bold;
+  color: #000080;
+}
+
+.hljs-attribute,
+.hljs-rules .hljs-keyword,
+.hljs-number,
+.hljs-date,
+.hljs-regexp,
+.tex .hljs-special {
+  font-weight: bold;
+  color: #0000ff;
+}
+
+.hljs-number,
+.hljs-regexp {
+  font-weight: normal;
+}
+
+.hljs-string,
+.hljs-value,
+.hljs-filter .hljs-argument,
+.css .hljs-function .hljs-params,
+.apache .hljs-tag {
+  color: #008000;
+  font-weight: bold;
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.hljs-char,
+.tex .hljs-formula {
+  color: #000;
+  background: #d0eded;
+  font-style: italic;
+}
+
+.hljs-phpdoc,
+.hljs-yardoctag,
+.hljs-javadoctag {
+  text-decoration: underline;
+}
+
+.hljs-variable,
+.hljs-envvar,
+.apache .hljs-sqbracket,
+.nginx .hljs-built_in {
+  color: #660e7a;
+}
+
+.hljs-addition {
+  background: #baeeba;
+}
+
+.hljs-deletion {
+  background: #ffc8bd;
+}
+
+.diff .hljs-change {
+  background: #bccff9;
+}
+</style><style>body, #wrapper  {
+    padding: 0px !important;
+    background: #ffffff; 
+}</style>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/prettify.js"></script>
+
+  </head>
+<body onload="prettyPrint()">
+
+  <div id="wrapper">
+    <div id="header">
+
+    </div>
+
+    <div class="clear"></div>
+    <div id="main">
+      <div id="content" class="post">
+
+        <a name="catjs"></a><h1>CatJS 0.4.24<a class="anchorlink" href="#catjs"></a></h1>
+<a name="how_it_works"></a><h2>How It Works<a class="anchorlink" href="#how_it_works"></a></h2>
+<a name="the_idea"></a><h3>The idea<a class="anchorlink" href="#the_idea"></a></h3>
+<p>  We think that the developer is the key for leveraging the applications quality and currently in use processes. 
+  For having such system to support that assumption we have created a system where the developer use annotations within comments for test units creation and a test project for creating test scenarios that represents one or more test units that we call &quot;Scraps&quot;.  </p>
+<a name="ingredients"></a><h3>Ingredients<a class="anchorlink" href="#ingredients"></a></h3>
+<p>  CatJS framework entities  </p>
+<ul class="list">
+<li><p>Command Line Tool (Node Module) </p>
+<ul class="list">
+<li>Handling the application project sources</li>
+<li>Cat project creation and maintenance</li>
+<li>Run the server</li>
+<li>Execute the Runner</li>
+</ul>
+</li>
+<li><p>CatJS web library</p>
+<ul class="list">
+<li>Load the test project</li>
+<li>Execute the tests</li>
+<li>Send the information to the monitoring server</li>
+<li>Display the UI console</li>
+</ul>
+</li>
+<li><p>Runner</p>
+<ul class="list">
+<li>Execute the browsers and devices </li>
+<li>Load the application</li>
+<li>Send the execution data to the monitoring server</li>
+</ul>
+</li>
+<li><p>Reports</p>
+<ul class="list">
+<li>JUnit XML report generator</li>
+<li>Print the test data to the monitoring server console</li>
+</ul>
+</li>
+</ul>
+<a name="life_cycle"></a><h3>Life-cycle<a class="anchorlink" href="#life_cycle"></a></h3>
+<a name="using_catjs_tool__catcli_"></a><h4>Using CatJS Tool (catcli)<a class="anchorlink" href="#using_catjs_tool__catcli_"></a></h4>
+<ul class="list">
+<li><p>First we need to have a skeleton test project</p>
+</li>
+<li><p>Then, we need to collect all of the test units (scraps) information, understand it, 
+generate the proper functionality out of that information and inject the calls to that functionality to the right places.  </p>
+</li>
+<li><p>Having all the information we need, the test deployment is ready to be created</p>
+<ul class="list">
+<li>We need to package the generated sources add all of the third-parties resources and catjs web library</li>
+<li>Prepare the test project that contains all of the scenarios that are need to be executed. </li>
+<li>Add the test data to be consumed by the test functionality </li>
+</ul>
+</li>
+</ul>
+<a name="catjs_web_library"></a><h4>CatJS web library<a class="anchorlink" href="#catjs_web_library"></a></h4>
+<ul class="list">
+<li><p>CatJS web library run as part of the web application and being loaded when the application start running</p>
+</li>
+<li><p>The library is responsible to read the cat.json files that is the test project that contains all of the test scenarios and other properties that controls the tests behaviour</p>
+</li>
+</ul>
+<a name="runner"></a><h4>Runner<a class="anchorlink" href="#runner"></a></h4>
+<ul class="list">
+<li><p>The runner is being executed by the command line tool and according to its configuration is running the supported browsers and/or devices and make sure that the proper applications are being loaded.</p>
+</li>
+<li><p>After the applications has been executed the runner inform the monitoring server about his activities.</p>
+</li>
+</ul>
+<a name="reports"></a><h4>Reports<a class="anchorlink" href="#reports"></a></h4>
+<ul class="list">
+<li><p>When the test are running the CatJS web library is sending the test data to the monitoring server that gather the data and when the test finishes it generate a JUnit XML file to be consumed for example, by Jenkins </p>
+</li>
+<li><p>The monitoring server is printing the test data to its console. The CatJS library is printing the test data to the UI console. </p>
+</li>
+</ul>
+<a name="behavior"></a><h3>Behavior<a class="anchorlink" href="#behavior"></a></h3>
+<a name="assertions"></a><h4>Assertions<a class="anchorlink" href="#assertions"></a></h4>
+<p>  Currently CatJS works in a way that scraps (test units) are not being part of the test report if no assert annotation exists in the specific scrap.<br>   The assert library that are being used is <a href="http://chaijs.com/">chaijs</a> and only the assert API has been implemented.  </p>
+<a name="notifications"></a><h5>Notifications<a class="anchorlink" href="#notifications"></a></h5>
+<p>  The test passed or failed notification will be displayed in the <a href="ui_console.html">UI console</a> or in the monitor server console and available only when an assert annotation is being used.  </p>
+
+
+<!-- end content -->
+      </div>
+    </div>
+
+    <div class="clear">
+    </div>
+
+    <div id="footer">
+    </div>
+  </div>
+<div style="position: fixed; padding: 10px; top: 0; right:0; width:100%; text-align:right; cursor:pointer;" onclick="window.location.href='http://catjsteam.github.io/docs/user_guide.html'" > <span style="position: relative; right: 10px; top: 10px; padding-top:10px; font-size:10px; color:#444444">Applications That Test Themselves</span> <img align="right" width="50" height="24" src="https://raw.githubusercontent.com/catjsteam/catjs/master/resources/images/Logo48x48-01.png"></div><script> (function(){ for(var els = document.getElementsByTagName ('a'), i = els.length; i--;) { var elt = els[i]; elt.setAttribute("target","_blank"); if (elt.href.lastIndexOf(".md") !== -1) {elt.href = elt.href.split(".md").join(".html") } } })(); </script> <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-53626536-1', 'auto'); ga('send', 'pageview');</script></body>
+</html>

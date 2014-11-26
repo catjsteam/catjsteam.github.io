@@ -148,17 +148,70 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
       <div id="content" class="post">
 
         <a name="catjs"></a><h1>CatJS 0.4.24<a class="anchorlink" href="#catjs"></a></h1>
-<a name="ui_console"></a><h2>UI Console<a class="anchorlink" href="#ui_console"></a></h2>
-<p>The UI console is available by default, it means that when the test deploy has been started a catjs UI console will be display on the right top corner.
-The UI console displays the test output console and in additional internal monitoring messages such as notification for the test in case there&#39;s no activities.  </p>
-<p>In additional to the UI console display a mask cover is being displayed over the original UI, it can be turned off and back on when pressing on the cat logo that placed in the UI console.</p>
-<a name="on_off"></a><h3>On/Off<a class="anchorlink" href="#on_off"></a></h3>
-<p>catjs UI console can be turned on/off by setting the cat.json file that can be found in the generated test deployment. Setting the &#39;ui&#39; property to true or false can switch the UI console to on/off. </p>
-<a name="notification_icons"></a><h3>Notification Icons<a class="anchorlink" href="#notification_icons"></a></h3>
+<a name="javascript_annotations"></a><h2>JavaScript Annotations<a class="anchorlink" href="#javascript_annotations"></a></h2>
+<p>  <a href="http://en.wikipedia.org/wiki/Annotation">Annotations</a> can be found in many programming languages (e.g. <a href="http://en.wikipedia.org/wiki/Java_annotation">Java</a>). 
+  We have implemented a text annotation parser for CatJS engine, the parser is very naive and will be improved in future releases.</p>
+<a name="main_scrap_annotation_block"></a><h4>Main Scrap annotation Block<a class="anchorlink" href="#main_scrap_annotation_block"></a></h4>
+<p>  The main &quot;scrap&quot; block is a single test unit that can be a ui action, javascript code snippet, an assertion or all combined.</p>
+<pre class="prettyprint">    @[scrap
+
+    ]@</pre>
+<p>  The scrap annotation should be placed within a comment block, currently there are two options HTML and JS</p>
 <ul class="list">
-<li><strong>&#x2713;</strong> When an assertion test passed</li>
-<li><strong>&#x2717;</strong> When an assertion test failed </li>
-<li><strong>i</strong> Info sign for UI actions or other general information</li>
+<li><code>/&#42; &#42;/</code> </li>
+<li><code> &lt;!-- --&gt; </code></li>
+</ul>
+<a name="context"></a><h4>Context<a class="anchorlink" href="#context"></a></h4>
+<p>  The idea behind the context is to exposing the scope variables from the source code project to the testing area. 
+  Empower the tests by enabling real environment tests as closest it can get to production.
+   See <a href="plugins/annotation_plugins.html">Annotations Plugins</a> </p>
+<a name="thi_"></a><h5>thi$<a class="anchorlink" href="#thi_"></a></h5>
+<p>  In additional to context annotation that enables to pass scope arguments to the test, 
+  there&#39;s a built-in representation of the JavaScript &quot;this&quot; keyword that is automatically passed to the annotation block and can be used with CatJS syntax of &quot;thi{{content}}quot; keyword. </p>
+<pre class="prettyprint">    this.test = function(){};
+
+    @[scrap
+      @@code[
+          thi$.test();
+      ]
+    ]@</pre>
+<a name="catjs_annotations"></a><h4>CatJS Annotations<a class="anchorlink" href="#catjs_annotations"></a></h4>
+<p>  There are CatJS native annotations that you can use, or customize your own annotation, see <a href="plugins/annotation_plugins.html">Annotations Plugins</a></p>
+<a name="syntax_limitations"></a><h4>Syntax Limitations<a class="anchorlink" href="#syntax_limitations"></a></h4>
+<ul class="list">
+<li><p>When adding annotations to comments the main scrap annotation block must be added in a certain syntax because of its naive text parser.</p>
+<ul class="list">
+<li>Both comments for HTML and JavaScript can be used in separate lines       </li>
+<li>Each annotation needs to be in new line</li>
+<li>The main scrap block has to be in separate lines.</li>
+<li><p>When adding a multi-line block the square brackets needs to be in a certain syntax for example:</p>
+<pre class="prettyprint">@[scrap
+    @@code[
+        alert(1)
+        alert(2)
+    ]
+]@</pre>
+</li>
+<li><p>When adding a text that need quotes, use double quotes signs:</p>
+<pre class="prettyprint">   @[scrap
+       @@log &quot;my log text&quot;
+   ]@</pre>
+</li>
+<li><p>Full example</p>
+<pre class="prettyprint">    var localvar = 1;
+
+    @[scrap
+        @@context  localvar
+        @@code[
+            alert(&quot;first alert&quot;)
+            alert(&quot;second alert&quot;)
+        ]
+        @@log &quot;This is a syntax scrap example&quot;
+        @@assert ok(localvar === 1, &quot;great conditional&quot;)
+    ]@</pre>
+</li>
+</ul>
+</li>
 </ul>
 
 

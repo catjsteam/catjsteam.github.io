@@ -148,17 +148,21 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
       <div id="content" class="post">
 
         <a name="catjs"></a><h1>CatJS 0.4.24<a class="anchorlink" href="#catjs"></a></h1>
-<a name="ui_console"></a><h2>UI Console<a class="anchorlink" href="#ui_console"></a></h2>
-<p>The UI console is available by default, it means that when the test deploy has been started a catjs UI console will be display on the right top corner.
-The UI console displays the test output console and in additional internal monitoring messages such as notification for the test in case there&#39;s no activities.  </p>
-<p>In additional to the UI console display a mask cover is being displayed over the original UI, it can be turned off and back on when pressing on the cat logo that placed in the UI console.</p>
-<a name="on_off"></a><h3>On/Off<a class="anchorlink" href="#on_off"></a></h3>
-<p>catjs UI console can be turned on/off by setting the cat.json file that can be found in the generated test deployment. Setting the &#39;ui&#39; property to true or false can switch the UI console to on/off. </p>
-<a name="notification_icons"></a><h3>Notification Icons<a class="anchorlink" href="#notification_icons"></a></h3>
+<a name="dependencies"></a><h2>Dependencies<a class="anchorlink" href="#dependencies"></a></h2>
+<a name="third_parties_for_the_web"></a><h3>Third-Parties For The Web<a class="anchorlink" href="#third_parties_for_the_web"></a></h3>
+<p>  CatJS has a built-in web libraries\frameworks dependencies (see &quot;dependencies&quot; section at <a href="catjs_tool.html">catjs project tool doc</a><br>  Those dependencies are being used as part of the web framework area and are packaged as part of cat.js resource.  </p>
+<p>  Obviously it can be modified although it not recommended to remove the existing library since it will lead to malfunctioning of some of catjs modules. 
+  Adding additional library as a dependencies is not a problem, just need to make sure to add the resources to the [APPLICATION_HOME_FOLDER]/cat-project/lib folder.</p>
 <ul class="list">
-<li><strong>&#x2713;</strong> When an assertion test passed</li>
-<li><strong>&#x2717;</strong> When an assertion test failed </li>
-<li><strong>i</strong> Info sign for UI actions or other general information</li>
+<li><p><em>ChaiJS</em>
+Currently we are using chaijs as an assertion library.</p>
+</li>
+<li><p><em>UnderscoreJS</em>
+We rae using underscore as JavaScript utilities and template engine. </p>
+</li>
+<li><p><em>JSPath</em>
+CatJs has dependency at JSPath that is a great library for JSON object navigation.</p>
+</li>
 </ul>
 
 

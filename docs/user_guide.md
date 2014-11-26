@@ -52,10 +52,16 @@ Take a look on the [demo](http://ransnir.github.io/cat-project/target/catexample
 
 ## Documentation
 
+* [Features](core/catjs_features.html)
+* [How It Works](core/how_it_works.html)
 * [Getting started](core/getting_started.html)
 * [Command Line Tool](core/cli.html)
+* [CatJS Project (Tool)](core/catjs_tool.html)
+* [Dependencies](core/dependencies.html)
 * [Test Project](core/test_project.html)
 * [Test Data](core/test_data.html)
+* [Annotations](core/annotations.html)
+* [Plugins](core/plugins.html)
 * [Reports](core/reports.html)
 * [Runner](core/runner.html)
 * [UI Console](core/ui_console.html)
