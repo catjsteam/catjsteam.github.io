@@ -33,7 +33,7 @@ require('package-script').spawn([
                     _lineReader.eachLine(filepath, function(line) {
 
                         var goto = "http://catjsteam.github.io/docs/user_guide.html",
-                            version = "0.4.25";
+                            version = "0.4.26";
 
                         if (line.indexOf("<h1>CatJS") !== -1) {
                             line = line.split("<h1>CatJS").join("<h1>CatJS " + version);
