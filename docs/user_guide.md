@@ -50,6 +50,9 @@ Take a look on the [demo](http://ransnir.github.io/cat-project/target/catexample
 ### GTAC & Ignite Velocity events
 [![ScreenShot](https://raw.githubusercontent.com/catjsteam/catjs/master/resources/images/gtac.jpg)](https://www.youtube.com/watch?v=gGdDc5SlBq4) [![ScreenShot](https://raw.githubusercontent.com/catjsteam/catjs/master/resources/images/velocity.jpg)](https://www.youtube.com/watch?v=nRcKAFS-Gyg)
 
+## Release Notes
+
+* **Note! Reports location moved to be aggregated below "reports" folder**  
 
 ## Documentation
 
