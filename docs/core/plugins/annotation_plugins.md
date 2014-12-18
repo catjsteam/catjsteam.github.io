@@ -34,7 +34,7 @@ CatJS
                 @@log "This is my first scrap"
             ]@
         
-* **code** JavaScript code snippet
+* **code** and **js** JavaScript code snippet
   Just put a JavaScript code and we will execute it from the natural environment. 
     
             @[scrap
@@ -70,6 +70,14 @@ CatJS
                 @@embed true
             ]@
             
+* **standalone** is a boolean flag that notifies the tests execution engine to skip the related scrap. It means that this scrap will not be part of the scenario configuration but
+will be executed as part of the natural application flow. A good example is a listener of a click that will be triggered by the click action. the scraps within the listener should be standalone.
+
+            @[scrap
+                @@standalone true
+            ]@    
+ 
+           
 #### Third-party            
 
 The common layer will do for create robust tests for your application. However we added third-party plugins for sugar syntax and making everybody life easier.  

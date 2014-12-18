@@ -151,7 +151,7 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
     <div id="main">
       <div id="content" class="post">
 
-        <a name="catjs"></a><h1>CatJS 0.4.30<a class="anchorlink" href="#catjs"></a></h1>
+        <a name="catjs"></a><h1>CatJS 0.4.45<a class="anchorlink" href="#catjs"></a></h1>
 <a name="native_annotation_plugins"></a><h3>Native Annotation Plugins<a class="anchorlink" href="#native_annotation_plugins"></a></h3>
 <a name="common"></a><h4>Common<a class="anchorlink" href="#common"></a></h4>
 <ul class="list">
@@ -178,7 +178,7 @@ Add console log (use double quatoes &quot;)    </p>
           @@log &quot;This is my first scrap&quot;
       ]@</pre>
 </li>
-<li><p><strong>code</strong> JavaScript code snippet
+<li><p><strong>code</strong> and <strong>js</strong> JavaScript code snippet
 Just put a JavaScript code and we will execute it from the natural environment. </p>
 <pre class="prettyprint">      @[scrap
           @@code alert(&quot;test&quot;)
@@ -211,6 +211,12 @@ With the context annotation you can expose any variable from your scope, it can 
 <pre class="prettyprint">      @[scrap
           @@embed true
       ]@</pre>
+</li>
+<li><p><strong>standalone</strong> is a boolean flag that notifies the tests execution engine to skip the related scrap. It means that this scrap will not be part of the scenario configuration but
+will be executed as part of the natural application flow. A good example is a listener of a click that will be triggered by the click action. the scraps within the listener should be standalone.</p>
+<pre class="prettyprint">      @[scrap
+          @@standalone true
+      ]@    </pre>
 </li>
 </ul>
 <a name="third_party"></a><h4>Third-party<a class="anchorlink" href="#third_party"></a></h4>

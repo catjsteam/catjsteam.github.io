@@ -45,6 +45,9 @@ CatJS
   * **apppath**
   The original application project path, CatJS scans for gathering information. None intrusive action are being applied to the application file system.
    
+  * **jshint**   
+  JavaScript source code validation using [jshint configuration](http://jshint.com/docs/options/)
+   
   * **runner** 
   The CatJS Runner configuration to be able to run the application on multiple browsers and devices. For more information about the module and configuration see [CatJSRunner Module](https://www.npmjs.org/package/mobilerunner)
    
