@@ -32,7 +32,8 @@ CatJS
   The application protocol [http | https]
   
   * **dependencies** Consider that changing this dependencies might cause malfunction of some of the modules. Adding your own dependencies are more than welcome 
-  Array of the third-party libraries to be included in the project, in the order they are pushed. The OOTB libraries in use as follows: ["underscore", "js.utils", "tmr", "jspath", "chai",  "cat"]   
+  Array of the third-party libraries to be included/excluded in the project, 
+  in the order they are pushed. The OOTB libraries in use as follows: ["underscore", "js.utils", "tmr", "jspath", "chai",  "cat"]   
   * *[underscore](http://underscorejs.org/)* JavaScript helpers library
   * *[js.utils](https://github.com/lastboy/js.utils)* JavaScript Utilities
   * *[Test Model Reporter](https://github.com/lastboy/test-unit-reporter)* JavaScript model to JUnit XML reporter, the library is being used for modeling the monitoring data
@@ -46,7 +47,40 @@ CatJS
   The original application project path, CatJS scans for gathering information. None intrusive action are being applied to the application file system.
    
   * **jshint**   
-  JavaScript source code validation using [jshint configuration](http://jshint.com/docs/options/)
+  JavaScript source code validation using [jshint configuration](http://jshint.com/docs/options/) 
+  defaults: 
+        { "opt": {
+            "evil": true,
+            "strict": false,
+            "curly": true,
+            "eqeqeq": true,
+            "immed": false,
+            "latedef": true,
+            "newcap": false,
+            "noarg": true,
+            "sub": true,
+            "undef": true,
+            "boss": true,
+            "eqnull": true,
+            "node": true,
+            "es5": false
+            
+        }, "globals": {
+            "_cat": true,
+            "chai": true,
+            "$": true,
+            "window": true,
+            "document": true,
+            "XMLHttpRequest": true,
+            "describe": true,
+            "xdescribe": true,
+            "it": true,
+            "xit": true,
+            "before": true,
+            "beforeEach": true,
+            "after": true,
+            "afterEach": true, 
+        }  
    
   * **runner** 
   The CatJS Runner configuration to be able to run the application on multiple browsers and devices. For more information about the module and configuration see [CatJSRunner Module](https://www.npmjs.org/package/mobilerunner)

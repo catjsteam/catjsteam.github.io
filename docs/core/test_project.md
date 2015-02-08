@@ -42,7 +42,8 @@ Attribute for scenarios definition.
     + Under scenario you can set any scenario name as an object property, like "general".  
     Within the scenario object set a tests property containing an array of test objects, the test object's properties are:      
         + *name*  The scrap name as appear in the annotation
-        + *repeat* (optional) how many times the following scrap will be repeated 
+        + *repeat* (optional) how many times the following scrap will be repeated ,
+        + *delay* (optional) custom scrap delay (in milliseconds)
     
     
 * **run-mode**  
@@ -54,6 +55,8 @@ Two modes are available for tests executions ("tests" as default)":
     + *all*
     Ignore the test scenarios definition and run all the tests at once as they are running natively.   
     In this mode you will not be able to see the ui console or any delay in the script.  
+
+* **auto-override** combined with -a command line flag <code>catcli -a</code> the cat.json file will be override by the "autotest" process (default true/false)
 
 * **"run-test-delay"** 
 This is the delay in milliseconds that are going to be set between the actions (default to 500ms)

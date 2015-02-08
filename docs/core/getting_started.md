@@ -23,7 +23,7 @@ Follow the command inputs:
 * Enter CatJS server's port:  (8089)
 * Enter CatJS server's protocol:  (http)
 * May catjs anonymously report usage statistics to improve the tool over time?:  (Y) 
-* Enter your project's (application) path:  ./../app 
+* Enter your project's (application) path (./..):  ./../app 
   Relative path from "cat-project" folder to your app. 
   
 "cat-project" folder will be created automatically for you after this process is done.  
