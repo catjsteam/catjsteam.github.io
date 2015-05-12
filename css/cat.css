@@ -586,14 +586,6 @@ H3 {
   width: 24px;
   height: 12px;
 }
-.mobile-device .hplogo {
-  position: absolute;
-  top: 55px;
-  left: 18px;
-  width: 42px;
-  height: 49px;
-  background: url('../resources/sprite.png') -320px 0px;
-}
 /*
   Tube
 */
@@ -1416,11 +1408,11 @@ li {
   background-clip: padding-box;
 }
 .view .catworkspace .devices .tubeGroupC .tubePlug {
-  width: 17px;
+  width: 21px;
   height: 18px;
   position: absolute;
-  left: -3px;
-  top: 158px;
+  left: -2px;
+  top: 162px;
   border: 3px solid #373737;
   background-color: #000;
   -webkit-border-radius: 30px;

@@ -52,12 +52,12 @@ window.onload = function() {
         })() };
         $.browser.device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
 
-        if ($.browser.device) {
+        //if ($.browser.device) {
             // device in specific
             config = {
                 alignLeft: 200
             };
-        }
+        //}
 
         if (site) {
             site.initialize(config);
