@@ -26,7 +26,7 @@ Rest API
     message=End
     type=test
     
-## Assert Example
+### Assert Example
   /assert?
   
     id=10bcf922-d74b-dbde-eb35-a49e0d8c86a8 
@@ -38,6 +38,9 @@ Rest API
     type=test  
 
 ## scrap [GET]
+  /scrap [ testId | scrsp ]
+
+### Scrap Example
     /scraps?
     
     testId=10bcf922-d74b-dbde-eb35-a49e0d8c86a8' 
