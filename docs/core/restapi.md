@@ -41,7 +41,7 @@ Rest API
   /scrap [ testId | scrsp ]
 
 ### Scrap Example
-    /scraps?
+  /scraps?
     
     testId=10bcf922-d74b-dbde-eb35-a49e0d8c86a8' 
     scrap=native.eventFireNativeTest
