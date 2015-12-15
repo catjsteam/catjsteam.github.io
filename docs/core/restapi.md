@@ -6,6 +6,7 @@ Rest API
   
 ### Test Start Example
   /assert?
+  
     id=10bcf922-d74b-dbde-eb35-a49e0d8c86a8 
     testName=Start
     name=Start
@@ -16,6 +17,7 @@ Rest API
     
 ### Test End Example
   /assert?
+  
     id=10bcf922-d74b-dbde-eb35-a49e0d8c86a8 
     testName=End
     name=End
@@ -25,7 +27,8 @@ Rest API
     type=test
     
 ## Assert Example
-  /assert
+  /assert?
+  
     id=10bcf922-d74b-dbde-eb35-a49e0d8c86a8 
     testName=deleteTestScrap
     name=deleteTestScrap
@@ -36,5 +39,6 @@ Rest API
 
 ## scrap [GET]
     /scraps?
-  testId=10bcf922-d74b-dbde-eb35-a49e0d8c86a8' 
-  scrap=native.eventFireNativeTest
+    
+    testId=10bcf922-d74b-dbde-eb35-a49e0d8c86a8' 
+    scrap=native.eventFireNativeTest
