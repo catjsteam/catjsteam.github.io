@@ -23,3 +23,18 @@ Rest API
     status=End
     message=End
     type=test
+    
+## Assert Example
+  /assert
+    id=10bcf922-d74b-dbde-eb35-a49e0d8c86a8 
+    testName=deleteTestScrap
+    name=deleteTestScrap
+    reports=console,junit
+    status=success
+    message=Test%20Passed
+    type=test  
+
+## scrap [GET]
+    /scraps?
+  testId=10bcf922-d74b-dbde-eb35-a49e0d8c86a8' 
+  scrap=native.eventFireNativeTest
